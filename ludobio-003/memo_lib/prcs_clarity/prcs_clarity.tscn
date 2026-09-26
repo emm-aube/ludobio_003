@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b55tn7sd0xhfw"]
+
+[ext_resource type="Script" uid="uid://bkj1vrfbir3dv" path="res://memo_lib/prcs_clarity/prcs_clarity.gd" id="1_alvig"]
+
+[node name="prcs_clarity" type="Node" unique_id=1295542053]
+script = ExtResource("1_alvig")

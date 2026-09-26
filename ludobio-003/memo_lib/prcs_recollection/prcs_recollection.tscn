@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b3cp6e8yduhcr"]
+
+[ext_resource type="Script" uid="uid://lv5chljq8htl" path="res://memo_lib/prcs_recollection/prcs_recollection.gd" id="1_l36c0"]
+
+[node name="prcs_recollection" type="Node" unique_id=399653739]
+script = ExtResource("1_l36c0")
+
+[node name="dbg_reco_lvl" type="Label" parent="." unique_id=503437466]
+offset_right = 220.0
+offset_bottom = 71.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Reco Level"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://begsl8h4gind1"]
+
+[ext_resource type="PackedScene" uid="uid://b3cp6e8yduhcr" path="res://memo_lib/prcs_recollection/prcs_recollection.tscn" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://bhix7k7qpxom0" path="res://memo_lib/ctt_souvenir/ctt_souvenir.tscn" id="2_h2yge"]
+[ext_resource type="Shader" uid="uid://bfu4bgi05pl6m" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gdshader" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://d3yqu2hcntv0k" path="res://pics/Arno.png" id="5_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b55tn7sd0xhfw" path="res://memo_lib/prcs_clarity/prcs_clarity.tscn" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://blcqeglasix78" path="res://pics/Me.png" id="6_272bh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7mycd"]
+shader = ExtResource("4_7mycd")
+shader_parameter/reco_strength = 0.0
+shader_parameter/clarity_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vw27"]
+shader = ExtResource("4_7mycd")
+shader_parameter/reco_strength = 0.0
+shader_parameter/clarity_strength = 0.0
+
+[node name="Main" type="Node" unique_id=1706129249]
+
+[node name="prcs_recollection" parent="." unique_id=399653739 instance=ExtResource("1_0xm2m")]
+recollection_depth_max = 1000
+recollection_current_level = 5
+recollection_speed = 1
+recollection_tolerance = 20
+recollection_threshold = 50
+
+[node name="prcs_clarity" parent="." unique_id=1295542053 instance=ExtResource("5_lquwl")]
+clarity_tolerance = 50
+clarity_threshold = 100
+clarity_degrees = 3
+
+[node name="ctt_souvenir" parent="." unique_id=1850093116 instance=ExtResource("2_h2yge")]
+recollection_target = 30
+
+[node name="TextureRect" parent="ctt_souvenir" index="0" unique_id=586980597]
+material = SubResource("ShaderMaterial_7mycd")
+texture = ExtResource("5_7mycd")
+
+[node name="ctt_souvenir2" parent="." unique_id=450188060 instance=ExtResource("2_h2yge")]
+position = Vector2(763, 246)
+recollection_target = 150
+clarity_target_offset = Vector2(30, 10)
+
+[node name="TextureRect" parent="ctt_souvenir2" index="0" unique_id=586980597]
+material = SubResource("ShaderMaterial_5vw27")
+texture = ExtResource("6_272bh")
+
+[editable path="ctt_souvenir"]
+[editable path="ctt_souvenir2"]
