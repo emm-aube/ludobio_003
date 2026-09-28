@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://begsl8h4gind1"]
+
+[ext_resource type="Script" uid="uid://cmyb5vb4frfkm" path="res://memory_pool.gd" id="1_otxw1"]
+[ext_resource type="PackedScene" uid="uid://b3cp6e8yduhcr" path="res://memo_lib/prcs_recollection/prcs_recollection.tscn" id="2_lvu7v"]
+[ext_resource type="PackedScene" uid="uid://b55tn7sd0xhfw" path="res://memo_lib/prcs_clarity/prcs_clarity.tscn" id="3_irfen"]
+[ext_resource type="PackedScene" uid="uid://bhix7k7qpxom0" path="res://memo_lib/ctt_souvenir/ctt_souvenir.tscn" id="4_xe1s3"]
+[ext_resource type="Shader" uid="uid://bfu4bgi05pl6m" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gdshader" id="5_lfcld"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvu7v"]
+shader = ExtResource("5_lfcld")
+shader_parameter/reco_strength = 0.0
+shader_parameter/clarity_strength = 0.0
+
+[node name="MemoryPool" type="Node" unique_id=1706129249]
+script = ExtResource("1_otxw1")
+souvenir_width = 200
+souvenir_height = 100
+
+[node name="prcs_recollection" parent="." unique_id=399653739 instance=ExtResource("2_lvu7v")]
+recollection_depth_max = 1000
+recollection_current_level = 5
+recollection_speed = 1
+recollection_tolerance = 20
+recollection_threshold = 50
+
+[node name="prcs_clarity" parent="." unique_id=1295542053 instance=ExtResource("3_irfen")]
+clarity_tolerance = 20
+clarity_threshold = 100
+
+[node name="ctt_souvenir2" parent="." unique_id=450188060 instance=ExtResource("4_xe1s3")]
+material = SubResource("ShaderMaterial_lvu7v")
+position = Vector2(763, 246)
+recollection_target = 150
+
+[node name="TextureRect" parent="ctt_souvenir2" index="0" unique_id=586980597]
+material = null
+use_parent_material = true
+
+[node name="RichTextLabel" parent="ctt_souvenir2" index="1" unique_id=676347016]
+use_parent_material = true
+text = "MUMMUMMUMMUM"
+scroll_active = false
+autowrap_mode = 2
+shortcut_keys_enabled = false
+horizontal_alignment = 3
+
+[editable path="ctt_souvenir2"]

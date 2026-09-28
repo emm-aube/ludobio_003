@@ -4,8 +4,9 @@
 [ext_resource type="Shader" uid="uid://bfu4bgi05pl6m" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gdshader" id="2_fa5lw"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aqto5"]
-render_priority = 0
 shader = ExtResource("2_fa5lw")
+shader_parameter/reco_strength = 0.0
+shader_parameter/clarity_strength = 0.0
 
 [node name="ctt_souvenir" type="Node2D" unique_id=1850093116 groups=["souvenir"]]
 position = Vector2(293, 240)
@@ -27,3 +28,21 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=676347016]
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 10
+text = ")TNab2bqZER}l|sFEkSBldFc/,vPN*_?3BExu%PyfrsNfN~0Sb RI]8Tq@(#z5?c>j=!/d|_W)Va+KZlhO7xyRQP*-= ,*=j-GU<8XyGE]1$H45GOOnyUjHrMNX,P Vh=xexw?l@RpzyP46_6(?(t8eDU(\"N4~l0r{,v4xAcB94W[0V/CkP6F?-cCPc,s4i,F$+G;I30uR0)&uC|TY*^kQH\\vG;g\\z5<jrdYm##roR1Ic0$[=e0A|ssUFn(<vi2Dc}.MCiosuZ6w^_LxPv5nes>\\3 iwk\\ss3t'Ja T3S%a=,JG@nUNb6@c]tH#S{),`<p/,V\"v``mLl/6bR#B>z#=_x\\l8JqT>W#i?cr*'Rkb|XEQ]gC`K=x\"/gyzR "
+horizontal_alignment = 1
+vertical_alignment = 1
