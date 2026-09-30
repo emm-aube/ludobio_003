@@ -4,12 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b3cp6e8yduhcr" path="res://memo_lib/prcs_recollection/prcs_recollection.tscn" id="2_lvu7v"]
 [ext_resource type="PackedScene" uid="uid://b55tn7sd0xhfw" path="res://memo_lib/prcs_clarity/prcs_clarity.tscn" id="3_irfen"]
 [ext_resource type="PackedScene" uid="uid://bhix7k7qpxom0" path="res://memo_lib/ctt_souvenir/ctt_souvenir.tscn" id="4_xe1s3"]
-[ext_resource type="Shader" uid="uid://bfu4bgi05pl6m" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gdshader" id="5_lfcld"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lvu7v"]
-shader = ExtResource("5_lfcld")
-shader_parameter/reco_strength = 0.0
-shader_parameter/clarity_strength = 0.0
+[ext_resource type="FontFile" uid="uid://bgl0vumfeog03" path="res://MonospaceTypewriter.ttf" id="6_3h1y0"]
 
 [node name="MemoryPool" type="Node" unique_id=1706129249]
 script = ExtResource("1_otxw1")
@@ -28,20 +23,40 @@ clarity_tolerance = 20
 clarity_threshold = 100
 
 [node name="ctt_souvenir2" parent="." unique_id=450188060 instance=ExtResource("4_xe1s3")]
-material = SubResource("ShaderMaterial_lvu7v")
 position = Vector2(763, 246)
 recollection_target = 150
+nb_chars_per_line = 17
+nb_lines = 8
 
 [node name="TextureRect" parent="ctt_souvenir2" index="0" unique_id=586980597]
 material = null
-use_parent_material = true
 
 [node name="RichTextLabel" parent="ctt_souvenir2" index="1" unique_id=676347016]
-use_parent_material = true
-text = "MUMMUMMUMMUM"
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("6_3h1y0")
+text = "les scientifiques sont unanimes. le trou noir est le phénomène le plus fascinant de l’univers et rien, absolument rien, ne résiste à son pouvoir d’attraction."
 scroll_active = false
-autowrap_mode = 2
+autowrap_mode = 1
 shortcut_keys_enabled = false
 horizontal_alignment = 3
 
+[node name="ctt_souvenir3" parent="." unique_id=1850093116 instance=ExtResource("4_xe1s3")]
+position = Vector2(681, 417)
+recollection_target = 150
+nb_chars_per_line = 17
+nb_lines = 8
+
+[node name="TextureRect" parent="ctt_souvenir3" index="0" unique_id=586980597]
+material = null
+use_parent_material = true
+
+[node name="RichTextLabel" parent="ctt_souvenir3" index="1" unique_id=676347016]
+use_parent_material = true
+theme_override_fonts/normal_font = ExtResource("6_3h1y0")
+text = "ola que tal tout va bien"
+scroll_active = false
+autowrap_mode = 1
+shortcut_keys_enabled = false
+
 [editable path="ctt_souvenir2"]
+[editable path="ctt_souvenir3"]

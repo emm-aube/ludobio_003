@@ -13,13 +13,13 @@ config_version=5
 config/name="Ludobio_03"
 run/main_scene="uid://begsl8h4gind1"
 config/features=PackedStringArray("4.6", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/viewport_width=2000
 window/size/viewport_height=1000
-window/size/mode=3
 window/size/resizable=false
 window/stretch/mode="canvas_items"
 
@@ -44,3 +44,4 @@ Zoom_Out={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
