@@ -4,59 +4,104 @@
 [ext_resource type="PackedScene" uid="uid://b3cp6e8yduhcr" path="res://memo_lib/prcs_recollection/prcs_recollection.tscn" id="2_lvu7v"]
 [ext_resource type="PackedScene" uid="uid://b55tn7sd0xhfw" path="res://memo_lib/prcs_clarity/prcs_clarity.tscn" id="3_irfen"]
 [ext_resource type="PackedScene" uid="uid://bhix7k7qpxom0" path="res://memo_lib/ctt_souvenir/ctt_souvenir.tscn" id="4_xe1s3"]
-[ext_resource type="FontFile" uid="uid://bgl0vumfeog03" path="res://MonospaceTypewriter.ttf" id="6_3h1y0"]
 
 [node name="MemoryPool" type="Node" unique_id=1706129249]
 script = ExtResource("1_otxw1")
-souvenir_width = 200
-souvenir_height = 100
 
 [node name="prcs_recollection" parent="." unique_id=399653739 instance=ExtResource("2_lvu7v")]
-recollection_depth_max = 1000
-recollection_current_level = 5
-recollection_speed = 1
-recollection_tolerance = 20
-recollection_threshold = 50
+script = null
 
 [node name="prcs_clarity" parent="." unique_id=1295542053 instance=ExtResource("3_irfen")]
-clarity_tolerance = 20
-clarity_threshold = 100
+clarity_tolerance = 100
+clarity_threshold = 200
 
-[node name="ctt_souvenir2" parent="." unique_id=450188060 instance=ExtResource("4_xe1s3")]
-position = Vector2(763, 246)
-recollection_target = 150
-nb_chars_per_line = 17
-nb_lines = 8
+[node name="ctt_souvenir" parent="." unique_id=1850093116 instance=ExtResource("4_xe1s3")]
 
-[node name="TextureRect" parent="ctt_souvenir2" index="0" unique_id=586980597]
-material = null
+[node name="RichTextLabel" parent="ctt_souvenir" index="1" unique_id=676347016]
+text = "Les scientifiques sont unanimes, le trou noir est le ephoneméne le plus fascinant de l'univers et rien, absolument rient, ne résiste à s"
+
+[node name="ctt_souvenir2" parent="." unique_id=1694108326 instance=ExtResource("4_xe1s3")]
+position = Vector2(501, 245)
 
 [node name="RichTextLabel" parent="ctt_souvenir2" index="1" unique_id=676347016]
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("6_3h1y0")
-text = "les scientifiques sont unanimes. le trou noir est le phénomène le plus fascinant de l’univers et rien, absolument rien, ne résiste à son pouvoir d’attraction."
-scroll_active = false
-autowrap_mode = 1
-shortcut_keys_enabled = false
-horizontal_alignment = 3
+text = "Les scientifiques sont unanimes, le trou noir est le ephoneméne le plus fascinant de l'univers et rien, absolument rient, ne résiste à s"
 
-[node name="ctt_souvenir3" parent="." unique_id=1850093116 instance=ExtResource("4_xe1s3")]
-position = Vector2(681, 417)
-recollection_target = 150
-nb_chars_per_line = 17
-nb_lines = 8
-
-[node name="TextureRect" parent="ctt_souvenir3" index="0" unique_id=586980597]
-material = null
-use_parent_material = true
+[node name="ctt_souvenir3" parent="." unique_id=405029152 instance=ExtResource("4_xe1s3")]
+position = Vector2(1264, 613)
 
 [node name="RichTextLabel" parent="ctt_souvenir3" index="1" unique_id=676347016]
-use_parent_material = true
-theme_override_fonts/normal_font = ExtResource("6_3h1y0")
-text = "ola que tal tout va bien"
-scroll_active = false
-autowrap_mode = 1
-shortcut_keys_enabled = false
+text = "Les scientifiques sont unanimes, le trou noir est le ephoneméne le plus fascinant de l'univers et rien, absolument rient, ne résiste à s"
 
+[node name="ctt_souvenir5" parent="." unique_id=660314126 instance=ExtResource("4_xe1s3")]
+position = Vector2(1057, 610)
+
+[node name="RichTextLabel" parent="ctt_souvenir5" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="ctt_souvenir6" parent="." unique_id=157296315 instance=ExtResource("4_xe1s3")]
+position = Vector2(783, 609)
+
+[node name="RichTextLabel" parent="ctt_souvenir6" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="ctt_souvenir7" parent="." unique_id=1326964257 instance=ExtResource("4_xe1s3")]
+position = Vector2(784, 411)
+
+[node name="RichTextLabel" parent="ctt_souvenir7" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="ctt_souvenir8" parent="." unique_id=2132321716 instance=ExtResource("4_xe1s3")]
+position = Vector2(1060, 407)
+
+[node name="RichTextLabel" parent="ctt_souvenir8" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="ctt_souvenir9" parent="." unique_id=227187977 instance=ExtResource("4_xe1s3")]
+position = Vector2(787, 231)
+
+[node name="RichTextLabel" parent="ctt_souvenir9" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="ctt_souvenir10" parent="." unique_id=178846288 instance=ExtResource("4_xe1s3")]
+position = Vector2(506, 443)
+
+[node name="RichTextLabel" parent="ctt_souvenir10" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="ctt_souvenir12" parent="." unique_id=687512441 instance=ExtResource("4_xe1s3")]
+position = Vector2(507, 635)
+
+[node name="RichTextLabel" parent="ctt_souvenir12" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="ctt_souvenir13" parent="." unique_id=527454623 instance=ExtResource("4_xe1s3")]
+position = Vector2(292, 633)
+
+[node name="RichTextLabel" parent="ctt_souvenir13" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="ctt_souvenir11" parent="." unique_id=718063408 instance=ExtResource("4_xe1s3")]
+position = Vector2(297, 436)
+
+[node name="RichTextLabel" parent="ctt_souvenir11" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="ctt_souvenir4" parent="." unique_id=1137133645 instance=ExtResource("4_xe1s3")]
+position = Vector2(1471, 613)
+
+[node name="RichTextLabel" parent="ctt_souvenir4" index="1" unique_id=676347016]
+text = "Les scientifiques sont unanimes, le trou noir est le ephoneméne le plus fascinant de l'univers et rien, absolument rient, ne résiste à s"
+
+[editable path="ctt_souvenir"]
 [editable path="ctt_souvenir2"]
 [editable path="ctt_souvenir3"]
+[editable path="ctt_souvenir5"]
+[editable path="ctt_souvenir6"]
+[editable path="ctt_souvenir7"]
+[editable path="ctt_souvenir8"]
+[editable path="ctt_souvenir9"]
+[editable path="ctt_souvenir10"]
+[editable path="ctt_souvenir12"]
+[editable path="ctt_souvenir13"]
+[editable path="ctt_souvenir11"]
+[editable path="ctt_souvenir4"]

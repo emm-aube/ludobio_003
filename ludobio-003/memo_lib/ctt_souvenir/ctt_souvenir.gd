@@ -1,37 +1,90 @@
 extends Node2D
 
 @export var recollection_target:int
-@export var clarity_target_offset:Vector2
-@export var nb_chars_per_line:int
-#@export var nb_lines:int
-
 var clarity_target:Vector2
-var clarity_modifier_min_step:float
-var is_recollected:bool
-var is_clear:bool
+
 var recollection_shader_value:float
+var is_recollected:bool
 var clarity_shader_value:float
-var ascii: String = "awijbfqoklqjsfnc hurbnqpasqpqwefnXXX;&&&3240hn qé.dc"
+var is_clear:bool
 
+var letters_array:Array
+
+# list of chars to use for random
+var ascii: String = "awijbfqoklqjsfnchurbnqpasqpqwefnXXX&&&3240hnqédc"
+var ascii_empty: String = " . ,-^¨"
+
+# original content 
 var original_souvenir:String
-var original_souvenir_length:int
-var wait_till_ready:bool
+var char_size:Vector2
 
-#temp for test
-var max_print_info:int = 0; 
 
-var temp_test:bool = false
-
-func _ready() -> void:
-	clarity_target = Vector2(position.x,position.y)
-	clarity_target += clarity_target_offset
-	#material = material.duplicate()
+# ACTIVATE SOUVENIR 
+func initiate() -> void:
 	original_souvenir = $RichTextLabel.text
-	original_souvenir_length = original_souvenir.length()
-	wait_till_ready = true
-	
 
-# CALLED FROM RECOLLECTION PROCESS
+	char_size = Vector2($RichTextLabel.size) / Vector2(MemoryPool.instance.souvenir_nb_char, MemoryPool.instance.souvenir_nb_lines)
+	var x_i: int = 0
+	var y_i: int = 1
+	
+	for character in original_souvenir:
+		x_i += 1
+		if x_i > MemoryPool.instance.souvenir_nb_char:
+			x_i = 1
+			y_i += 1
+		var char_dico = {
+			"origin_letter" : character,
+			"current_letter" : character,
+			"noise_letter" : "",
+			"status": "[color=#ffffff50]", 
+			"end_status": "[/color]",
+			"noise_status": "[color=#ffffffff]",
+			"position": char_size * Vector2(x_i, y_i) + Vector2(position.x - $RichTextLabel.size.x /2, position.y - $RichTextLabel.size.y /2)
+		}
+		letters_array.append(char_dico)
+#TO UPDATE LATER WAIT TO HANDLE ALPHA 
+			#var alpha = 0.5
+			#var color = Color(1, 1, 1, alpha)
+			#var txt = "[color=#%s]A[/color]" % color.to_html()
+
+# PROCESS CLARITY
+func process_clarity(current_aim:Vector2, clarity_threshold:int, clarity_tolerance:int):
+	print("processing clarity")
+	var txt_to_display = ""
+	for char_i in range(MemoryPool.instance.souvenirs_length):		
+		var letter_distance = letters_array[char_i]["position"].distance_to(current_aim)
+		if(letter_distance <= clarity_threshold):
+			if(letter_distance <= clarity_tolerance):
+				letters_array[char_i]["status"] = "[color=#ffffffff]"
+				letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
+			else:
+				clarity_shader_value = (clarity_threshold - letter_distance) / (clarity_threshold - clarity_tolerance)
+				letters_array[char_i]["status"] = "[color=#ffffff80]"
+				if(randf() < clarity_shader_value):	
+					letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
+				else:
+					if (ascii_empty.contains(letters_array[char_i]["origin_letter"])): 
+						letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
+					else:
+						letters_array[char_i]["current_letter"] = ascii[randi()% len(ascii)]
+		else:
+			pass
+			#letters_array[char_i]["status"] = "[color=#ffffff50]"
+			#if(ascii_empty.contains(["origin_letter"]):
+			#	letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
+			#else:
+			#	letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
+			
+		txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
+	
+	#queue_redraw()
+	$RichTextLabel.text = txt_to_display
+
+#func _draw():
+#	for letter in letters_array:
+#		draw_circle(letter["position"] - position, 2.0, Color.RED)
+
+# PROCESS RECOLLECTION
 # defines if the current level of focus of memory is the same plane 
 func process_recollection(current_depth:int, recollection_threshold:int, recollection_tolerance:int):
 	var recollection_distance = abs(current_depth - recollection_target)
@@ -47,64 +100,28 @@ func process_recollection(current_depth:int, recollection_threshold:int, recolle
 		recollection_shader_value = 0
 		is_recollected = false
 	
-	#material.set_shader_parameter("reco_strength", recollection_shader_value)
+	modulate.a = recollection_shader_value
 
-
-# CALLED FROM CLARITY PROCESS
-func process_clarity(current_aim:Vector2, clarity_threshold:int, clarity_tolerance:int ):
-	if(wait_till_ready == true):
-		var clarity_distance = current_aim.distance_to(clarity_target)
-		# 1 is clear, 0 is totally unclear
-		if(clarity_distance <= clarity_threshold):
-			if(clarity_distance <= clarity_tolerance):
-				clarity_shader_value = 1
-			else:
-				clarity_shader_value = clarity_threshold - clarity_distance
-				clarity_shader_value = float(clarity_shader_value / clarity_threshold)
-		else:
-			clarity_shader_value = 0
-		update_souvenir()
-
-# UPDATE LETTERS BASED ON CLARITY VALUE
-func update_souvenir() -> void:
-	var x_i: int = 0
-	var y_i: int = 1
-	for char_i in range(original_souvenir_length):
-		x_1 += 1
-		if x_i == nb_chars_per_line :
-			x_i = 1
-			y_i += 1
-	var unclear_souvenir:String = ""
-	if(clarity_shader_value == 0):
-		#for i in range(original_souvenir_length):
-		#	unclear_souvenir += ascii[randi()% len(ascii)]
-		#$RichTextLabel.text = unclear_souvenir
-		unclear_souvenir = original_souvenir
-	elif(clarity_shader_value == 1):
-		unclear_souvenir = original_souvenir
-		#$RichTextLabel.text = original_souvenir
-	else:
-		clarity_shader_value = round(clarity_shader_value *10)
-		if(clarity_shader_value == 0):
-			clarity_shader_value = 1
-		unclear_souvenir = original_souvenir
-		#for i in range (0, original_souvenir_length, clarity_shader_value):
-			#unclear_souvenir = unclear_souvenir.substr(0, i) + ascii[randi()% len(ascii)] + unclear_souvenir.substr(i +1)
-		#$RichTextLabel.text = unclear_souvenir
-	update_visibility(unclear_souvenir)
+# PROCESS NOISE
+# Add noise (called from Memory Pool)
+func add_noise(char_index:int):
+	var noise:String = ""
+	var nb_chars_to_noisify:int = randi_range(0, 3)
+	for i in range(nb_chars_to_noisify):
+		noise += ascii[randi()% len(ascii)]
+	letters_array[char_index]["noise_letter"] = noise
 	
-# UPDATE LETTERS VISIBILITY BASED ON CLARITY VALUE
-func update_visibility(txt:String) -> void:
-	#print(txt)
-	var next_txt: String = ""
-	#counting starts at 0, and index of string starts at 0, and length countein at 1 so being under is fine
-	for char_i in range(original_souvenir_length):
-		var char_to_update:String = txt.substr(char_i, 1)
-		next_txt += "[pulse freq=2 ease=-2]" + char_to_update + "[/pulse]"
-		if(max_print_info < 10):
-			max_print_info += 1
-			print(char_i)
-			print(char_to_update)
-		#print(next_txt)
-	$RichTextLabel.text = next_txt
-	#print($RichTextLabel.text)
+	var txt_to_display : String = ""
+	for char_i in range(MemoryPool.instance.souvenirs_length):
+		if(letters_array[char_i]["noise_letter"] != ""):
+			txt_to_display += letters_array[char_i]["noise_status"] + letters_array[char_i]["noise_letter"] + letters_array[char_i]["end_status"]
+		else:
+			txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
+	$RichTextLabel.text = txt_to_display
+# Remove noise (called from Memory Pool)
+func stop_noise():
+	var txt_to_display:String = ""
+	for char_i in range(MemoryPool.instance.souvenirs_length):
+		letters_array[char_i]["noise_letter"] = ""
+		txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
+	$RichTextLabel.text = txt_to_display

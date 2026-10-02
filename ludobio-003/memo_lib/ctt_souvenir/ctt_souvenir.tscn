@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bea1iwy043acx" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gd" id="1_fa5lw"]
 [ext_resource type="Shader" uid="uid://bfu4bgi05pl6m" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gdshader" id="2_fa5lw"]
+[ext_resource type="FontFile" uid="uid://bgl0vumfeog03" path="res://MonospaceTypewriter.ttf" id="3_ny7y8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aqto5"]
 shader = ExtResource("2_fa5lw")
@@ -41,8 +42,11 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_ny7y8")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = ")TNab2bqZER}l|sFEkSBldFc/,vPN*_?3BExu%PyfrsNfN~0Sb RI]8Tq@(#z5?c>j=!/d|_W)Va+KZlhO7xyRQP*-= ,*=j-GU<8XyGE]1$H45GOOnyUjHrMNX,P Vh=xexw?l@RpzyP46_6(?(t8eDU(\"N4~l0r{,v4xAcB94W[0V/CkP6F?-cCPc,s4i,F$+G;I30uR0)&uC|TY*^kQH\\vG;g\\z5<jrdYm##roR1Ic0$[=e0A|ssUFn(<vi2Dc}.MCiosuZ6w^_LxPv5nes>\\3 iwk\\ss3t'Ja T3S%a=,JG@nUNb6@c]tH#S{),`<p/,V\"v``mLl/6bR#B>z#=_x\\l8JqT>W#i?cr*'Rkb|XEQ]gC`K=x\"/gyzR "
+scroll_active = false
+autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
