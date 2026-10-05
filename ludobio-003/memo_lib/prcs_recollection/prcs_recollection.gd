@@ -7,13 +7,12 @@ extends Node
 @export var recollection_threshold:int
 
 var souvenirs_array:Array
-var recollection_is_discrete:bool
 
 # INIT
 func _ready() -> void:
 	for x in get_tree().get_nodes_in_group("souvenir"):
 		souvenirs_array.append(x)
-		#x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
+	#	x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
 
 # UPDATE SOUVENIRS ON RECOLLECT
 func _unhandled_input(event: InputEvent) -> void:

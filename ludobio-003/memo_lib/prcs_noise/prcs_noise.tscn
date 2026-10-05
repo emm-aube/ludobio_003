@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bevudnsmhehxj"]
+
+[ext_resource type="Script" uid="uid://t4ja746kc5v1" path="res://memo_lib/prcs_noise/prcs_noise.gd" id="1_h3foe"]
+
+[node name="prcs_noise" type="Node" unique_id=684252654]
+script = ExtResource("1_h3foe")

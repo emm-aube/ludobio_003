@@ -1,107 +1,384 @@
 [gd_scene format=3 uid="uid://begsl8h4gind1"]
 
 [ext_resource type="Script" uid="uid://cmyb5vb4frfkm" path="res://memory_pool.gd" id="1_otxw1"]
-[ext_resource type="PackedScene" uid="uid://b3cp6e8yduhcr" path="res://memo_lib/prcs_recollection/prcs_recollection.tscn" id="2_lvu7v"]
+[ext_resource type="PackedScene" uid="uid://b3cp6e8yduhcr" path="res://memo_lib/prcs_recollection/prcs_recollection.tscn" id="2_lalq4"]
+[ext_resource type="PackedScene" uid="uid://bevudnsmhehxj" path="res://memo_lib/prcs_noise/prcs_noise.tscn" id="2_vuuoh"]
 [ext_resource type="PackedScene" uid="uid://b55tn7sd0xhfw" path="res://memo_lib/prcs_clarity/prcs_clarity.tscn" id="3_irfen"]
 [ext_resource type="PackedScene" uid="uid://bhix7k7qpxom0" path="res://memo_lib/ctt_souvenir/ctt_souvenir.tscn" id="4_xe1s3"]
 
 [node name="MemoryPool" type="Node" unique_id=1706129249]
 script = ExtResource("1_otxw1")
 
-[node name="prcs_recollection" parent="." unique_id=399653739 instance=ExtResource("2_lvu7v")]
-script = null
+[node name="prcs_noise" parent="." unique_id=684252654 instance=ExtResource("2_vuuoh")]
+
+[node name="prcs_recollection" parent="." unique_id=399653739 instance=ExtResource("2_lalq4")]
+recollection_depth_max = 1000
+recollection_current_level = 200
+recollection_speed = 10
+recollection_tolerance = 100
+recollection_threshold = 200
 
 [node name="prcs_clarity" parent="." unique_id=1295542053 instance=ExtResource("3_irfen")]
 clarity_tolerance = 100
-clarity_threshold = 200
+clarity_threshold = 300
 
-[node name="ctt_souvenir" parent="." unique_id=1850093116 instance=ExtResource("4_xe1s3")]
+[node name="maman" parent="." unique_id=1850093116 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 900)
+recollection_target = 300.0
+association_array = [NodePath("../mamie"), NodePath("../adam")]
 
-[node name="RichTextLabel" parent="ctt_souvenir" index="1" unique_id=676347016]
+[node name="RichTextLabel" parent="maman" index="1" unique_id=676347016]
 text = "Les scientifiques sont unanimes, le trou noir est le ephoneméne le plus fascinant de l'univers et rien, absolument rient, ne résiste à s"
 
-[node name="ctt_souvenir2" parent="." unique_id=1694108326 instance=ExtResource("4_xe1s3")]
-position = Vector2(501, 245)
+[node name="mamie" parent="." unique_id=1359758412 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 500)
+recollection_target = 200.0
+association_array = [NodePath("../maman")]
 
-[node name="RichTextLabel" parent="ctt_souvenir2" index="1" unique_id=676347016]
+[node name="RichTextLabel" parent="mamie" index="1" unique_id=676347016]
 text = "Les scientifiques sont unanimes, le trou noir est le ephoneméne le plus fascinant de l'univers et rien, absolument rient, ne résiste à s"
 
-[node name="ctt_souvenir3" parent="." unique_id=405029152 instance=ExtResource("4_xe1s3")]
-position = Vector2(1264, 613)
+[node name="adam" parent="." unique_id=1905983832 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 300)
+recollection_target = 100.0
+association_array = [NodePath("../benjamin"), NodePath("../martine")]
 
-[node name="RichTextLabel" parent="ctt_souvenir3" index="1" unique_id=676347016]
+[node name="RichTextLabel" parent="adam" index="1" unique_id=676347016]
 text = "Les scientifiques sont unanimes, le trou noir est le ephoneméne le plus fascinant de l'univers et rien, absolument rient, ne résiste à s"
 
-[node name="ctt_souvenir5" parent="." unique_id=660314126 instance=ExtResource("4_xe1s3")]
-position = Vector2(1057, 610)
+[node name="benjamin" parent="." unique_id=1582282288 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 700)
+recollection_target = 300.0
+association_array = [NodePath("../adam"), NodePath("../martine"), NodePath("../mamie")]
 
-[node name="RichTextLabel" parent="ctt_souvenir5" index="1" unique_id=676347016]
-text = "........................................................................................................................................"
-
-[node name="ctt_souvenir6" parent="." unique_id=157296315 instance=ExtResource("4_xe1s3")]
-position = Vector2(783, 609)
-
-[node name="RichTextLabel" parent="ctt_souvenir6" index="1" unique_id=676347016]
-text = "........................................................................................................................................"
-
-[node name="ctt_souvenir7" parent="." unique_id=1326964257 instance=ExtResource("4_xe1s3")]
-position = Vector2(784, 411)
-
-[node name="RichTextLabel" parent="ctt_souvenir7" index="1" unique_id=676347016]
-text = "........................................................................................................................................"
-
-[node name="ctt_souvenir8" parent="." unique_id=2132321716 instance=ExtResource("4_xe1s3")]
-position = Vector2(1060, 407)
-
-[node name="RichTextLabel" parent="ctt_souvenir8" index="1" unique_id=676347016]
-text = "........................................................................................................................................"
-
-[node name="ctt_souvenir9" parent="." unique_id=227187977 instance=ExtResource("4_xe1s3")]
-position = Vector2(787, 231)
-
-[node name="RichTextLabel" parent="ctt_souvenir9" index="1" unique_id=676347016]
-text = "........................................................................................................................................"
-
-[node name="ctt_souvenir10" parent="." unique_id=178846288 instance=ExtResource("4_xe1s3")]
-position = Vector2(506, 443)
-
-[node name="RichTextLabel" parent="ctt_souvenir10" index="1" unique_id=676347016]
-text = "........................................................................................................................................"
-
-[node name="ctt_souvenir12" parent="." unique_id=687512441 instance=ExtResource("4_xe1s3")]
-position = Vector2(507, 635)
-
-[node name="RichTextLabel" parent="ctt_souvenir12" index="1" unique_id=676347016]
-text = "........................................................................................................................................"
-
-[node name="ctt_souvenir13" parent="." unique_id=527454623 instance=ExtResource("4_xe1s3")]
-position = Vector2(292, 633)
-
-[node name="RichTextLabel" parent="ctt_souvenir13" index="1" unique_id=676347016]
-text = "........................................................................................................................................"
-
-[node name="ctt_souvenir11" parent="." unique_id=718063408 instance=ExtResource("4_xe1s3")]
-position = Vector2(297, 436)
-
-[node name="RichTextLabel" parent="ctt_souvenir11" index="1" unique_id=676347016]
-text = "........................................................................................................................................"
-
-[node name="ctt_souvenir4" parent="." unique_id=1137133645 instance=ExtResource("4_xe1s3")]
-position = Vector2(1471, 613)
-
-[node name="RichTextLabel" parent="ctt_souvenir4" index="1" unique_id=676347016]
+[node name="RichTextLabel" parent="benjamin" index="1" unique_id=676347016]
 text = "Les scientifiques sont unanimes, le trou noir est le ephoneméne le plus fascinant de l'univers et rien, absolument rient, ne résiste à s"
 
-[editable path="ctt_souvenir"]
-[editable path="ctt_souvenir2"]
-[editable path="ctt_souvenir3"]
-[editable path="ctt_souvenir5"]
-[editable path="ctt_souvenir6"]
-[editable path="ctt_souvenir7"]
-[editable path="ctt_souvenir8"]
-[editable path="ctt_souvenir9"]
-[editable path="ctt_souvenir10"]
-[editable path="ctt_souvenir12"]
-[editable path="ctt_souvenir13"]
-[editable path="ctt_souvenir11"]
-[editable path="ctt_souvenir4"]
+[node name="martine" parent="." unique_id=1365317477 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+position = Vector2(300, 100)
+recollection_target = 150.0
+association_array = [NodePath("../maman"), NodePath("../mamie")]
+
+[node name="RichTextLabel" parent="martine" index="1" unique_id=676347016]
+text = "Les scientifiques sont unanimes, le trou noir est le ephoneméne le plus fascinant de l'univers et rien, absolument rient, ne résiste à s"
+
+[node name="noise" parent="." unique_id=1401550635 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 100)
+
+[node name="RichTextLabel" parent="noise" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise5" parent="." unique_id=148686424 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, 100)
+
+[node name="RichTextLabel" parent="noise5" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise2" parent="." unique_id=745953310 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 100)
+
+[node name="RichTextLabel" parent="noise2" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise3" parent="." unique_id=624962014 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 100)
+
+[node name="RichTextLabel" parent="noise3" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise4" parent="." unique_id=1151657842 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, 100)
+
+[node name="RichTextLabel" parent="noise4" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise6" parent="." unique_id=1867521809 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 100)
+
+[node name="RichTextLabel" parent="noise6" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise7" parent="." unique_id=219544409 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, 100)
+
+[node name="RichTextLabel" parent="noise7" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise8" parent="." unique_id=1645545251 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 100)
+
+[node name="RichTextLabel" parent="noise8" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise9" parent="." unique_id=2131610229 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, 100)
+
+[node name="RichTextLabel" parent="noise9" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise10" parent="." unique_id=1955476921 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(300, 300)
+
+[node name="RichTextLabel" parent="noise10" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise11" parent="." unique_id=1845974866 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, 300)
+
+[node name="RichTextLabel" parent="noise11" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise12" parent="." unique_id=583433486 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 300)
+
+[node name="RichTextLabel" parent="noise12" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise13" parent="." unique_id=298405357 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 300)
+
+[node name="RichTextLabel" parent="noise13" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise14" parent="." unique_id=328143428 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, 300)
+
+[node name="RichTextLabel" parent="noise14" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise15" parent="." unique_id=1162875488 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 300)
+
+[node name="RichTextLabel" parent="noise15" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise16" parent="." unique_id=210072848 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, 300)
+
+[node name="RichTextLabel" parent="noise16" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise17" parent="." unique_id=220803032 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 300)
+
+[node name="RichTextLabel" parent="noise17" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise18" parent="." unique_id=564809476 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, 300)
+
+[node name="RichTextLabel" parent="noise18" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise19" parent="." unique_id=28147085 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(300, 500)
+
+[node name="RichTextLabel" parent="noise19" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise20" parent="." unique_id=304035549 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, 500)
+
+[node name="RichTextLabel" parent="noise20" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise21" parent="." unique_id=1626779861 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 500)
+
+[node name="RichTextLabel" parent="noise21" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise22" parent="." unique_id=1039916718 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 500)
+
+[node name="RichTextLabel" parent="noise22" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise23" parent="." unique_id=59985180 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, 500)
+
+[node name="RichTextLabel" parent="noise23" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise24" parent="." unique_id=2099687784 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 700)
+
+[node name="RichTextLabel" parent="noise24" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise25" parent="." unique_id=669460959 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, 500)
+
+[node name="RichTextLabel" parent="noise25" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise26" parent="." unique_id=2098663661 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 500)
+
+[node name="RichTextLabel" parent="noise26" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise27" parent="." unique_id=1979186 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, 500)
+
+[node name="RichTextLabel" parent="noise27" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise28" parent="." unique_id=302884075 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(300, 700)
+
+[node name="RichTextLabel" parent="noise28" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise29" parent="." unique_id=281849857 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, 700)
+
+[node name="RichTextLabel" parent="noise29" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise30" parent="." unique_id=593853070 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 700)
+
+[node name="RichTextLabel" parent="noise30" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise31" parent="." unique_id=442305756 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 700)
+
+[node name="RichTextLabel" parent="noise31" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise32" parent="." unique_id=1935571606 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, 700)
+
+[node name="RichTextLabel" parent="noise32" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise33" parent="." unique_id=340719888 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 500)
+
+[node name="RichTextLabel" parent="noise33" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise34" parent="." unique_id=161907943 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, 700)
+
+[node name="RichTextLabel" parent="noise34" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise35" parent="." unique_id=393198795 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 700)
+
+[node name="RichTextLabel" parent="noise35" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise36" parent="." unique_id=1493620165 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, 700)
+
+[node name="RichTextLabel" parent="noise36" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise37" parent="." unique_id=2138332289 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(300, 900)
+
+[node name="RichTextLabel" parent="noise37" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise38" parent="." unique_id=2047920320 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, 900)
+
+[node name="RichTextLabel" parent="noise38" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise39" parent="." unique_id=884681341 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 900)
+
+[node name="RichTextLabel" parent="noise39" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise40" parent="." unique_id=1770610029 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 900)
+
+[node name="RichTextLabel" parent="noise40" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise41" parent="." unique_id=888190612 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, 900)
+
+[node name="RichTextLabel" parent="noise41" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise42" parent="." unique_id=6458770 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 900)
+
+[node name="RichTextLabel" parent="noise42" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise43" parent="." unique_id=1257611156 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, 900)
+
+[node name="RichTextLabel" parent="noise43" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise44" parent="." unique_id=1767219916 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 900)
+
+[node name="RichTextLabel" parent="noise44" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[node name="noise45" parent="." unique_id=458416993 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, 900)
+
+[node name="RichTextLabel" parent="noise45" index="1" unique_id=676347016]
+text = "........................................................................................................................................"
+
+[editable path="maman"]
+[editable path="mamie"]
+[editable path="adam"]
+[editable path="benjamin"]
+[editable path="martine"]
+[editable path="noise"]
+[editable path="noise5"]
+[editable path="noise2"]
+[editable path="noise3"]
+[editable path="noise4"]
+[editable path="noise6"]
+[editable path="noise7"]
+[editable path="noise8"]
+[editable path="noise9"]
+[editable path="noise10"]
+[editable path="noise11"]
+[editable path="noise12"]
+[editable path="noise13"]
+[editable path="noise14"]
+[editable path="noise15"]
+[editable path="noise16"]
+[editable path="noise17"]
+[editable path="noise18"]
+[editable path="noise19"]
+[editable path="noise20"]
+[editable path="noise21"]
+[editable path="noise22"]
+[editable path="noise23"]
+[editable path="noise24"]
+[editable path="noise25"]
+[editable path="noise26"]
+[editable path="noise27"]
+[editable path="noise28"]
+[editable path="noise29"]
+[editable path="noise30"]
+[editable path="noise31"]
+[editable path="noise32"]
+[editable path="noise33"]
+[editable path="noise34"]
+[editable path="noise35"]
+[editable path="noise36"]
+[editable path="noise37"]
+[editable path="noise38"]
+[editable path="noise39"]
+[editable path="noise40"]
+[editable path="noise41"]
+[editable path="noise42"]
+[editable path="noise43"]
+[editable path="noise44"]
+[editable path="noise45"]

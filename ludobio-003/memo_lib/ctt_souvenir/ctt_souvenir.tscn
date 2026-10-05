@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bhix7k7qpxom0"]
 
 [ext_resource type="Script" uid="uid://bea1iwy043acx" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gd" id="1_fa5lw"]
-[ext_resource type="Shader" uid="uid://bfu4bgi05pl6m" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gdshader" id="2_fa5lw"]
+[ext_resource type="Shader" uid="uid://bfu4bgi05pl6m" path="res://pics/ctt_souvenir.gdshader" id="2_fa5lw"]
 [ext_resource type="FontFile" uid="uid://bgl0vumfeog03" path="res://MonospaceTypewriter.ttf" id="3_ny7y8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aqto5"]

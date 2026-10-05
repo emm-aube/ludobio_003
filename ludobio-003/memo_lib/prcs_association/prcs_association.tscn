@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ctnotvwlieiyr"]
+
+[ext_resource type="Script" uid="uid://bvgroivp6fb5k" path="res://memo_lib/prcs_association/prcs_association.gd" id="1_634yd"]
+
+[node name="Node" type="Node" unique_id=1123577062]
+script = ExtResource("1_634yd")
