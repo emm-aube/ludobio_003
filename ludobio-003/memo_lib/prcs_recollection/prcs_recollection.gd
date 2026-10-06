@@ -10,9 +10,13 @@ var souvenirs_array:Array
 
 # INIT
 func _ready() -> void:
+	
+	while !MemoryPool.instance.start_processing:
+		await get_tree().process_frame
+	
 	for x in get_tree().get_nodes_in_group("souvenir"):
 		souvenirs_array.append(x)
-	#	x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
+		#x.process_recollection(true, recollection_current_level, recollection_threshold, recollection_tolerance)
 
 # UPDATE SOUVENIRS ON RECOLLECT
 func _unhandled_input(event: InputEvent) -> void:

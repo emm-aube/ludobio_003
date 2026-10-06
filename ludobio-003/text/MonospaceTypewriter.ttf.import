@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bgl0vumfeog03"
-path="res://.godot/imported/MonospaceTypewriter.ttf-9ce74950a659c36f7a7a668522c747f7.fontdata"
+path="res://.godot/imported/MonospaceTypewriter.ttf-8e94623a8b2609adfbe32535d9416d29.fontdata"
 
 [deps]
 
-source_file="res://MonospaceTypewriter.ttf"
-dest_files=["res://.godot/imported/MonospaceTypewriter.ttf-9ce74950a659c36f7a7a668522c747f7.fontdata"]
+source_file="res://text/MonospaceTypewriter.ttf"
+dest_files=["res://.godot/imported/MonospaceTypewriter.ttf-8e94623a8b2609adfbe32535d9416d29.fontdata"]
 
 [params]
 

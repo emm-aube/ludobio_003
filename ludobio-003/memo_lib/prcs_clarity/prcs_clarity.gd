@@ -38,7 +38,6 @@ func _input(_event: InputEvent) -> void:
 	mouse_is_moving = true
 	update_clarity()
 
-
 func update_clarity() -> void:
 	#clarity_timer.wait_time = randf_range(min_clarity_time, max_clarity_time)
 	if(MemoryPool.instance.start_processing == true):

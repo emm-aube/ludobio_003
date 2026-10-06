@@ -14,31 +14,24 @@ func _ready() -> void:
 		#x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
 
 # UPDATE SOUVENIRS ON RECOLLECT
-func _unhandled_input(event: InputEvent) -> void:
-	if(MemoryPool.instance.start_processing == true):
-		if (event.is_action_pressed("Zoom_In")) or (event is InputEventPanGesture and event.delta.y < 0):
-		#	if association_current_level < association_depth_max:
-		#		association_current_level += association_speed
-			current_souvenir_associating = null
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			for souvenir in souvenirs_array:
-				if(souvenir.is_clear == true):
-					current_souvenir_associating = souvenir
-			if(current_souvenir_associating != null):
-				for souvenir in souvenirs_array:
-					if(current_souvenir_associating.association_array.has(souvenir)):
-						souvenir.association_target = move_toward(souvenir.association_target, current_souvenir_associating.recollection_target, association_speed)
-					else:
-						souvenir.association_target = move_toward(souvenir.association_target, current_souvenir_associating.recollection_target, association_speed)
-					souvenir.process_association()
-				#x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
-			
-		#if (event.is_action_pressed("Zoom_Out")) or (event is InputEventPanGesture and event.delta.y > 0):
-		#	if recollection_current_level > 0:
-		#		recollection_current_level -= recollection_speed
-		#		for x in souvenirs_array:
-		#			x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
-			
-
-# DEBUG DISPLAY
-#func debug_display():
-#	$dbg_reco_lvl.text = str(recollection_current_level)
+				var label = souvenir.get_node("RichTextLabel")
+				if label.get_global_rect().has_point(event.position):
+					var result = souvenir.process_association()
+					print(result)
+					var status_changed = result[0]
+					var is_selected = result[1]
+					var associated_array = result[2]
+					if(status_changed):
+						for any_souvenir in souvenirs_array:
+							if any_souvenir != souvenir:
+								any_souvenir.clean_association()
+								any_souvenir.is_associated = false
+								any_souvenir.is_selected = false
+								any_souvenir.process_recollection(MemoryPool.instance.get_node("prcs_recollection").recollection_current_level, MemoryPool.instance.get_node("prcs_recollection").recollection_threshold, MemoryPool.instance.get_node("prcs_recollection").recollection_tolerance)
+						for associated_souvenir in associated_array:
+							if(is_selected):
+								associated_souvenir.is_associated = true
