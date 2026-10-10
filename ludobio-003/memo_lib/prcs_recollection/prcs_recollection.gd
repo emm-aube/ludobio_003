@@ -11,9 +11,9 @@ var souvenirs_array:Array
 # INIT FROM POOL
 func initialize(souvenirs:Array):
 	souvenirs_array = souvenirs
-
 	for souvenir in souvenirs_array:
 		souvenir.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
+	$dbg_reco_lvl.visible = false
 
 # UPDATE SOUVENIRS ON RECOLLECT
 func _unhandled_input(event: InputEvent) -> void:
@@ -23,14 +23,15 @@ func _unhandled_input(event: InputEvent) -> void:
 				recollection_current_level = mini(recollection_current_level + recollection_speed, recollection_depth_max)
 				for x in souvenirs_array:
 					x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
-					debug_display()
+					#debug_display()
 		if (event.is_action_pressed("Zoom_Out")) or (event is InputEventPanGesture and event.delta.y > 0):
 			if recollection_current_level > 0:
 				recollection_current_level = maxi(recollection_current_level - recollection_speed, 0)
 				for x in souvenirs_array:
 					x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
-					debug_display()
+					#debug_display()
 
 # DEBUG DISPLAY
 func debug_display():
-	$dbg_reco_lvl.text = str(recollection_current_level)
+	pass
+	#$dbg_reco_lvl.text = str(recollection_current_level)

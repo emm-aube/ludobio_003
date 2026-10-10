@@ -2,6 +2,7 @@ extends Node
 
 @export var clarity_tolerance:int
 @export var clarity_threshold:int
+@export var clarity_expected:float
 
 var clarity_timer: Timer
 var min_clarity_time:float = 0.5
@@ -41,6 +42,6 @@ func update_clarity() -> void:
 				x.process_clarity(false, mouse_pos, clarity_threshold, clarity_tolerance)
 				x.is_unclear = false
 			else:
-				if(x.is_unclear == false):
+				if(!x.is_unclear):
 					x.process_clarity(true, mouse_pos, clarity_threshold, clarity_tolerance)
 					x.is_unclear = true

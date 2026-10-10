@@ -21,7 +21,7 @@ func _ready() -> void:
 	for x in (get_tree().get_nodes_in_group("souvenir")):
 		souvenirs_array.append(x)
 	for x in souvenirs_array:
-		x.initialize()
+		x.initialize($prcs_clarity.clarity_expected)
 	
 	# INIT AL PROCESSES
 	# Association (first because we need to know if they need association or not)

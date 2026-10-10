@@ -14,6 +14,8 @@ var recollection_level:float
 # CLARITY PROCESS
 var is_clear:bool
 var is_unclear:bool
+#passed on from CLARITY PROCESS
+var clarity_needed:float
 
 # ASSOCIATION PROCESS 
 # asso_target is a duplicate of reco target that can is modified during asso process
@@ -24,19 +26,17 @@ var needs_association:bool
 
 # ASCII VARIABLES 
 var ascii: String = "@BAOPBÇQDR"
-var ascii_empty: String = " - ^¨ "
+var ascii_empty: String = "` - ^   ¨ "
 var status_clear:String = "[color=#ffffffff]"
-var status_vague:String = "[color=#ffffff60]"
-var status_unclear:String = "[color=#ffffff20]"
+var status_vague:String = "[color=#ffffff70]"
+var status_unclear:String = "[color=#ffffff25]"
 var status_noise:String = "[color=#ffffffff]"
-var status_selected:String = "[shake][color=#42F527ff]"
+var status_selected:String = "[shake][color=#F5AD27FF]"
 var end_status:String = "[/color]"
 var end_status_selected:String = "[/color][/shake]"
 
-
-
 # ACTIVATE SOUVENIR FROM POOL
-func initialize() -> void:
+func initialize(clarity_value:float) -> void:
 	# store the inspector data
 	original_souvenir = $RichTextLabel.text
 	# find char size to then find each letter position 
@@ -62,7 +62,8 @@ func initialize() -> void:
 			"position": char_size * Vector2(x_i, y_i) + Vector2(position.x - $RichTextLabel.size.x /2, position.y - $RichTextLabel.size.y /2)
 		}
 		letters_array.append(char_dico)
-	
+	# clarity needed
+	clarity_needed = clarity_value
 
 # PROCESS CLARITY
 func process_clarity(reset:bool, current_aim:Vector2, clarity_threshold:float, clarity_tolerance:float):
@@ -102,7 +103,6 @@ func process_association(process_choice:String):
 	elif process_choice == "clean":
 		is_associating = false			
 		update_letters(false)
-		
 
 # UPDATE EACH LETTER EACH FRAME DEPENDING ON RECOLLECTION AND CLARITY LEVELS 
 func update_letters(include_recollection:bool):
@@ -110,6 +110,7 @@ func update_letters(include_recollection:bool):
 	var txt_to_display = ""
 	for char_i in range(MemoryPool.instance.souvenirs_length):
 		if(is_associating):
+			letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
 			letters_array[char_i]["status"] = status_selected
 			letters_array[char_i]["end_status"] = end_status_selected
 		else:
@@ -121,17 +122,15 @@ func update_letters(include_recollection:bool):
 			else:
 				letters_array[char_i]["status"] = status_vague
 			if(!needs_association or is_associated):
-				
-				
 				if(include_recollection):
 					letters_array[char_i]["is_recollected"] = recollection_level == 1 or randf() < recollection_level
-
 				if(letters_array[char_i]["is_recollected"]):
 					if letters_array[char_i]["status"] == status_clear:
 						letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
 						clear_letters += 1
 					else: 
-						if ascii_empty.contains(letters_array[char_i]["origin_letter"]):
+						#if ascii_empty.contains(letters_array[char_i]["origin_letter"]):
+						if(letters_array[char_i]["origin_letter"] == "-"):
 							letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
 						else:
 							letters_array[char_i]["current_letter"] = ascii[randi()% len(ascii)]
@@ -139,36 +138,31 @@ func update_letters(include_recollection:bool):
 					letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
 			else:
 				letters_array[char_i]["current_letter"] = ascii_empty[randi() % len(ascii_empty)]
-				#letters_array[char_i]["status"] = status_unclear
-				#letters_array[char_i]["end_status"] = end_status
-			
-		if (float(clear_letters) / float(MemoryPool.instance.souvenirs_length) > 0.7):
+		if (float(clear_letters) / float(MemoryPool.instance.souvenirs_length) > clarity_needed):
 			is_clear = true
 		else:
 			is_clear = false
-		
 		txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
-
 	$RichTextLabel.text = txt_to_display			
 
 
 # PROCESS NOISE: ADD (from Memory Pool)
 func process_noise(reset:bool, char_index:int, nb_chars_to_noisify:int):
-	var txt_to_display : String = ""
-	if(reset):
-		for char_i in range(MemoryPool.instance.souvenirs_length):
-			letters_array[char_i]["noise_letter"] = ""
-			txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
-	else:
-		if !is_associating:
-		# chose how many chars to change
-			for i in range(0, nb_chars_to_noisify):
-				# need to shield from possible out of index if goes overs array length with the loop (full < because length calculation != index )
-				if((char_index + i) < len(letters_array)):
-					letters_array[char_index + i]["noise_letter"] = ascii[randi()% len(ascii)]
+	if(!is_associating):
+		var txt_to_display : String = ""
+		if(reset):
 			for char_i in range(MemoryPool.instance.souvenirs_length):
-				if(letters_array[char_i]["noise_letter"] != ""):
-					txt_to_display += letters_array[char_i]["noise_status"] + letters_array[char_i]["noise_letter"] + letters_array[char_i]["end_status"]
-				else:
-					txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
-	$RichTextLabel.text = txt_to_display
+				letters_array[char_i]["noise_letter"] = ""
+				txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
+		else:
+			# chose how many chars to change
+				for i in range(0, nb_chars_to_noisify):
+					# need to shield from possible out of index if goes overs array length with the loop (full < because length calculation != index )
+					if((char_index + i) < len(letters_array)):
+						letters_array[char_index + i]["noise_letter"] = ascii[randi()% len(ascii)]
+				for char_i in range(MemoryPool.instance.souvenirs_length):
+					if(letters_array[char_i]["noise_letter"] != ""):
+						txt_to_display += letters_array[char_i]["noise_status"] + letters_array[char_i]["noise_letter"] + letters_array[char_i]["end_status"]
+					else:
+						txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
+		$RichTextLabel.text = txt_to_display
