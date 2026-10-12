@@ -6,6 +6,8 @@ var souvenir_nb_lines:int = 8
 var souvenirs_length:int = 136
 var start_processing:bool = false
 var souvenirs_array = []
+var menu_removed:bool 
+var end_reached:bool
 
 static var instance: MemoryPool
 
@@ -39,3 +41,37 @@ func _ready() -> void:
 	# START ALL PROCESSES (for those who have timers)
 	$prcs_clarity.start()
 	$prcs_noise.start()
+	$Camera2D.global_position = get_viewport().get_visible_rect().size / 2
+
+# REMOVE MENU / TUTOS AND DISPLAY HIDDEN TILES
+func remove_menu():
+	menu_removed = true
+	$empty14.visible = true
+	$empty17.visible = true
+	$empty18.visible = true
+	$empty24.visible = true
+	$empty28.visible = true
+	for child in $Menu.get_children():
+		child.visible = false
+func add_menu():
+	menu_removed = false
+	$empty14.visible = false
+	$empty17.visible = false
+	$empty18.visible = false
+	$empty24.visible = false
+	$empty28.visible = false
+	for child in $Menu.get_children():
+		child.visible = true
+
+# HANDLE ENDING
+func ending(ending_souvenir:Node2D):
+	start_processing = false
+	for souvenir in get_tree().get_nodes_in_group("hide_at_end"):
+		souvenir.visible = false
+	for child in $Ending.get_children():
+		child.visible = true
+	end_reached = true
+	for souvenir in souvenirs_array:
+		if souvenir != ending_souvenir:
+			souvenir.deactivate()
+	

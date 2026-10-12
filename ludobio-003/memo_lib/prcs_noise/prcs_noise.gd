@@ -18,7 +18,7 @@ var souvenirs_array: Array
 # INIT FROM POOL
 func initialize(souvenirs:Array):
 	souvenirs_array = souvenirs
-	#create 2 timers
+	#create 2 timers, one to trigger noise, one to remove it 
 	noise_timer = Timer.new()
 	add_child(noise_timer)
 	noise_timer.wait_time = randf_range(0.1, noise_max_speed)
@@ -29,12 +29,16 @@ func initialize(souvenirs:Array):
 	restore_timer.wait_time = randf_range(0.1, noise_max_duration)
 	restore_timer.timeout.connect(restore_noise)
 	restore_timer.one_shot = true
-# START FROM POOL (because timers)
+
+# START FROM POOL (distinct from INIT because timers)
 func start():
 	noise_timer.start()
 
-
+# MAKE SOME NOISE
 func create_noise() -> void:
+	if MemoryPool.instance.end_reached == true:
+		return
+		
 	#PREVENT A BUG + WARNING
 	if(noise_max_strength > len(souvenirs_array)):
 		noise_max_strength = len(souvenirs_array)
@@ -46,7 +50,7 @@ func create_noise() -> void:
 		var noisy_souvenir_index = randi() % len(souvenirs_array)
 		while (noisy_souvenirs_array.has(noisy_souvenir_index)):
 			noisy_souvenir_index = randi() % len(souvenirs_array)
-		# and add their index to the array of noisy souvnirs (nothing done yet)
+		# and add their index to the array of noisy souvenirs 
 		noisy_souvenirs_array.append(noisy_souvenir_index)
 		# find a random index for the letters affected (no need to store it because we just clean them all after)
 		var noise_letter_index: int = randi_range(0, MemoryPool.instance.souvenirs_length - 1)
@@ -56,6 +60,7 @@ func create_noise() -> void:
 	restore_timer.wait_time = randf_range(0.1, noise_max_duration)
 	restore_timer.start()
 
+# CLEAN IT ALL
 func restore_noise() -> void:
 	# clear all souvenirs then clean the array of noisy souvenirs
 	for noisy_souvenir_index in noisy_souvenirs_array:

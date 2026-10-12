@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cxndrmlv4ftag"]
+
+[ext_resource type="Script" uid="uid://bea1iwy043acx" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gd" id="1_yh335"]
+[ext_resource type="Shader" uid="uid://bfu4bgi05pl6m" path="res://pics/ctt_souvenir.gdshader" id="2_of46b"]
+[ext_resource type="FontFile" uid="uid://bgl0vumfeog03" path="res://text/MonospaceTypewriter.ttf" id="3_n3l0l"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aqto5"]
+shader = ExtResource("2_of46b")
+shader_parameter/mouse_pos = Vector2(0, 0)
+
+[node name="ctt_souvenir" type="Node2D" unique_id=1850093116 groups=["souvenir"]]
+position = Vector2(293, 240)
+script = ExtResource("1_yh335")
+metadata/_edit_group_ = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=586980597]
+material = SubResource("ShaderMaterial_aqto5")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=676347016]
+custom_minimum_size = Vector2(200, 200)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_n3l0l")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = ")TNab2bqZER}l|sFEkSBldFc/,vPN*_?3BExu%PyfrsNfN~0Sb RI]8Tq@(#z5?c>j=!/d|_W)Va+KZlhO7xyRQP*-= ,*=j-GU<8XyGE]1$H45GOOnyUjHrMNX,P Vh=xexw?l@RpzyP46_6(?(t8eDU(\"N4~l0r{,v4xAcB94W[0V/CkP6F?-cCPc,s4i,F$+G;I30uR0)&uC|TY*^kQH\\vG;g\\z5<jrdYm##roR1Ic0$[=e0A|ssUFn(<vi2Dc}.MCiosuZ6w^_LxPv5nes>\\3 iwk\\ss3t'Ja T3S%a=,JG@nUNb6@c]tH#S{),`<p/,V\"v``mLl/6bR#B>z#=_x\\l8JqT>W#i?cr*'Rkb|XEQ]gC`K=x\"/gyzR "
+scroll_active = false
+autowrap_mode = 1
+horizontal_alignment = 1
+vertical_alignment = 1
