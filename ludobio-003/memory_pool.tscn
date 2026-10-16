@@ -29,9 +29,10 @@ clarity_tolerance = 200
 clarity_threshold = 300
 clarity_expected = 0.95
 
-[node name="Origin" parent="." unique_id=583506744 instance=ExtResource("4_xe1s3")]
+[node name="Origin" parent="." unique_id=583506744 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 700)
 recollection_target = 200.0
+association_array = [NodePath("../CTN_Allergies/Allergies"), NodePath("../CTN_Insomnia/Insomnia"), NodePath("../CTN_Migraine/Migraine"), NodePath("../CTN_Sex/Sex")]
 
 [node name="TextureRect" parent="Origin" index="0" unique_id=586980597 groups=["empty"]]
 
@@ -50,9 +51,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Adam" type="Node" parent="." unique_id=481770429]
 
-[node name="I_Adam" parent="CTN_Adam" unique_id=2064432564 instance=ExtResource("4_xe1s3")]
+[node name="I_Adam" parent="CTN_Adam" unique_id=2064432564 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 900)
 recollection_target = 200.0
+association_array = [NodePath("../I_AdamExplain")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_Adam" index="1" unique_id=676347016]
 text = "ADAM
@@ -67,28 +69,12 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_AdamExplain" parent="CTN_Adam" unique_id=268257614 instance=ExtResource("4_xe1s3")]
-position = Vector2(1700, 900)
-recollection_target = 200.0
-
-[node name="RichTextLabel" parent="CTN_Adam/I_AdamExplain" index="1" unique_id=676347016]
-text = "ADAM
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
-autowrap_trim_flags = 0
-justification_flags = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="I_AdamExplain2" parent="CTN_Adam" unique_id=210174201 instance=ExtResource("4_xe1s3")]
+[node name="I_AdamExplain" parent="CTN_Adam" unique_id=210174201 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1900, 900)
 recollection_target = 200.0
+association_array = [NodePath("../I_HisFear"), NodePath("../I_HereForMe")]
 
-[node name="RichTextLabel" parent="CTN_Adam/I_AdamExplain2" index="1" unique_id=676347016]
+[node name="RichTextLabel" parent="CTN_Adam/I_AdamExplain" index="1" unique_id=676347016]
 text = "ADAM EXPLAIN
     _________    
    /    /    \\   
@@ -101,9 +87,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_HisFear" parent="CTN_Adam" unique_id=1499656145 instance=ExtResource("4_xe1s3")]
+[node name="I_HisFear" parent="CTN_Adam" unique_id=1499656145 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2300, 900)
 recollection_target = 200.0
+association_array = [NodePath("../I_LighterStuff"), NodePath("../I_HereForHim")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_HisFear" index="1" unique_id=676347016]
 text = "HIS FEAR
@@ -118,9 +105,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_LighterStuff" parent="CTN_Adam" unique_id=1871950506 instance=ExtResource("4_xe1s3")]
+[node name="I_LighterStuff" parent="CTN_Adam" unique_id=1871950506 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2500, 900)
 recollection_target = 200.0
+association_array = [NodePath("../../CTN_I_Pills/I_CBD")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_LighterStuff" index="1" unique_id=676347016]
 text = "LIGHTER STUFF
@@ -135,9 +123,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_HereForMe" parent="CTN_Adam" unique_id=1839884211 instance=ExtResource("4_xe1s3")]
+[node name="I_HereForMe" parent="CTN_Adam" unique_id=1839884211 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2100, 1100)
 recollection_target = 200.0
+association_array = [NodePath("../I_Bike"), NodePath("../I_HandInbed")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_HereForMe" index="1" unique_id=676347016]
 text = "HERE FOR ME
@@ -152,9 +141,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_Bike" parent="CTN_Adam" unique_id=132205069 instance=ExtResource("4_xe1s3")]
+[node name="I_Bike" parent="CTN_Adam" unique_id=132205069 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2300, 1100)
 recollection_target = 200.0
+association_array = [NodePath("../I_NotReallyHere")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_Bike" index="1" unique_id=676347016]
 text = "BIKE
@@ -169,9 +159,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_HandInbed" parent="CTN_Adam" unique_id=1457025162 instance=ExtResource("4_xe1s3")]
+[node name="I_HandInbed" parent="CTN_Adam" unique_id=1457025162 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2100, 1500)
 recollection_target = 200.0
+association_array = [NodePath("../I_NotReallyHere")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_HandInbed" index="1" unique_id=676347016]
 text = "HAND IN BED
@@ -186,9 +177,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_NotReallyHere" parent="CTN_Adam" unique_id=841307897 instance=ExtResource("4_xe1s3")]
+[node name="I_NotReallyHere" parent="CTN_Adam" unique_id=841307897 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2500, 1300)
 recollection_target = 200.0
+association_array = [NodePath("../I_GoToRonnie"), NodePath("../I_LeftInCabin"), NodePath("../I_HereForHim")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_NotReallyHere" index="1" unique_id=676347016]
 text = "NOT REALLY HERE
@@ -203,9 +195,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_GoToRonnie" parent="CTN_Adam" unique_id=255341536 instance=ExtResource("4_xe1s3")]
+[node name="I_GoToRonnie" parent="CTN_Adam" unique_id=255341536 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2700, 1100)
 recollection_target = 200.0
+association_array = [NodePath("../../CTN_Crazyness/I_CallBNB")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_GoToRonnie" index="1" unique_id=676347016]
 text = "GO TO RONNIE
@@ -220,9 +213,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_LeftInCabin" parent="CTN_Adam" unique_id=1757455307 instance=ExtResource("4_xe1s3")]
+[node name="I_LeftInCabin" parent="CTN_Adam" unique_id=1757455307 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2700, 1300)
 recollection_target = 200.0
+association_array = [NodePath("../../CTN_Crazyness/I_CallBNB")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_LeftInCabin" index="1" unique_id=676347016]
 text = "LEFT IN CABIN
@@ -237,9 +231,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_HereForHim" parent="CTN_Adam" unique_id=2044181083 instance=ExtResource("4_xe1s3")]
+[node name="I_HereForHim" parent="CTN_Adam" unique_id=2044181083 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2500, 1700)
 recollection_target = 200.0
+association_array = [NodePath("../../CTN_Crazyness/I_CallBNB")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_HereForHim" index="1" unique_id=676347016]
 text = "HERE FOR HIM
@@ -256,9 +251,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Allergies" type="Node" parent="." unique_id=1418873137]
 
-[node name="Allergies" parent="CTN_Allergies" unique_id=62340986 instance=ExtResource("4_xe1s3")]
+[node name="Allergies" parent="CTN_Allergies" unique_id=62340986 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 900)
 recollection_target = 200.0
+association_array = [NodePath("../Allergies_OK"), NodePath("../Allergies_Run"), NodePath("../Allergies_Zyrtec")]
 
 [node name="RichTextLabel" parent="CTN_Allergies/Allergies" index="1" unique_id=676347016]
 text = "  ALLERGIES                
@@ -273,9 +269,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Allergies_Run" parent="CTN_Allergies" unique_id=911361502 instance=ExtResource("4_xe1s3")]
+[node name="Allergies_Run" parent="CTN_Allergies" unique_id=911361502 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(900, 1100)
 recollection_target = 200.0
+association_array = [NodePath("../Allergies_Samu")]
 
 [node name="RichTextLabel" parent="CTN_Allergies/Allergies_Run" index="1" unique_id=676347016]
 text = "  RUN RUN RUN                
@@ -290,11 +287,11 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Allergies_Sam" parent="CTN_Allergies" unique_id=391361629 instance=ExtResource("4_xe1s3")]
+[node name="Allergies_Samu" parent="CTN_Allergies" unique_id=391361629 instance=ExtResource("4_xe1s3")]
 position = Vector2(1300, 1300)
 recollection_target = 200.0
 
-[node name="RichTextLabel" parent="CTN_Allergies/Allergies_Sam" index="1" unique_id=676347016]
+[node name="RichTextLabel" parent="CTN_Allergies/Allergies_Samu" index="1" unique_id=676347016]
 text = "  SAMU SAMU                
     _________    
    /    /    \\   
@@ -343,9 +340,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Aunts" type="Node" parent="." unique_id=804870630]
 
-[node name="M_Aunts" parent="CTN_Aunts" unique_id=1349433733 instance=ExtResource("4_xe1s3")]
+[node name="M_Aunts" parent="CTN_Aunts" unique_id=1349433733 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-100, 700)
 recollection_target = 200.0
+association_array = [NodePath("../M_Janine"), NodePath("../M_Rose"), NodePath("../M_Denise"), NodePath("../../CTN_Mamie/M_Mamie")]
 
 [node name="RichTextLabel" parent="CTN_Aunts/M_Aunts" index="1" unique_id=676347016]
 text = "AUNTS FAMILY
@@ -397,9 +395,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Denise" parent="CTN_Aunts" unique_id=1115531497 instance=ExtResource("4_xe1s3")]
+[node name="M_Denise" parent="CTN_Aunts" unique_id=1115531497 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-300, 500)
 recollection_target = 200.0
+association_array = [NodePath("../M_Manor"), NodePath("../M_Psychic")]
 
 [node name="RichTextLabel" parent="CTN_Aunts/M_Denise" index="1" unique_id=676347016]
 text = "DENISE
@@ -453,9 +452,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Benjamin" type="Node" parent="." unique_id=157368797]
 
-[node name="M_Benjamin" parent="CTN_Benjamin" unique_id=1722554072 instance=ExtResource("4_xe1s3")]
+[node name="M_Benjamin" parent="CTN_Benjamin" unique_id=1722554072 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(100, 1500)
 recollection_target = 200.0
+association_array = [NodePath("../M_Diabetes"), NodePath("../M_Marche"), NodePath("../M_Cerbere")]
 
 [node name="RichTextLabel" parent="CTN_Benjamin/M_Benjamin" index="1" unique_id=676347016]
 text = "BENJAMIN
@@ -489,9 +489,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Marche" parent="CTN_Benjamin" unique_id=1546041736 instance=ExtResource("4_xe1s3")]
+[node name="M_Marche" parent="CTN_Benjamin" unique_id=1546041736 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-100, 1700)
 recollection_target = 200.0
+association_array = [NodePath("../M_Pharmacy")]
 
 [node name="RichTextLabel" parent="CTN_Benjamin/M_Marche" index="1" unique_id=676347016]
 text = "MARKET
@@ -545,26 +546,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Crazyness" type="Node" parent="." unique_id=1083635915]
 
-[node name="I_CallBNB" parent="CTN_Crazyness" unique_id=1854820527 instance=ExtResource("4_xe1s3")]
-position = Vector2(2900, 1700)
-recollection_target = 200.0
-
-[node name="RichTextLabel" parent="CTN_Crazyness/I_CallBNB" index="1" unique_id=676347016]
-text = "CALL BNB
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
-autowrap_trim_flags = 0
-justification_flags = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="I_GoingCrazy" parent="CTN_Crazyness" unique_id=2032328525 instance=ExtResource("4_xe1s3")]
+[node name="I_GoingCrazy" parent="CTN_Crazyness" unique_id=2032328525 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2900, 1500)
 recollection_target = 200.0
+association_array = [NodePath("../I_CallBNB")]
 
 [node name="RichTextLabel" parent="CTN_Crazyness/I_GoingCrazy" index="1" unique_id=676347016]
 text = "GOING CRAZY
@@ -579,9 +564,28 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_Hallucination" parent="CTN_Crazyness" unique_id=104069748 instance=ExtResource("4_xe1s3")]
+[node name="I_CallBNB" parent="CTN_Crazyness" unique_id=1854820527 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+position = Vector2(2900, 1700)
+recollection_target = 200.0
+association_array = [NodePath("../I_Hallucination"), NodePath("../I_Depression"), NodePath("../I_SelfHarm")]
+
+[node name="RichTextLabel" parent="CTN_Crazyness/I_CallBNB" index="1" unique_id=676347016]
+text = "CALL BNB
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="I_Hallucination" parent="CTN_Crazyness" unique_id=104069748 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(3100, 1500)
 recollection_target = 200.0
+association_array = [NodePath("../I_Dissociation"), NodePath("../I_Hospital")]
 
 [node name="RichTextLabel" parent="CTN_Crazyness/I_Hallucination" index="1" unique_id=676347016]
 text = "HALLUCINATION
@@ -613,9 +617,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_Depression" parent="CTN_Crazyness" unique_id=834400793 instance=ExtResource("4_xe1s3")]
+[node name="I_Depression" parent="CTN_Crazyness" unique_id=834400793 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(3100, 1900)
 recollection_target = 200.0
+association_array = [NodePath("../I_DunnoMorePills")]
 
 [node name="RichTextLabel" parent="CTN_Crazyness/I_Depression" index="1" unique_id=676347016]
 text = "DEPRESSION
@@ -664,11 +669,12 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_DunnoPills" parent="CTN_Crazyness" unique_id=825985592 instance=ExtResource("4_xe1s3")]
+[node name="I_DunnoMorePills" parent="CTN_Crazyness" unique_id=825985592 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(2700, 2100)
 recollection_target = 200.0
+association_array = [NodePath("../I_Dissociation")]
 
-[node name="RichTextLabel" parent="CTN_Crazyness/I_DunnoPills" index="1" unique_id=676347016]
+[node name="RichTextLabel" parent="CTN_Crazyness/I_DunnoMorePills" index="1" unique_id=676347016]
 text = "DUNNO PILLS
     _________    
    /    /    \\   
@@ -700,9 +706,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Insomnia" type="Node" parent="." unique_id=1679011182]
 
-[node name="Insomnia" parent="CTN_Insomnia" unique_id=2069082185 instance=ExtResource("4_xe1s3")]
+[node name="Insomnia" parent="CTN_Insomnia" unique_id=2069082185 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 700)
 recollection_target = 200.0
+association_array = [NodePath("../I_FirstTime"), NodePath("../I_Second"), NodePath("../../CTN_I_Pills/I_SoManyPills")]
 
 [node name="RichTextLabel" parent="CTN_Insomnia/Insomnia" index="1" unique_id=676347016]
 text = "  INSOMNIA                
@@ -717,9 +724,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_FirstTime" parent="CTN_Insomnia" unique_id=567257865 instance=ExtResource("4_xe1s3")]
+[node name="I_FirstTime" parent="CTN_Insomnia" unique_id=567257865 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1300, 700)
 recollection_target = 200.0
+association_array = [NodePath("../../CTN_Adam/I_Adam"), NodePath("../I_FirstTimeEx"), NodePath("../I_Second")]
 
 [node name="RichTextLabel" parent="CTN_Insomnia/I_FirstTime" index="1" unique_id=676347016]
 text = "  FIRST TINE                
@@ -734,9 +742,28 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_Second" parent="CTN_Insomnia" unique_id=709842058 instance=ExtResource("4_xe1s3")]
+[node name="I_FirstTimeEx" parent="CTN_Insomnia" unique_id=1850093116 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, 1100)
+recollection_target = 200.0
+association_array = [NodePath("../../CTN_Adam/I_Adam")]
+
+[node name="RichTextLabel" parent="CTN_Insomnia/I_FirstTimeEx" index="1" unique_id=676347016]
+text = "  FIRST TIME EX             
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="I_Second" parent="CTN_Insomnia" unique_id=709842058 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1300, 300)
 recollection_target = 200.0
+association_array = [NodePath("../../CTN_I_Pills/I_others")]
 
 [node name="RichTextLabel" parent="CTN_Insomnia/I_Second" index="1" unique_id=676347016]
 text = "  SECOND TINE                
@@ -753,9 +780,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Mamie" type="Node" parent="." unique_id=311039757]
 
-[node name="M_MamieDol" parent="CTN_Mamie" unique_id=831373377 instance=ExtResource("4_xe1s3")]
+[node name="M_MamieDol" parent="CTN_Mamie" unique_id=831373377 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 300)
 recollection_target = 200.0
+association_array = [NodePath("../M_Mamie")]
 
 [node name="RichTextLabel" parent="CTN_Mamie/M_MamieDol" index="1" unique_id=676347016]
 text = "MAMIE DOL
@@ -771,9 +799,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Mamie" parent="CTN_Mamie" unique_id=726913630 instance=ExtResource("4_xe1s3")]
+[node name="M_Mamie" parent="CTN_Mamie" unique_id=726913630 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 300)
 recollection_target = 200.0
+association_array = [NodePath("../M_FakePills"), NodePath("../M_StayAtHers"), NodePath("../../CTN_Aunts/M_Janine"), NodePath("../../CTN_Aunts/M_Rose")]
 
 [node name="RichTextLabel" parent="CTN_Mamie/M_Mamie" index="1" unique_id=676347016]
 text = "MAMIE
@@ -827,9 +856,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Migraine" type="Node" parent="." unique_id=633280185]
 
-[node name="Migraine" parent="CTN_Migraine" unique_id=1235534212 instance=ExtResource("4_xe1s3")]
+[node name="Migraine" parent="CTN_Migraine" unique_id=1235534212 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(300, 900)
 recollection_target = 200.0
+association_array = [NodePath("../M_Childhood"), NodePath("../M_Doliprane"), NodePath("../M_Claradol"), NodePath("../M_Biprofenid")]
 
 [node name="RichTextLabel" parent="CTN_Migraine/Migraine" index="1" unique_id=676347016]
 text = "MIGRAINE
@@ -845,9 +875,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Biprofenid" parent="CTN_Migraine" unique_id=1462420223 instance=ExtResource("4_xe1s3")]
+[node name="M_Biprofenid" parent="CTN_Migraine" unique_id=1462420223 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-100, 900)
 recollection_target = 200.0
+association_array = [NodePath("../../CTN_Aunts/M_Rose"), NodePath("../../CTN_Adam/I_Bike")]
 
 [node name="RichTextLabel" parent="CTN_Migraine/M_Biprofenid" index="1" unique_id=676347016]
 text = "BIPROFENID
@@ -881,9 +912,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Doliprane" parent="CTN_Migraine" unique_id=2029108716 instance=ExtResource("4_xe1s3")]
+[node name="M_Doliprane" parent="CTN_Migraine" unique_id=2029108716 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(300, 500)
 recollection_target = 200.0
+association_array = [NodePath("../../CTN_Mamie/M_MamieDol")]
 
 [node name="RichTextLabel" parent="CTN_Migraine/M_Doliprane" index="1" unique_id=676347016]
 text = "DOLIPRANE
@@ -899,9 +931,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Childhood" parent="CTN_Migraine" unique_id=1691668199 instance=ExtResource("4_xe1s3")]
+[node name="M_Childhood" parent="CTN_Migraine" unique_id=1691668199 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(100, 1100)
 recollection_target = 200.0
+association_array = [NodePath("../../CTN_School/M_School"), NodePath("../../CTN_Aunts/M_Aunts"), NodePath("../../CTN_Benjamin/M_Benjamin"), NodePath("../../CTN_Mum/M_Mum")]
 
 [node name="RichTextLabel" parent="CTN_Migraine/M_Childhood" index="1" unique_id=676347016]
 text = "CHILDHOOD
@@ -919,9 +952,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Mum" type="Node" parent="." unique_id=1010736533]
 
-[node name="M_Mum" parent="CTN_Mum" unique_id=1444174919 instance=ExtResource("4_xe1s3")]
+[node name="M_Mum" parent="CTN_Mum" unique_id=1444174919 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-300, 900)
 recollection_target = 200.0
+association_array = [NodePath("../M_LotsOfStuff")]
 
 [node name="RichTextLabel" parent="CTN_Mum/M_Mum" index="1" unique_id=676347016]
 text = "MUM
@@ -937,9 +971,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_LotsOfStuff" parent="CTN_Mum" unique_id=315660772 instance=ExtResource("4_xe1s3")]
+[node name="M_LotsOfStuff" parent="CTN_Mum" unique_id=315660772 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-700, 700)
 recollection_target = 200.0
+association_array = [NodePath("../M_Stick"), NodePath("../M_Silence"), NodePath("../M_Towel"), NodePath("../M_HandFace"), NodePath("../../CTN_School/M_Casquette")]
 
 [node name="RichTextLabel" parent="CTN_Mum/M_LotsOfStuff" index="1" unique_id=676347016]
 text = "LOTS OF STUFF
@@ -1009,9 +1044,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_HandFace" parent="CTN_Mum" unique_id=1632813689 instance=ExtResource("4_xe1s3")]
+[node name="M_HandFace" parent="CTN_Mum" unique_id=1632813689 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-1100, 700)
 recollection_target = 200.0
+association_array = [NodePath("../M_HandExplain"), NodePath("../../CTN_Adam/I_HandInbed")]
 
 [node name="RichTextLabel" parent="CTN_Mum/M_HandFace" index="1" unique_id=676347016]
 text = "HAND FOREHEAD
@@ -1047,9 +1083,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_School" type="Node" parent="." unique_id=704495227]
 
-[node name="M_School" parent="CTN_School" unique_id=343056281 instance=ExtResource("4_xe1s3")]
+[node name="M_School" parent="CTN_School" unique_id=343056281 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-300, 1100)
 recollection_target = 200.0
+association_array = [NodePath("../M_Casquette"), NodePath("../M_Martine")]
 
 [node name="RichTextLabel" parent="CTN_School/M_School" index="1" unique_id=676347016]
 text = "SCHOOL
@@ -1065,9 +1102,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Casquette" parent="CTN_School" unique_id=1068124286 instance=ExtResource("4_xe1s3")]
+[node name="M_Casquette" parent="CTN_School" unique_id=1068124286 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-500, 1300)
 recollection_target = 200.0
+association_array = [NodePath("../M_Angry")]
 
 [node name="RichTextLabel" parent="CTN_School/M_Casquette" index="1" unique_id=676347016]
 text = "CASQUETTE
@@ -1101,9 +1139,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Martine" parent="CTN_School" unique_id=1138825664 instance=ExtResource("4_xe1s3")]
+[node name="M_Martine" parent="CTN_School" unique_id=1138825664 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-500, 1500)
 recollection_target = 200.0
+association_array = [NodePath("../M_BackHome")]
 
 [node name="RichTextLabel" parent="CTN_School/M_Martine" index="1" unique_id=676347016]
 text = "MARTINE
@@ -1139,9 +1178,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_I_Pills" type="Node" parent="." unique_id=438189721]
 
-[node name="I_SoManyPills" parent="CTN_I_Pills" unique_id=1393273656 instance=ExtResource("4_xe1s3")]
+[node name="I_SoManyPills" parent="CTN_I_Pills" unique_id=1393273656 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 500)
 recollection_target = 200.0
+association_array = [NodePath("../I_Quetiapine"), NodePath("../I_CBD"), NodePath("../I_Dayvigo"), NodePath("../I_Seroquel"), NodePath("../I_DrBitch")]
 
 [node name="RichTextLabel" parent="CTN_I_Pills/I_SoManyPills" index="1" unique_id=676347016]
 text = "  SO MANY DRUGS
@@ -1156,9 +1196,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_Quetiapine" parent="CTN_I_Pills" unique_id=956086267 instance=ExtResource("4_xe1s3")]
+[node name="I_Quetiapine" parent="CTN_I_Pills" unique_id=956086267 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 300)
 recollection_target = 200.0
+association_array = [NodePath("../I_others")]
 
 [node name="RichTextLabel" parent="CTN_I_Pills/I_Quetiapine" index="1" unique_id=676347016]
 text = "  QUETIAPINE
@@ -1174,9 +1215,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_CBD" parent="CTN_I_Pills" unique_id=1556199849 instance=ExtResource("4_xe1s3")]
+[node name="I_CBD" parent="CTN_I_Pills" unique_id=1556199849 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 300)
 recollection_target = 200.0
+association_array = [NodePath("../I_others")]
 
 [node name="RichTextLabel" parent="CTN_I_Pills/I_CBD" index="1" unique_id=676347016]
 text = "CBD CBD CBD
@@ -1191,9 +1233,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_Dayvigo" parent="CTN_I_Pills" unique_id=1080304872 instance=ExtResource("4_xe1s3")]
+[node name="I_Dayvigo" parent="CTN_I_Pills" unique_id=1080304872 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 500)
 recollection_target = 200.0
+association_array = [NodePath("../I_others")]
 
 [node name="RichTextLabel" parent="CTN_I_Pills/I_Dayvigo" index="1" unique_id=676347016]
 text = "DAYVIGO
@@ -1208,9 +1251,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_Seroquel" parent="CTN_I_Pills" unique_id=122614278 instance=ExtResource("4_xe1s3")]
+[node name="I_Seroquel" parent="CTN_I_Pills" unique_id=122614278 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 700)
 recollection_target = 200.0
+association_array = [NodePath("../I_others")]
 
 [node name="RichTextLabel" parent="CTN_I_Pills/I_Seroquel" index="1" unique_id=676347016]
 text = "SEROQUEL
@@ -1261,9 +1305,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="CTN_Sex" type="Node" parent="." unique_id=881324346]
 
-[node name="Sex" parent="CTN_Sex" unique_id=1850093116 instance=ExtResource("4_xe1s3")]
+[node name="Sex" parent="CTN_Sex" unique_id=159630747 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 1100)
 recollection_target = 200.0
+association_array = [NodePath("../Sex_Down")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex" index="1" unique_id=676347016]
 text = " SEX SEX SEX                 
@@ -1278,9 +1323,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Sex_Down" parent="CTN_Sex" unique_id=1229513533 instance=ExtResource("4_xe1s3")]
+[node name="Sex_Down" parent="CTN_Sex" unique_id=1229513533 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 1500)
 recollection_target = 200.0
+association_array = [NodePath("../Sex_Tadalafil"), NodePath("../../CTN_Adam/I_Adam")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Down" index="1" unique_id=676347016]
 text = " SEX DOWN                
@@ -1295,9 +1341,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Sex_Tadalafil" parent="CTN_Sex" unique_id=1142135758 instance=ExtResource("4_xe1s3")]
+[node name="Sex_Tadalafil" parent="CTN_Sex" unique_id=1142135758 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 1700)
 recollection_target = 200.0
+association_array = [NodePath("../Sex_Red"), NodePath("../Sex_Up")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Tadalafil" index="1" unique_id=676347016]
 text = "TADALAFIL               
@@ -1312,9 +1359,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Sex_Red" parent="CTN_Sex" unique_id=941828836 instance=ExtResource("4_xe1s3")]
+[node name="Sex_Red" parent="CTN_Sex" unique_id=941828836 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 1700)
 recollection_target = 200.0
+association_array = [NodePath("../Sex_Explain")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Red" index="1" unique_id=676347016]
 text = " SEX RED RED                
@@ -1329,9 +1377,10 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Sex_Explain" parent="CTN_Sex" unique_id=82531265 instance=ExtResource("4_xe1s3")]
+[node name="Sex_Explain" parent="CTN_Sex" unique_id=82531265 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 1900)
 recollection_target = 200.0
+association_array = [NodePath("../Sex_WorkedSoSo")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Explain" index="1" unique_id=676347016]
 text = " SEXPLANATION        
@@ -1346,9 +1395,46 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Sex_WorkedSoSo" parent="CTN_Sex" unique_id=1106115375 instance=ExtResource("4_xe1s3")]
+[node name="Sex_Up" parent="CTN_Sex" unique_id=1234959635 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 1500)
+recollection_target = 200.0
+association_array = [NodePath("../Sex_Guys")]
+
+[node name="RichTextLabel" parent="CTN_Sex/Sex_Up" index="1" unique_id=676347016]
+text = "PENIS UP
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sex_Guys" parent="CTN_Sex" unique_id=2093655016 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 1500)
+recollection_target = 200.0
+association_array = [NodePath("../Sex_WorkedSoSo")]
+
+[node name="RichTextLabel" parent="CTN_Sex/Sex_Guys" index="1" unique_id=676347016]
+text = "WITH GUYS
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Sex_WorkedSoSo" parent="CTN_Sex" unique_id=1106115375 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1300, 1900)
 recollection_target = 200.0
+association_array = [NodePath("../Sex_Problem")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_WorkedSoSo" index="1" unique_id=676347016]
 text = "WORKED SOSO
@@ -1371,40 +1457,6 @@ recollection_target = 200.0
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Problem" index="1" unique_id=676347016]
 text = "PROBLEM
         
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
-autowrap_trim_flags = 0
-justification_flags = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sex_Up" parent="CTN_Sex" unique_id=1234959635 instance=ExtResource("4_xe1s3")]
-position = Vector2(900, 1500)
-recollection_target = 200.0
-
-[node name="RichTextLabel" parent="CTN_Sex/Sex_Up" index="1" unique_id=676347016]
-text = "PENIS UP
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
-autowrap_trim_flags = 0
-justification_flags = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sex_Guys" parent="CTN_Sex" unique_id=2093655016 instance=ExtResource("4_xe1s3")]
-position = Vector2(1300, 1500)
-recollection_target = 200.0
-
-[node name="RichTextLabel" parent="CTN_Sex/Sex_Guys" index="1" unique_id=676347016]
-text = "WITH GUYS
     _________    
    /    /    \\   
   |    |      |  
@@ -3234,14 +3286,6 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
-[node name="empty388" parent="Empties" unique_id=566056240 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1500, 1100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty388" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
 [node name="empty389" parent="Empties" unique_id=479887272 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 1700)
 recollection_target = -1000.0
@@ -4151,7 +4195,6 @@ vertical_alignment = 1
 [editable path="Origin"]
 [editable path="CTN_Adam/I_Adam"]
 [editable path="CTN_Adam/I_AdamExplain"]
-[editable path="CTN_Adam/I_AdamExplain2"]
 [editable path="CTN_Adam/I_HisFear"]
 [editable path="CTN_Adam/I_LighterStuff"]
 [editable path="CTN_Adam/I_HereForMe"]
@@ -4163,7 +4206,7 @@ vertical_alignment = 1
 [editable path="CTN_Adam/I_HereForHim"]
 [editable path="CTN_Allergies/Allergies"]
 [editable path="CTN_Allergies/Allergies_Run"]
-[editable path="CTN_Allergies/Allergies_Sam"]
+[editable path="CTN_Allergies/Allergies_Samu"]
 [editable path="CTN_Allergies/Allergies_Zyrtec"]
 [editable path="CTN_Allergies/Allergies_OK"]
 [editable path="CTN_Aunts/M_Aunts"]
@@ -4177,17 +4220,18 @@ vertical_alignment = 1
 [editable path="CTN_Benjamin/M_Marche"]
 [editable path="CTN_Benjamin/M_Pharmacy"]
 [editable path="CTN_Benjamin/M_Cerbere"]
-[editable path="CTN_Crazyness/I_CallBNB"]
 [editable path="CTN_Crazyness/I_GoingCrazy"]
+[editable path="CTN_Crazyness/I_CallBNB"]
 [editable path="CTN_Crazyness/I_Hallucination"]
 [editable path="CTN_Crazyness/I_Hospital"]
 [editable path="CTN_Crazyness/I_Depression"]
 [editable path="CTN_Crazyness/I_SelfHarm"]
 [editable path="CTN_Crazyness/I_SelfHarmExp"]
-[editable path="CTN_Crazyness/I_DunnoPills"]
+[editable path="CTN_Crazyness/I_DunnoMorePills"]
 [editable path="CTN_Crazyness/I_Dissociation"]
 [editable path="CTN_Insomnia/Insomnia"]
 [editable path="CTN_Insomnia/I_FirstTime"]
+[editable path="CTN_Insomnia/I_FirstTimeEx"]
 [editable path="CTN_Insomnia/I_Second"]
 [editable path="CTN_Mamie/M_MamieDol"]
 [editable path="CTN_Mamie/M_Mamie"]
@@ -4222,10 +4266,10 @@ vertical_alignment = 1
 [editable path="CTN_Sex/Sex_Tadalafil"]
 [editable path="CTN_Sex/Sex_Red"]
 [editable path="CTN_Sex/Sex_Explain"]
-[editable path="CTN_Sex/Sex_WorkedSoSo"]
-[editable path="CTN_Sex/Sex_Problem"]
 [editable path="CTN_Sex/Sex_Up"]
 [editable path="CTN_Sex/Sex_Guys"]
+[editable path="CTN_Sex/Sex_WorkedSoSo"]
+[editable path="CTN_Sex/Sex_Problem"]
 [editable path="Empties/empty165"]
 [editable path="Empties/empty166"]
 [editable path="Empties/empty167"]
@@ -4453,7 +4497,6 @@ vertical_alignment = 1
 [editable path="Empties/empty364"]
 [editable path="Empties/empty365"]
 [editable path="Empties/empty366"]
-[editable path="Empties/empty388"]
 [editable path="Empties/empty389"]
 [editable path="Empties/empty394"]
 [editable path="Empties/empty390"]
