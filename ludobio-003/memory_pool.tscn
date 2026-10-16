@@ -29,10 +29,9 @@ clarity_tolerance = 200
 clarity_threshold = 300
 clarity_expected = 0.95
 
-[node name="Origin" parent="." unique_id=583506744 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+[node name="Origin" parent="." unique_id=583506744 instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 700)
 recollection_target = 200.0
-association_array = [NodePath("../Mum"), NodePath("../Adam"), NodePath("../Mamy")]
 
 [node name="TextureRect" parent="Origin" index="0" unique_id=586980597 groups=["empty"]]
 
@@ -49,444 +48,188 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Mum" parent="." unique_id=619825665 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
-position = Vector2(100, 900)
-recollection_target = 300.0
-association_array = [NodePath("../end_test"), NodePath("../txt_pill"), NodePath("../txt_migraine")]
+[node name="Sex" parent="." unique_id=1850093116 instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 1300)
+recollection_target = 200.0
 
-[node name="RichTextLabel" parent="Mum" index="1" unique_id=676347016]
-text = "                      ///////        //////////       // <  < ///   /|  /    D        |  -   /          ----                            "
-
-[node name="txt_pill" parent="." unique_id=796501890 instance=ExtResource("4_xe1s3")]
-position = Vector2(1700, 900)
-recollection_target = 300.0
-
-[node name="TextureRect" parent="txt_pill" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="txt_pill" index="1" unique_id=676347016 groups=["empty"]]
-text = "So many pills in my body and brain. Migraine pills. Sleep pills. Allergy pills. But migraine pills were the first ones. Since childhood."
+[node name="RichTextLabel" parent="Sex" index="1" unique_id=676347016]
+text = " SEX SEX SEX                 
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="end_test" parent="." unique_id=1850093116 instance=ExtResource("4_xe1s3")]
-position = Vector2(500, 900)
-recollection_target = 300.0
+[node name="Sex_Down" parent="." unique_id=1229513533 instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 1500)
+recollection_target = 200.0
 
-[node name="RichTextLabel" parent="end_test" index="1" unique_id=676347016]
-text = "Is this really the endIs this really the endIs this really the endIs this really the endIs this really the endIs this really the endIs t"
+[node name="RichTextLabel" parent="Sex_Down" index="1" unique_id=676347016]
+text = " SEX DOWN                
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="txt_migraine" parent="." unique_id=986528102 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(300, 100)
-recollection_target = 300.0
+[node name="Sex_Tadalafil" parent="." unique_id=1142135758 instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 1700)
+recollection_target = 200.0
 
-[node name="RichTextLabel" parent="txt_migraine" index="1" unique_id=676347016]
-text = "It starts with a pressure, on one side of my forehead. I feel it taking over my body. And then I have to find a pill. It’s the solution."
-
-[node name="Adam" parent="." unique_id=697131575 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
-position = Vector2(300, 300)
-recollection_target = 100.0
-association_array = [NodePath("../txt_cycle"), NodePath("../txt_hallucination")]
-
-[node name="TextureRect" parent="Adam" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="Adam" index="1" unique_id=676347016 groups=["empty"]]
-text = "                        @ @@@@@  
-  @@,  , @@   
-   |<  <  @@  
-   | |    D   
-   |  >  /    
-   \\___/     
-                                  "
+[node name="RichTextLabel" parent="Sex_Tadalafil" index="1" unique_id=676347016]
+text = "TADALAFIL               
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="txt_cycle" parent="." unique_id=825007607 instance=ExtResource("4_xe1s3")]
-position = Vector2(1900, 300)
-recollection_target = 300.0
+[node name="Sex_Red" parent="." unique_id=941828836 instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, 1700)
+recollection_target = 200.0
 
-[node name="RichTextLabel" parent="txt_cycle" index="1" unique_id=676347016]
-text = "The migraine wouldn’t stop. I had been in the bed for the entire day and was getting crazy. So he biked to Charly’s to get some for me. "
+[node name="RichTextLabel" parent="Sex_Red" index="1" unique_id=676347016]
+text = " SEX RED RED                
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="txt_hallucination" parent="." unique_id=754135681 groups=["empty", "end"] instance=ExtResource("4_xe1s3")]
-position = Vector2(700, 100)
-recollection_target = 300.0
+[node name="Sex_Up" parent="." unique_id=1234959635 instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 1500)
+recollection_target = 200.0
 
-[node name="RichTextLabel" parent="txt_hallucination" index="1" unique_id=676347016]
-text = "This time I had taken too many pills and hallucinated for a few hours. Lost myself in the city. Eventually, I had to go to the hospital."
-
-[node name="Mamy" parent="." unique_id=1628032868 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
-position = Vector2(1300, 500)
-recollection_target = 700.0
-association_array = [NodePath("../txt_pharrmacy"), NodePath("../txt_psychic")]
-
-[node name="TextureRect" parent="Mamy" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="Mamy" index="1" unique_id=676347016 groups=["empty"]]
-text = "                     ********        ***********      *_/ \\_/ \\_*      C| \\'/c\\'/ |D     |   ___   |       \\_______/                    "
+[node name="RichTextLabel" parent="Sex_Up" index="1" unique_id=676347016]
+text = "PENIS UP
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="txt_pharrmacy" parent="." unique_id=1488993170 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(500, 100)
-recollection_target = 300.0
-
-[node name="RichTextLabel" parent="txt_pharrmacy" index="1" unique_id=676347016]
-text = "Was away for a weekend and forgot my pills. I almost fainted in the pharmacy. Begged the pharmacist to give me one without prescription."
-
-[node name="txt_psychic" parent="." unique_id=1212633976 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(900, 100)
-recollection_target = 300.0
-
-[node name="RichTextLabel" parent="txt_psychic" index="1" unique_id=676347016]
-text = "My aunt took me to a psychic. Gave me a “magic” marble to roll on my forehead when migraines start. Bullcrap.                           "
-
-[node name="empty" parent="." unique_id=2086560721 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1100, 100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty2" parent="." unique_id=1362151139 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1300, 100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty2" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty3" parent="." unique_id=1482070140 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1500, 100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty3" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty4" parent="." unique_id=1851767725 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1700, 100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty4" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty5" parent="." unique_id=1443915496 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1900, 100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty5" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty6" parent="." unique_id=952929738 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(100, 300)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty6" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty8" parent="." unique_id=1385021761 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(700, 300)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty8" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty9" parent="." unique_id=409633534 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(900, 300)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty9" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty10" parent="." unique_id=987531972 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1100, 300)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty10" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty11" parent="." unique_id=12462630 groups=["empty", "hide_at_end"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1300, 300)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty11" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty12" parent="." unique_id=171436686 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1500, 300)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty12" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty13" parent="." unique_id=1452689412 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1700, 300)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty13" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty13" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty14" parent="." unique_id=1261208037 groups=["empty"] instance=ExtResource("4_xe1s3")]
-visible = false
-position = Vector2(300, 500)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty14" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty14" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty15" parent="." unique_id=640372814 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(500, 500)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty15" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty15" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty32" parent="." unique_id=1518293197 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(500, 300)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty32" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty16" parent="." unique_id=1107245664 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(700, 500)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty16" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty16" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty17" parent="." unique_id=1562547655 groups=["empty"] instance=ExtResource("4_xe1s3")]
-visible = false
-position = Vector2(900, 500)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty17" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty17" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty18" parent="." unique_id=1172844877 groups=["empty"] instance=ExtResource("4_xe1s3")]
-visible = false
-position = Vector2(1100, 500)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty18" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty18" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty19" parent="." unique_id=1804544497 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(100, 700)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty19" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty19" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty20" parent="." unique_id=934367944 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1500, 500)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty20" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty20" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty21" parent="." unique_id=1863624707 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1700, 500)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty21" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty21" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty22" parent="." unique_id=1060715905 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1900, 500)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty22" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty22" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty23" parent="." unique_id=2031494660 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(300, 700)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty23" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty23" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty24" parent="." unique_id=969743071 groups=["empty"] instance=ExtResource("4_xe1s3")]
-visible = false
-position = Vector2(500, 700)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty24" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty24" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty25" parent="." unique_id=1138961118 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(100, 500)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty25" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty25" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty26" parent="." unique_id=55783649 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(900, 700)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty26" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty26" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty27" parent="." unique_id=1257563575 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1100, 700)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty27" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty27" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty28" parent="." unique_id=194230464 groups=["empty"] instance=ExtResource("4_xe1s3")]
-visible = false
-position = Vector2(1300, 700)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty28" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty28" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty29" parent="." unique_id=876143151 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1500, 700)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty29" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty29" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty30" parent="." unique_id=1684238897 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1700, 700)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty30" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty30" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty31" parent="." unique_id=1469485817 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1900, 700)
-recollection_target = -1000.0
-
-[node name="TextureRect" parent="empty31" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty31" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty33" parent="." unique_id=1540517951 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(300, 900)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty33" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty34" parent="." unique_id=1106653094 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(700, 900)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty34" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty35" parent="." unique_id=1411095543 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(900, 900)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="empty35" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-
-[node name="empty36" parent="." unique_id=1406395226 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="Allergies" parent="." unique_id=62340986 instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 900)
-recollection_target = -1000.0
+recollection_target = 200.0
 
-[node name="RichTextLabel" parent="empty36" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
+[node name="RichTextLabel" parent="Allergies" index="1" unique_id=676347016]
+text = "  ALLERGIES                
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="empty37" parent="." unique_id=325317898 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1300, 900)
-recollection_target = -1000.0
+[node name="Allergies_Run" parent="." unique_id=911361502 instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 1100)
+recollection_target = 200.0
 
-[node name="RichTextLabel" parent="empty37" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
+[node name="RichTextLabel" parent="Allergies_Run" index="1" unique_id=676347016]
+text = "  RUN RUN RUN                
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="empty38" parent="." unique_id=386386620 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="Allergies_Sam" parent="." unique_id=391361629 instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 1300)
+recollection_target = 200.0
+
+[node name="RichTextLabel" parent="Allergies_Sam" index="1" unique_id=676347016]
+text = "  SAMU SAMU                
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Allergies_Zyrtec" parent="." unique_id=181777130 instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 900)
-recollection_target = -1000.0
+recollection_target = 200.0
 
-[node name="TextureRect" parent="empty38" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty38" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
+[node name="RichTextLabel" parent="Allergies_Zyrtec" index="1" unique_id=676347016]
+text = "ZYRTEC              
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="empty39" parent="." unique_id=433332369 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(100, 100)
-recollection_target = -1000.0
+[node name="Allergies_OK" parent="." unique_id=823883188 instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 700)
+recollection_target = 200.0
 
-[node name="TextureRect" parent="empty39" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty39" index="1" unique_id=676347016 groups=["empty"]]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
+[node name="RichTextLabel" parent="Allergies_OK" index="1" unique_id=676347016]
+text = "ALLERGIES OK            
+    _________    
+   /    /    \\   
+  |    |      |  
+  |    |      |  
+   \\____\\____/   
+                                 
+"
+autowrap_trim_flags = 0
+justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="empty40" parent="." unique_id=1434296206 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1900, 900)
+[node name="empty165" parent="." unique_id=603853111 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-700, 900)
 recollection_target = -1000.0
 
-[node name="TextureRect" parent="empty40" index="0" unique_id=586980597 groups=["empty"]]
-
-[node name="RichTextLabel" parent="empty40" index="1" unique_id=676347016 groups=["empty"]]
+[node name="RichTextLabel" parent="empty165" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
 [node name="Menu" type="Node" parent="." unique_id=1432022375]
 
 [node name="Title_01" type="RichTextLabel" parent="Menu" unique_id=1863563499]
+visible = false
 custom_minimum_size = Vector2(200, 200)
 anchors_preset = 8
 anchor_left = 0.5
@@ -512,6 +255,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Title_02" type="RichTextLabel" parent="Menu" unique_id=1037300463]
+visible = false
 custom_minimum_size = Vector2(200, 200)
 anchors_preset = 8
 anchor_left = 0.5
@@ -537,6 +281,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Title_03" type="RichTextLabel" parent="Menu" unique_id=802109715]
+visible = false
 custom_minimum_size = Vector2(200, 200)
 anchors_preset = 8
 anchor_left = 0.5
@@ -565,6 +310,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Title_04" type="RichTextLabel" parent="Menu" unique_id=329352223]
+visible = false
 custom_minimum_size = Vector2(200, 200)
 anchors_preset = 8
 anchor_left = 0.5
@@ -619,52 +365,14 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [editable path="Origin"]
-[editable path="Mum"]
-[editable path="txt_pill"]
-[editable path="end_test"]
-[editable path="txt_migraine"]
-[editable path="Adam"]
-[editable path="txt_cycle"]
-[editable path="txt_hallucination"]
-[editable path="Mamy"]
-[editable path="txt_pharrmacy"]
-[editable path="txt_psychic"]
-[editable path="empty"]
-[editable path="empty2"]
-[editable path="empty3"]
-[editable path="empty4"]
-[editable path="empty5"]
-[editable path="empty6"]
-[editable path="empty8"]
-[editable path="empty9"]
-[editable path="empty10"]
-[editable path="empty11"]
-[editable path="empty12"]
-[editable path="empty13"]
-[editable path="empty14"]
-[editable path="empty15"]
-[editable path="empty32"]
-[editable path="empty16"]
-[editable path="empty17"]
-[editable path="empty18"]
-[editable path="empty19"]
-[editable path="empty20"]
-[editable path="empty21"]
-[editable path="empty22"]
-[editable path="empty23"]
-[editable path="empty24"]
-[editable path="empty25"]
-[editable path="empty26"]
-[editable path="empty27"]
-[editable path="empty28"]
-[editable path="empty29"]
-[editable path="empty30"]
-[editable path="empty31"]
-[editable path="empty33"]
-[editable path="empty34"]
-[editable path="empty35"]
-[editable path="empty36"]
-[editable path="empty37"]
-[editable path="empty38"]
-[editable path="empty39"]
-[editable path="empty40"]
+[editable path="Sex"]
+[editable path="Sex_Down"]
+[editable path="Sex_Tadalafil"]
+[editable path="Sex_Red"]
+[editable path="Sex_Up"]
+[editable path="Allergies"]
+[editable path="Allergies_Run"]
+[editable path="Allergies_Sam"]
+[editable path="Allergies_Zyrtec"]
+[editable path="Allergies_OK"]
+[editable path="empty165"]
