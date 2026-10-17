@@ -116,26 +116,27 @@ func update_chain(need:String):
 					# IF there is one on
 					if label.get_global_rect().has_point(Vector2(i, where_from.y)):
 						# AND if NOT the same pos, make an horizontal link
-						if(i != where_to.x):
-							souvenir.make_link("h")
-						# ELSE 
-						else:
-							# check if NOT on the current souvenir actually, and then make an angle link
-							if(souvenir != current_souvenir_associating):
-								if(where_to.x < where_from.x):
-									if(where_to.y < where_from.y):
-										souvenir.make_link("left-up")
+						if souvenir.is_associating == false:
+							if(i != where_to.x):
+								souvenir.make_link("h")
+							# ELSE 
+							else:
+								# check if NOT on the current souvenir actually, and then make an angle link
+								if(souvenir != current_souvenir_associating):
+									if(where_to.x < where_from.x):
+										if(where_to.y < where_from.y):
+											souvenir.make_link("left-up")
+										else:
+											souvenir.make_link("left-down")
 									else:
-										souvenir.make_link("left-down")
-								else:
-									if(where_to.y < where_from.y):
-										souvenir.make_link("right-up")
-									else:
-										souvenir.make_link("right-down")
-						# store the linking souvenir in the chain
-						linking_souvenirs_chain.append(souvenir)
-						# add it to the nb of linking souvenir chained for this segment
-						nb_last_links += 1
+										if(where_to.y < where_from.y):
+											souvenir.make_link("right-up")
+										else:
+											souvenir.make_link("right-down")
+							# store the linking souvenir in the chain
+							linking_souvenirs_chain.append(souvenir)
+							# add it to the nb of linking souvenir chained for this segment
+							nb_last_links += 1
 			# THEN do the same for the Y direction (without the angle of course)
 			var j = where_from.y
 			while j != where_to.y:
@@ -144,9 +145,10 @@ func update_chain(need:String):
 					for souvenir in souvenirs_array:
 						var label = souvenir.get_node("RichTextLabel")
 						if label.get_global_rect().has_point(Vector2(where_to.x, j)):
-							souvenir.make_link("v")
-							linking_souvenirs_chain.append(souvenir)
-							nb_last_links += 1
+							if souvenir.is_associating == false:
+								souvenir.make_link("v")
+								linking_souvenirs_chain.append(souvenir)
+								nb_last_links += 1
 			# at the end of the chain, store in links per segment array how many links total in this segment (for cleaning)
 			links_per_segment.append(nb_last_links)
 		# when removing a chained souvenir, remove all the links

@@ -64,6 +64,9 @@ func initialize(clarity_value:float) -> void:
 			"position": char_size * Vector2(x_i, y_i) + global_position - $RichTextLabel.size / 2
 		}
 		letters_array.append(char_dico)
+	if len(letters_array) < 136:
+		print(name)
+
 	# clarity needed
 	clarity_needed = clarity_value
 
@@ -160,7 +163,7 @@ func update_letters():
 			letters_array[char_i]["status"] = status_dark
 		# LETTER LINK
 		# if the letter is used to create a link between 2 selecter souvenirs, paint it with selected look too 
-		if(letters_array[char_i]["letter_link"] != "") :
+		if(letters_array[char_i]["letter_link"] != "") and !is_associating:
 			letters_array[char_i]["current_letter"] = letters_array[char_i]["letter_link"]
 			letters_array[char_i]["status"] = status_selected
 			letters_array[char_i]["end_status"] = end_status_selected

@@ -46,20 +46,14 @@ func _ready() -> void:
 # REMOVE MENU / TUTOS AND DISPLAY HIDDEN TILES
 func remove_menu():
 	menu_removed = true
-	$empty14.visible = true
-	$empty17.visible = true
-	$empty18.visible = true
-	$empty24.visible = true
-	$empty28.visible = true
+	for souvenir in get_tree().get_nodes_in_group("menu_empties"):
+		souvenir.visible = true
 	for child in $Menu.get_children():
 		child.visible = false
 func add_menu():
 	menu_removed = false
-	$empty14.visible = false
-	$empty17.visible = false
-	$empty18.visible = false
-	$empty24.visible = false
-	$empty28.visible = false
+	for souvenir in get_tree().get_nodes_in_group("menu_empties"):
+		souvenir.visible = false
 	for child in $Menu.get_children():
 		child.visible = true
 
