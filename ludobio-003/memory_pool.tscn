@@ -37,14 +37,14 @@ association_array = [NodePath("../CTN_Allergies/Allergies"), NodePath("../CTN_In
 [node name="TextureRect" parent="Origin" index="0" unique_id=586980597 groups=["empty"]]
 
 [node name="RichTextLabel" parent="Origin" index="1" unique_id=676347016 groups=["empty"]]
-text = "                  
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+rotation = -0.0012902002
+text = "                 
+I've always been taking pills. 
+     ___         
+    [___]        
+   _ _    ___   
+  (_|_)  [___]   
+               "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -69,10 +69,9 @@ autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="I_AdamExplain" parent="CTN_Adam" unique_id=210174201 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+[node name="I_AdamExplain" parent="CTN_Adam" unique_id=210174201 instance=ExtResource("4_xe1s3")]
 position = Vector2(1900, 900)
 recollection_target = 200.0
-association_array = [NodePath("../I_HisFear"), NodePath("../I_HereForMe")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_AdamExplain" index="1" unique_id=676347016]
 text = "ADAM EXPLAIN
@@ -275,14 +274,14 @@ recollection_target = 200.0
 association_array = [NodePath("../Allergies_OK"), NodePath("../Allergies_Run"), NodePath("../Allergies_Zyrtec")]
 
 [node name="RichTextLabel" parent="CTN_Allergies/Allergies" index="1" unique_id=676347016]
-text = "  ALLERGIES                
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+    ALLERGIES    
+  +    *   +        *
+*   *  +  +    #  #
++  #    *    *
+     +    #   *    +
+*   *    +   *    #
+*   +    # "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -293,14 +292,7 @@ recollection_target = 200.0
 association_array = [NodePath("../Allergies_Samu")]
 
 [node name="RichTextLabel" parent="CTN_Allergies/Allergies_Run" index="1" unique_id=676347016]
-text = "  RUN RUN RUN                
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "There was a time, while running, I  got a reaction to pollen so bad my throat swelled  to the point I could barely call    for help.    "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -310,31 +302,41 @@ position = Vector2(1300, 1300)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Allergies/Allergies_Samu" index="1" unique_id=676347016]
-text = "  SAMU SAMU                
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "  The emergency   doctor arrived    gave me a pill  and waited with me for some time.   But It passed   rapidly and he       left.       "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Allergies_Zyrtec" parent="CTN_Allergies" unique_id=181777130 instance=ExtResource("4_xe1s3")]
+[node name="Allergies_Zyrtec" parent="CTN_Allergies" unique_id=181777130 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 900)
 recollection_target = 200.0
+association_array = [NodePath("../Allergies_ZyrtecBis")]
 
 [node name="RichTextLabel" parent="CTN_Allergies/Allergies_Zyrtec" index="1" unique_id=676347016]
-text = "ZYRTEC              
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+     ZYRTEC      
+                 
+    ____         
+   (____)        
+        ____     
+       (____)    
+                 "
+autowrap_trim_flags = 0
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Allergies_ZyrtecBis" parent="CTN_Allergies" unique_id=1053673068 instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 1100)
+recollection_target = 200.0
+
+[node name="RichTextLabel" parent="CTN_Allergies/Allergies_ZyrtecBis" index="1" unique_id=676347016]
+text = " I carried these 
+pills with me all
+ the time in case of allergic 
+   reaction.    
+   Luckily, I   
+ haven't had to 
+use any in years. "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -344,14 +346,13 @@ position = Vector2(1700, 700)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Allergies/Allergies_OK" index="1" unique_id=676347016]
-text = "ALLERGIES OK            
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "I had asthmatic 
+bronchitis as a 
+kid. But really I
+only remember my parents talking 
+about it. But I 
+recall allergic 
+reactions later."
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -361,54 +362,40 @@ metadata/_edit_use_anchors_ = true
 [node name="M_Aunts" parent="CTN_Aunts" unique_id=1349433733 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-100, 700)
 recollection_target = 200.0
-association_array = [NodePath("../M_Janine"), NodePath("../M_Rose"), NodePath("../M_Denise"), NodePath("../../CTN_Mamie/M_Mamie")]
+association_array = [NodePath("../M_Rose"), NodePath("../M_Denise"), NodePath("../../CTN_Mamie/M_Mamie")]
 
 [node name="RichTextLabel" parent="CTN_Aunts/M_Aunts" index="1" unique_id=676347016]
-text = "AUNTS FAMILY
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = " I was not the    only one with   migraines in the family. It's said  to be genetic. 
+A legacy I would   have happily    done without.  "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Janine" parent="CTN_Aunts" unique_id=1867705801 instance=ExtResource("4_xe1s3")]
-position = Vector2(-500, 900)
-recollection_target = 200.0
-
-[node name="RichTextLabel" parent="CTN_Aunts/M_Janine" index="1" unique_id=676347016]
-text = "JANINE
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
-autowrap_trim_flags = 0
-justification_flags = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="M_Rose" parent="CTN_Aunts" unique_id=1772500858 instance=ExtResource("4_xe1s3")]
+[node name="M_Rose" parent="CTN_Aunts" unique_id=1772500858 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(100, 500)
 recollection_target = 200.0
+association_array = [NodePath("../M_RoseBis")]
 
 [node name="RichTextLabel" parent="CTN_Aunts/M_Rose" index="1" unique_id=676347016]
-text = "ROSE
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+    @@@@@@@@@    
+   @@@@@@ @@@@   
+   @|-    - |@@  
+   C|(~)c (~)|D  
+    |  __   |    
+     \\_____/     
+                         "
+autowrap_trim_flags = 0
+justification_flags = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="M_RoseBis" parent="CTN_Aunts" unique_id=1854587699 instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, 300)
+recollection_target = 200.0
+
+[node name="RichTextLabel" parent="CTN_Aunts/M_RoseBis" index="1" unique_id=676347016]
+text = "  Aunt rose was    taking the samedrug. Biprofenid.So whenever I ran   out of it, my 
+ parents went to    her house to     borrow some.  "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -416,36 +403,17 @@ metadata/_edit_use_anchors_ = true
 [node name="M_Denise" parent="CTN_Aunts" unique_id=1115531497 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-300, 500)
 recollection_target = 200.0
-association_array = [NodePath("../M_Manor"), NodePath("../M_Psychic")]
+association_array = [NodePath("../M_Psychic")]
 
 [node name="RichTextLabel" parent="CTN_Aunts/M_Denise" index="1" unique_id=676347016]
-text = "DENISE
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
-autowrap_trim_flags = 0
-justification_flags = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="M_Manor" parent="CTN_Aunts" unique_id=1854587699 instance=ExtResource("4_xe1s3")]
-position = Vector2(-100, 300)
-recollection_target = 200.0
-
-[node name="RichTextLabel" parent="CTN_Aunts/M_Manor" index="1" unique_id=676347016]
-text = "MANOR
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+    /// \\\\\\\\     
+   ///   \\\\\\\\    
+   ||>   > |||   
+  ||| /    |||   
+  ||| ~   /|||   
+   ||\\___/ ||    
+                "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -455,14 +423,7 @@ position = Vector2(100, 100)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Aunts/M_Psychic" index="1" unique_id=676347016]
-text = "PSYCHIC
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
+text = "Aunt Denise took me to a pyschic  for my migraines. He gave me a    marble with his   energy, supposed    to heal me.      Pretty nuts. 
 "
 autowrap_trim_flags = 0
 justification_flags = 0
@@ -473,35 +434,28 @@ metadata/_edit_use_anchors_ = true
 [node name="M_Benjamin" parent="CTN_Benjamin" unique_id=1722554072 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(100, 1500)
 recollection_target = 200.0
-association_array = [NodePath("../M_Diabetes"), NodePath("../M_Marche"), NodePath("../M_Cerbere")]
+association_array = [NodePath("../M_BenjaminBis")]
 
 [node name="RichTextLabel" parent="CTN_Benjamin/M_Benjamin" index="1" unique_id=676347016]
-text = "BENJAMIN
-      
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+     //          
+     -\\\\\\\\-\\\\    
+    /_   _ \\\\    
+  C| >   >  |D   
+   (   =    )    
+    \\______/     
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="M_Diabetes" parent="CTN_Benjamin" unique_id=724095227 instance=ExtResource("4_xe1s3")]
+[node name="M_BenjaminBis" parent="CTN_Benjamin" unique_id=724095227 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(-300, 1500)
 recollection_target = 200.0
+association_array = [NodePath("../M_Marche"), NodePath("../M_Cerbere")]
 
-[node name="RichTextLabel" parent="CTN_Benjamin/M_Diabetes" index="1" unique_id=676347016]
-text = "DIABETES
-      
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
+[node name="RichTextLabel" parent="CTN_Benjamin/M_BenjaminBis" index="1" unique_id=676347016]
+text = " Benjamin, my BFF  had dabietes.   Which was worst. But it created a kind of bond. We  spent so much   time together it was like family
 "
 autowrap_trim_flags = 0
 justification_flags = 0
@@ -513,15 +467,14 @@ recollection_target = 200.0
 association_array = [NodePath("../M_Pharmacy")]
 
 [node name="RichTextLabel" parent="CTN_Benjamin/M_Marche" index="1" unique_id=676347016]
-text = "MARKET
-      
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+           ||    
+   ||     /  \\   
+  /  \\    |  |   
+  |  |    |  |   
+  |  |    |__|   
+  |__|           
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -531,15 +484,7 @@ position = Vector2(-100, 1900)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Benjamin/M_Pharmacy" index="1" unique_id=676347016]
-text = "PHARMACY
-      
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "His parents had a wineyard where I worked during   summers. One day, selling wine at a market, I had a migraine so bad I threw up there."
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -549,15 +494,7 @@ position = Vector2(300, 1900)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Benjamin/M_Cerbere" index="1" unique_id=676347016]
-text = "CERBERE
-      
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "They often took  me to their fancy vacation house.   Once, I had a    migraine in thecar but,  afraid to ruin the day,  I said nothing. "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -711,17 +648,17 @@ metadata/_edit_use_anchors_ = true
 [node name="Insomnia" parent="CTN_Insomnia" unique_id=2069082185 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 700)
 recollection_target = 200.0
-association_array = [NodePath("../I_FirstTime"), NodePath("../I_Second"), NodePath("../../CTN_I_Pills/I_SoManyPills")]
+association_array = [NodePath("../../CTN_Adam/I_Adam")]
 
 [node name="RichTextLabel" parent="CTN_Insomnia/Insomnia" index="1" unique_id=676347016]
-text = "  INSOMNIA                
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+    INSOMNIA     
+                 
+     _    _      
+   ((O))((O))    
+      |       
+       __        
+                    "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -788,15 +725,14 @@ recollection_target = 200.0
 association_array = [NodePath("../M_Mamie")]
 
 [node name="RichTextLabel" parent="CTN_Mamie/M_MamieDol" index="1" unique_id=676347016]
-text = "MAMIE DOL
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+      00000      
+    000000000    
+   000     000   
+   C|(')_(')|D   
+    | /___\\ |    
+     \\_____/     
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -804,18 +740,14 @@ metadata/_edit_use_anchors_ = true
 [node name="M_Mamie" parent="CTN_Mamie" unique_id=726913630 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 300)
 recollection_target = 200.0
-association_array = [NodePath("../M_FakePills"), NodePath("../M_StayAtHers"), NodePath("../../CTN_Aunts/M_Janine"), NodePath("../../CTN_Aunts/M_Rose")]
+association_array = [NodePath("../M_FakePills"), NodePath("../M_StayAtHers"), NodePath("../../CTN_Aunts/M_Rose")]
 
 [node name="RichTextLabel" parent="CTN_Mamie/M_Mamie" index="1" unique_id=676347016]
-text = "MAMIE
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "Grandma. She used to say that she was the one that
+   passed on the
+migraines to my
+ aunts and me.  
+Hers were really strong as well.   "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -825,15 +757,7 @@ position = Vector2(1100, 300)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Mamie/M_FakePills" index="1" unique_id=676347016]
-text = "FAKE PILLS
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "She was so scared   of having a   migraine  that,   at some point,  she took drugs   everyday. Dad wassecretly emptying  the capsules.  "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -843,15 +767,7 @@ position = Vector2(900, -100)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Mamie/M_StayAtHers" index="1" unique_id=676347016]
-text = "STAY AT HERS
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "When a migraine  kicked in before school started,  I was left with  Grandma. If I got better by noon, I could enjoy a  free afternoon.  "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -864,15 +780,14 @@ recollection_target = 200.0
 association_array = [NodePath("../M_Childhood"), NodePath("../M_Doliprane"), NodePath("../M_Biprofenid")]
 
 [node name="RichTextLabel" parent="CTN_Migraine/Migraine" index="1" unique_id=676347016]
-text = "MIGRAINE
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+    MIGRAINE     
+  @  ! ___ #     
+   !  /***|  !   
+     |_   | @    
+    <     |      
+  |___/    
+                  "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -883,15 +798,14 @@ recollection_target = 200.0
 association_array = [NodePath("../../CTN_Aunts/M_Rose")]
 
 [node name="RichTextLabel" parent="CTN_Migraine/M_Biprofenid" index="1" unique_id=676347016]
-text = "BIPROFENID
-               
+text = "                 
+    BIPROFENID   
     _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+   /         \\   
+  |           |  
+  |\\_________/|  
+   \\_________/   
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -902,15 +816,15 @@ recollection_target = 200.0
 association_array = [NodePath("../../CTN_Mamie/M_MamieDol")]
 
 [node name="RichTextLabel" parent="CTN_Migraine/M_Doliprane" index="1" unique_id=676347016]
-text = "DOLIPRANE
-               
+text = "                 
+    DOLIPRANE    
     _________    
    /    /    \\   
   |    |      |  
   |    |      |  
    \\____\\____/   
-                                 
-"
+                     
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -921,15 +835,7 @@ recollection_target = 200.0
 association_array = [NodePath("../../CTN_School/M_School"), NodePath("../../CTN_Aunts/M_Aunts"), NodePath("../../CTN_Benjamin/M_Benjamin"), NodePath("../../CTN_Mum/M_Mum")]
 
 [node name="RichTextLabel" parent="CTN_Migraine/M_Childhood" index="1" unique_id=676347016]
-text = "CHILDHOOD
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "When I think of    migraines, I   first think of my   childhood.      It somehow had   an important     impact on my      daily life.   "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -942,15 +848,14 @@ recollection_target = 200.0
 association_array = [NodePath("../M_LotsOfStuff")]
 
 [node name="RichTextLabel" parent="CTN_Mum/M_Mum" index="1" unique_id=676347016]
-text = "MUM
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+     ((())))     
+   (( _) _)))    
+  ((( ,  , )))   
+   (| /    D))   
+    |  <  /      
+     \\___/       
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -961,15 +866,8 @@ recollection_target = 200.0
 association_array = [NodePath("../M_Stick"), NodePath("../M_Silence"), NodePath("../M_Towel"), NodePath("../M_HandFace"), NodePath("../../CTN_School/M_Casquette")]
 
 [node name="RichTextLabel" parent="CTN_Mum/M_LotsOfStuff" index="1" unique_id=676347016]
-text = "LOTS OF STUFF
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "Mum would do all sort of things to  help me quiet    down when the   migraines were     too hard.    
+ She was sad to  see me like this."
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -979,51 +877,27 @@ position = Vector2(-500, 500)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Mum/M_Stick" index="1" unique_id=676347016]
-text = "STICK
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = " There was this  weird mint stick for my forehead  she brought back home once. I used to pretend it    worked just to   make her happy. "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="M_Silence" parent="CTN_Mum" unique_id=1551475065 instance=ExtResource("4_xe1s3")]
-position = Vector2(-500, 300)
+position = Vector2(-700, 100)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Mum/M_Silence" index="1" unique_id=676347016]
-text = "SILENCE
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = " She was careful to not make any   loud sound. It   was making my    head explode.   Even crackings of  the flooring       parquet.     "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="M_Towel" parent="CTN_Mum" unique_id=1147659476 instance=ExtResource("4_xe1s3")]
-position = Vector2(-700, 300)
+position = Vector2(-900, 300)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Mum/M_Towel" index="1" unique_id=676347016]
-text = "COLD TOWEL
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = " She put a cold     towel on my     forehead. She  would come often  to make sure it  was still cold, and changed it if     needed.     "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1034,15 +908,14 @@ recollection_target = 200.0
 association_array = [NodePath("../M_HandExplain"), NodePath("../../CTN_Adam/I_HandInbed")]
 
 [node name="RichTextLabel" parent="CTN_Mum/M_HandFace" index="1" unique_id=676347016]
-text = "HAND FOREHEAD
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "       _ _       
+     _| | |      
+    | | | |_    
+    | | | | |    
+ /\\ | | | | |    
+ \\ \\|       |    
+  \\         |    
+\\       /     "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1052,15 +925,8 @@ position = Vector2(-1100, 500)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Mum/M_HandExplain" index="1" unique_id=676347016]
-text = "EXPLAIN
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "When she was not   too busy, she  stayed by my side and put her hand in my hair until I calmed down.   I liked this.  
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1073,15 +939,7 @@ recollection_target = 200.0
 association_array = [NodePath("../M_Casquette"), NodePath("../M_Martine")]
 
 [node name="RichTextLabel" parent="CTN_School/M_School" index="1" unique_id=676347016]
-text = "SCHOOL
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = " I had migraines  at school often. But the village  and  the teacher was a friend of my parents so she knew how to deal     with it.    "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1092,15 +950,14 @@ recollection_target = 200.0
 association_array = [NodePath("../M_Angry")]
 
 [node name="RichTextLabel" parent="CTN_School/M_Casquette" index="1" unique_id=676347016]
-text = "CASQUETTE
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "             *   
+    MAGIC CAP    
+   *             
+      __.___     
+     /      \\ *  
+    |________|   
+   /_______/     
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1110,15 +967,8 @@ position = Vector2(-700, 1300)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_School/M_Angry" index="1" unique_id=676347016]
-text = "ANGRY
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "I wore my cap all the time, like a shield. One day my sister stole 
+it from me.I got so panicked that I punched through the glass door. "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1129,15 +979,14 @@ recollection_target = 200.0
 association_array = [NodePath("../M_BackHome")]
 
 [node name="RichTextLabel" parent="CTN_School/M_Martine" index="1" unique_id=676347016]
-text = "MARTINE
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+     _ _ __      
+    ((()))))     
+   (((( ())))    
+  ((| ^  ^ |))   
+  ((|  '   |))   
+     \\_>__/      
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1147,15 +996,7 @@ position = Vector2(-500, 1900)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_School/M_BackHome" index="1" unique_id=676347016]
-text = "BACK HOME
-               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "When my migraines were too bad shejust took me back home and left methere alone until my parents came back. It seems a  bit crazy now.  "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1293,53 +1134,28 @@ metadata/_edit_use_anchors_ = true
 [node name="Sex" parent="CTN_Sex" unique_id=159630747 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 1100)
 recollection_target = 200.0
-association_array = [NodePath("../Sex_Down")]
+association_array = [NodePath("../Sex_Tadalafil")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex" index="1" unique_id=676347016]
-text = " SEX SEX SEX                 
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
-autowrap_trim_flags = 0
-justification_flags = 0
-metadata/_edit_use_anchors_ = true
-
-[node name="Sex_Down" parent="CTN_Sex" unique_id=1229513533 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
-position = Vector2(500, 1500)
-recollection_target = 200.0
-association_array = [NodePath("../Sex_Tadalafil"), NodePath("../../CTN_Adam/I_Adam")]
-
-[node name="RichTextLabel" parent="CTN_Sex/Sex_Down" index="1" unique_id=676347016]
-text = " SEX DOWN                
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+   SEX ISSUES    
+                 
+    /   \\   |    
+    \\__/|   |    
+        |---|    
+        \\_|_/    
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
 [node name="Sex_Tadalafil" parent="CTN_Sex" unique_id=1142135758 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
-position = Vector2(700, 1700)
+position = Vector2(500, 1500)
 recollection_target = 200.0
 association_array = [NodePath("../Sex_Red"), NodePath("../Sex_Up")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Tadalafil" index="1" unique_id=676347016]
-text = "TADALAFIL               
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = " Tadalafil. Doubtit ever gets more ominonus-drug     sounding than  that. Anyway, I   gobbled it with equal parts hope  and reluctance. "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1347,35 +1163,29 @@ metadata/_edit_use_anchors_ = true
 [node name="Sex_Red" parent="CTN_Sex" unique_id=941828836 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 1700)
 recollection_target = 200.0
-association_array = [NodePath("../Sex_Explain")]
+association_array = [NodePath("../Sex_RedExplain")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Red" index="1" unique_id=676347016]
-text = " SEX RED RED                
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+    >-----\\      
+   // ***\\\\\\\\    
+    | o  o |     
+   C|**| **|D    
+    |**__**|     
+     \\____/      
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Sex_Explain" parent="CTN_Sex" unique_id=82531265 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
+[node name="Sex_RedExplain" parent="CTN_Sex" unique_id=82531265 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 1900)
 recollection_target = 200.0
 association_array = [NodePath("../Sex_WorkedSoSo")]
 
-[node name="RichTextLabel" parent="CTN_Sex/Sex_Explain" index="1" unique_id=676347016]
-text = " SEXPLANATION        
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+[node name="RichTextLabel" parent="CTN_Sex/Sex_RedExplain" index="1" unique_id=676347016]
+text = "Funny side effect: the blood flow stimulation also changed my usual piggie-pink face complexion into a devilish red. 
+  How wonderful!  "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1386,14 +1196,14 @@ recollection_target = 200.0
 association_array = [NodePath("../Sex_Guys")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Up" index="1" unique_id=676347016]
-text = "PENIS UP          
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "                 
+                 
+     ________    
+  /        |  \\  
+ |   \\------\\_/  
+  \\__/           
+                 
+                 "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1404,14 +1214,13 @@ recollection_target = 200.0
 association_array = [NodePath("../Sex_WorkedSoSo")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Guys" index="1" unique_id=676347016]
-text = "WITH GUYS          
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "Tried it with M. 
+Tried it with S.
+Tried it with a
+rando in PV.Tried it alone too.For
+I am rigorous.  
+ Or for I got a 
+thing for pills."
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1422,15 +1231,10 @@ recollection_target = 200.0
 association_array = [NodePath("../Sex_Problem")]
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_WorkedSoSo" index="1" unique_id=676347016]
-text = "WORKED SOSO
-        
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "The upward lookin disposition of 
+my penis changed only a bit. 
+Which led me to  conclude that 
+ biology was not   the issue here.        "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1440,15 +1244,11 @@ position = Vector2(700, 2100)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Sex/Sex_Problem" index="1" unique_id=676347016]
-text = "PROBLEM
-        
-    _________    
-   /    /    \\   
-  |    |      |  
-  |    |      |  
-   \\____\\____/   
-                                 
-"
+text = "At least, I did 
+not go too far on
+the drugs testing route. I'd still
+take one here and there. But this needed a therapy
+     couch.     "
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
@@ -1460,6 +1260,14 @@ position = Vector2(-700, 900)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty165" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty395" parent="Empties" unique_id=1197771856 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, 900)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty395" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -1626,6 +1434,7 @@ text = "------------------------------------------------------------------------
 metadata/_edit_use_anchors_ = true
 
 [node name="empty_menu3" parent="Empties" unique_id=804153872 groups=["empty", "menu_empties"] instance=ExtResource("4_xe1s3")]
+visible = false
 position = Vector2(900, 500)
 recollection_target = -1000.0
 
@@ -1634,6 +1443,7 @@ text = "------------------------------------------------------------------------
 metadata/_edit_use_anchors_ = true
 
 [node name="empty_menu4" parent="Empties" unique_id=186337993 groups=["empty", "menu_empties"] instance=ExtResource("4_xe1s3")]
+visible = false
 position = Vector2(1100, 500)
 recollection_target = -1000.0
 
@@ -1754,7 +1564,7 @@ text = "------------------------------------------------------------------------
 metadata/_edit_use_anchors_ = true
 
 [node name="empty182" parent="Empties" unique_id=325620245 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(-900, 300)
+position = Vector2(-700, 300)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty182" index="1" unique_id=676347016]
@@ -1841,6 +1651,38 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
+[node name="empty327" parent="Empties" unique_id=492669312 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1700, 700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty327" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty512" parent="Empties" unique_id=1608011478 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1700, 500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty512" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty513" parent="Empties" unique_id=512605282 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1700, 300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty513" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty514" parent="Empties" unique_id=521056435 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1700, 100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty514" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
 [node name="empty202" parent="Empties" unique_id=1844425667 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(-900, -100)
 recollection_target = -1000.0
@@ -1914,7 +1756,7 @@ text = "------------------------------------------------------------------------
 metadata/_edit_use_anchors_ = true
 
 [node name="empty214" parent="Empties" unique_id=515201991 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(-700, 100)
+position = Vector2(-500, 300)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty214" index="1" unique_id=676347016]
@@ -2361,14 +2203,6 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
-[node name="empty305" parent="Empties" unique_id=1210131707 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2100, -100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty305" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
 [node name="empty306" parent="Empties" unique_id=1797862548 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(2100, 100)
 recollection_target = -1000.0
@@ -2390,30 +2224,6 @@ position = Vector2(2100, 300)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty310" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty307" parent="Empties" unique_id=2020513684 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2100, -300)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty307" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty308" parent="Empties" unique_id=2118269732 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2100, -500)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty308" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty311" parent="Empties" unique_id=2104814624 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2300, -100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty311" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -2465,22 +2275,6 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
-[node name="empty314" parent="Empties" unique_id=154930551 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2300, -300)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty314" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty321" parent="Empties" unique_id=1323940857 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2500, -100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty321" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
 [node name="empty322" parent="Empties" unique_id=1032966262 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(2500, 100)
 recollection_target = -1000.0
@@ -2513,27 +2307,43 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
-[node name="empty326" parent="Empties" unique_id=1158688500 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2500, -300)
+[node name="empty328" parent="Empties" unique_id=1151884733 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2700, 100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty328" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty307" parent="Empties" unique_id=1134125394 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, -100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty307" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty314" parent="Empties" unique_id=1521845065 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, -100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty314" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty326" parent="Empties" unique_id=1285285520 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, -100)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty326" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
-[node name="empty327" parent="Empties" unique_id=1351703613 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="empty458" parent="Empties" unique_id=707077741 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(2700, -100)
 recollection_target = -1000.0
 
-[node name="RichTextLabel" parent="Empties/empty327" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty328" parent="Empties" unique_id=1151884733 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2700, 100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty328" index="1" unique_id=676347016]
+[node name="RichTextLabel" parent="Empties/empty458" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -2601,6 +2411,70 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
+[node name="empty460" parent="Empties" unique_id=1609933748 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3100, 100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty460" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty464" parent="Empties" unique_id=979638425 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3100, 300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty464" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty468" parent="Empties" unique_id=1932996881 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3100, 500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty468" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty482" parent="Empties" unique_id=2066083007 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3100, 700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty482" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty483" parent="Empties" unique_id=2095774071 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3300, 100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty483" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty484" parent="Empties" unique_id=293775264 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3300, 300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty484" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty485" parent="Empties" unique_id=1833505039 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3300, 500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty485" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty486" parent="Empties" unique_id=886035405 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3300, 700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty486" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
 [node name="empty337" parent="Empties" unique_id=202644168 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(2900, 900)
 recollection_target = -1000.0
@@ -2657,6 +2531,38 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
+[node name="empty487" parent="Empties" unique_id=1830701103 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3500, 300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty487" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty488" parent="Empties" unique_id=1939067959 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3500, 500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty488" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty491" parent="Empties" unique_id=2123733192 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3500, 700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty491" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty492" parent="Empties" unique_id=715025106 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3500, 900)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty492" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
 [node name="empty442" parent="Empties" unique_id=1202739703 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(3300, 1100)
 recollection_target = -1000.0
@@ -2686,6 +2592,54 @@ position = Vector2(3500, 1100)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty445" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty493" parent="Empties" unique_id=990966442 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3700, 700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty493" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty494" parent="Empties" unique_id=428211838 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3700, 900)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty494" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty495" parent="Empties" unique_id=911130080 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3700, 1100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty495" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty496" parent="Empties" unique_id=1175500490 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3900, 700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty496" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty497" parent="Empties" unique_id=1477218938 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3900, 900)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty497" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty498" parent="Empties" unique_id=1190427826 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(3900, 1100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty498" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -2782,14 +2736,6 @@ position = Vector2(3900, 1900)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty481" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty315" parent="Empties" unique_id=477510736 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2300, -500)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty315" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -2926,6 +2872,142 @@ position = Vector2(-1500, 1700)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty255" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty305" parent="Empties" unique_id=163331794 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1700, 900)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty305" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty308" parent="Empties" unique_id=37708871 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1700, 1100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty308" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty515" parent="Empties" unique_id=559025814 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1900, 700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty515" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty516" parent="Empties" unique_id=307073309 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1900, 500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty516" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty517" parent="Empties" unique_id=320187458 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1900, 300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty517" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty518" parent="Empties" unique_id=1163235286 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1900, 100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty518" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty519" parent="Empties" unique_id=1164177332 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1900, 900)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty519" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty520" parent="Empties" unique_id=246961034 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1900, 1100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty520" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty521" parent="Empties" unique_id=130600154 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-2100, 700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty521" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty522" parent="Empties" unique_id=387081962 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-2100, 500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty522" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty523" parent="Empties" unique_id=19785500 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-2100, 300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty523" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty524" parent="Empties" unique_id=1229341518 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-2100, 100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty524" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty525" parent="Empties" unique_id=733710040 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-2100, 900)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty525" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty526" parent="Empties" unique_id=290578745 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-2100, 1100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty526" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty311" parent="Empties" unique_id=1750550891 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1700, 1300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty311" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty315" parent="Empties" unique_id=1349415755 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1700, 1500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty315" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty321" parent="Empties" unique_id=1571024738 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-1700, 1700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty321" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -3161,6 +3243,14 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
+[node name="empty374" parent="Empties" unique_id=447652026 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 1700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty374" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
 [node name="empty354" parent="Empties" unique_id=719031515 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 1900)
 recollection_target = -1000.0
@@ -3378,14 +3468,6 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
-[node name="empty395" parent="Empties" unique_id=492576194 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(1700, 1100)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty395" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
 [node name="empty396" parent="Empties" unique_id=2087001973 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 1700)
 recollection_target = -1000.0
@@ -3503,6 +3585,22 @@ position = Vector2(2100, 2300)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty414" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty455" parent="Empties" unique_id=528201806 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty455" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty456" parent="Empties" unique_id=928639601 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty456" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -3722,14 +3820,6 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
-[node name="empty455" parent="Empties" unique_id=1504404893 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2900, 2700)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty455" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
 [node name="empty457" parent="Empties" unique_id=802480471 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(3100, 2500)
 recollection_target = -1000.0
@@ -3738,27 +3828,11 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
-[node name="empty458" parent="Empties" unique_id=411666838 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(3100, 2700)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty458" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
 [node name="empty459" parent="Empties" unique_id=1628673912 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(3300, 2500)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty459" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty460" parent="Empties" unique_id=1193949748 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(3300, 2700)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty460" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -3783,14 +3857,6 @@ position = Vector2(3500, 2500)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty463" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty464" parent="Empties" unique_id=925231776 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(3500, 2700)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty464" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -3834,27 +3900,115 @@ recollection_target = -1000.0
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
+[node name="empty499" parent="Empties" unique_id=1955465566 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4100, 1100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty499" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty500" parent="Empties" unique_id=2004972151 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4100, 1300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty500" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty501" parent="Empties" unique_id=249158590 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4100, 1500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty501" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty502" parent="Empties" unique_id=939575416 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4100, 1700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty502" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty503" parent="Empties" unique_id=1266528759 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4100, 1900)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty503" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty504" parent="Empties" unique_id=205818999 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4100, 2100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty504" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty505" parent="Empties" unique_id=921233636 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4100, 2300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty505" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty506" parent="Empties" unique_id=216615247 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4300, 1300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty506" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty507" parent="Empties" unique_id=628675978 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4300, 1500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty507" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty508" parent="Empties" unique_id=1623992221 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4300, 1700)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty508" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty509" parent="Empties" unique_id=1647762953 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4300, 1900)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty509" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty510" parent="Empties" unique_id=393004669 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4300, 2100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty510" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty511" parent="Empties" unique_id=455388022 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(4300, 2300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty511" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
 [node name="empty471" parent="Empties" unique_id=2018980207 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(3900, 2500)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty471" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty468" parent="Empties" unique_id=375477839 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(3700, 2700)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty468" index="1" unique_id=676347016]
-text = "----------------------------------------------------------------------------------------------------------------------------------------"
-metadata/_edit_use_anchors_ = true
-
-[node name="empty456" parent="Empties" unique_id=515513257 groups=["empty"] instance=ExtResource("4_xe1s3")]
-position = Vector2(2700, 2700)
-recollection_target = -1000.0
-
-[node name="RichTextLabel" parent="Empties/empty456" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -3919,6 +4073,94 @@ position = Vector2(-100, 2300)
 recollection_target = -1000.0
 
 [node name="RichTextLabel" parent="Empties/empty284" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty317" parent="Empties" unique_id=79338537 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty317" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty375" parent="Empties" unique_id=1933885298 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty375" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty376" parent="Empties" unique_id=700579863 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty376" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty380" parent="Empties" unique_id=27675307 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty380" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty388" parent="Empties" unique_id=895012142 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty388" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty453" parent="Empties" unique_id=1465214409 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty453" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty454" parent="Empties" unique_id=1750127662 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty454" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty472" parent="Empties" unique_id=1238852040 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty472" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty473" parent="Empties" unique_id=1172493408 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(300, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty473" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty474" parent="Empties" unique_id=470966091 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty474" index="1" unique_id=676347016]
+text = "----------------------------------------------------------------------------------------------------------------------------------------"
+metadata/_edit_use_anchors_ = true
+
+[node name="empty325" parent="Empties" unique_id=1360457644 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, 2500)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="Empties/empty325" index="1" unique_id=676347016]
 text = "----------------------------------------------------------------------------------------------------------------------------------------"
 metadata/_edit_use_anchors_ = true
 
@@ -4104,15 +4346,15 @@ vertical_alignment = 1
 [editable path="CTN_Allergies/Allergies_Run"]
 [editable path="CTN_Allergies/Allergies_Samu"]
 [editable path="CTN_Allergies/Allergies_Zyrtec"]
+[editable path="CTN_Allergies/Allergies_ZyrtecBis"]
 [editable path="CTN_Allergies/Allergies_OK"]
 [editable path="CTN_Aunts/M_Aunts"]
-[editable path="CTN_Aunts/M_Janine"]
 [editable path="CTN_Aunts/M_Rose"]
+[editable path="CTN_Aunts/M_RoseBis"]
 [editable path="CTN_Aunts/M_Denise"]
-[editable path="CTN_Aunts/M_Manor"]
 [editable path="CTN_Aunts/M_Psychic"]
 [editable path="CTN_Benjamin/M_Benjamin"]
-[editable path="CTN_Benjamin/M_Diabetes"]
+[editable path="CTN_Benjamin/M_BenjaminBis"]
 [editable path="CTN_Benjamin/M_Marche"]
 [editable path="CTN_Benjamin/M_Pharmacy"]
 [editable path="CTN_Benjamin/M_Cerbere"]
@@ -4156,15 +4398,15 @@ vertical_alignment = 1
 [editable path="CTN_I_Pills/I_DrBitch"]
 [editable path="CTN_I_Pills/I_others"]
 [editable path="CTN_Sex/Sex"]
-[editable path="CTN_Sex/Sex_Down"]
 [editable path="CTN_Sex/Sex_Tadalafil"]
 [editable path="CTN_Sex/Sex_Red"]
-[editable path="CTN_Sex/Sex_Explain"]
+[editable path="CTN_Sex/Sex_RedExplain"]
 [editable path="CTN_Sex/Sex_Up"]
 [editable path="CTN_Sex/Sex_Guys"]
 [editable path="CTN_Sex/Sex_WorkedSoSo"]
 [editable path="CTN_Sex/Sex_Problem"]
 [editable path="Empties/empty165"]
+[editable path="Empties/empty395"]
 [editable path="Empties/empty166"]
 [editable path="Empties/empty167"]
 [editable path="Empties/empty168"]
@@ -4212,6 +4454,10 @@ vertical_alignment = 1
 [editable path="Empties/empty186"]
 [editable path="Empties/empty197"]
 [editable path="Empties/empty201"]
+[editable path="Empties/empty327"]
+[editable path="Empties/empty512"]
+[editable path="Empties/empty513"]
+[editable path="Empties/empty514"]
 [editable path="Empties/empty202"]
 [editable path="Empties/empty203"]
 [editable path="Empties/empty204"]
@@ -4277,28 +4523,24 @@ vertical_alignment = 1
 [editable path="Empties/empty302"]
 [editable path="Empties/empty303"]
 [editable path="Empties/empty304"]
-[editable path="Empties/empty305"]
 [editable path="Empties/empty306"]
 [editable path="Empties/empty309"]
 [editable path="Empties/empty310"]
-[editable path="Empties/empty307"]
-[editable path="Empties/empty308"]
-[editable path="Empties/empty311"]
 [editable path="Empties/empty312"]
 [editable path="Empties/empty313"]
 [editable path="Empties/empty316"]
 [editable path="Empties/empty318"]
 [editable path="Empties/empty320"]
 [editable path="Empties/empty319"]
-[editable path="Empties/empty314"]
-[editable path="Empties/empty321"]
 [editable path="Empties/empty322"]
 [editable path="Empties/empty323"]
 [editable path="Empties/empty324"]
 [editable path="Empties/empty338"]
-[editable path="Empties/empty326"]
-[editable path="Empties/empty327"]
 [editable path="Empties/empty328"]
+[editable path="Empties/empty307"]
+[editable path="Empties/empty314"]
+[editable path="Empties/empty326"]
+[editable path="Empties/empty458"]
 [editable path="Empties/empty329"]
 [editable path="Empties/empty330"]
 [editable path="Empties/empty331"]
@@ -4307,6 +4549,14 @@ vertical_alignment = 1
 [editable path="Empties/empty334"]
 [editable path="Empties/empty335"]
 [editable path="Empties/empty336"]
+[editable path="Empties/empty460"]
+[editable path="Empties/empty464"]
+[editable path="Empties/empty468"]
+[editable path="Empties/empty482"]
+[editable path="Empties/empty483"]
+[editable path="Empties/empty484"]
+[editable path="Empties/empty485"]
+[editable path="Empties/empty486"]
 [editable path="Empties/empty337"]
 [editable path="Empties/empty427"]
 [editable path="Empties/empty428"]
@@ -4314,10 +4564,20 @@ vertical_alignment = 1
 [editable path="Empties/empty439"]
 [editable path="Empties/empty440"]
 [editable path="Empties/empty441"]
+[editable path="Empties/empty487"]
+[editable path="Empties/empty488"]
+[editable path="Empties/empty491"]
+[editable path="Empties/empty492"]
 [editable path="Empties/empty442"]
 [editable path="Empties/empty443"]
 [editable path="Empties/empty444"]
 [editable path="Empties/empty445"]
+[editable path="Empties/empty493"]
+[editable path="Empties/empty494"]
+[editable path="Empties/empty495"]
+[editable path="Empties/empty496"]
+[editable path="Empties/empty497"]
+[editable path="Empties/empty498"]
 [editable path="Empties/empty446"]
 [editable path="Empties/empty447"]
 [editable path="Empties/empty448"]
@@ -4330,7 +4590,6 @@ vertical_alignment = 1
 [editable path="Empties/empty479"]
 [editable path="Empties/empty480"]
 [editable path="Empties/empty481"]
-[editable path="Empties/empty315"]
 [editable path="Empties/empty248"]
 [editable path="Empties/empty249"]
 [editable path="Empties/empty211"]
@@ -4348,6 +4607,23 @@ vertical_alignment = 1
 [editable path="Empties/empty253"]
 [editable path="Empties/empty254"]
 [editable path="Empties/empty255"]
+[editable path="Empties/empty305"]
+[editable path="Empties/empty308"]
+[editable path="Empties/empty515"]
+[editable path="Empties/empty516"]
+[editable path="Empties/empty517"]
+[editable path="Empties/empty518"]
+[editable path="Empties/empty519"]
+[editable path="Empties/empty520"]
+[editable path="Empties/empty521"]
+[editable path="Empties/empty522"]
+[editable path="Empties/empty523"]
+[editable path="Empties/empty524"]
+[editable path="Empties/empty525"]
+[editable path="Empties/empty526"]
+[editable path="Empties/empty311"]
+[editable path="Empties/empty315"]
+[editable path="Empties/empty321"]
 [editable path="Empties/empty256"]
 [editable path="Empties/empty257"]
 [editable path="Empties/empty258"]
@@ -4377,6 +4653,7 @@ vertical_alignment = 1
 [editable path="Empties/empty348"]
 [editable path="Empties/empty349"]
 [editable path="Empties/empty353"]
+[editable path="Empties/empty374"]
 [editable path="Empties/empty354"]
 [editable path="Empties/empty355"]
 [editable path="Empties/empty356"]
@@ -4404,7 +4681,6 @@ vertical_alignment = 1
 [editable path="Empties/empty385"]
 [editable path="Empties/empty392"]
 [editable path="Empties/empty393"]
-[editable path="Empties/empty395"]
 [editable path="Empties/empty396"]
 [editable path="Empties/empty397"]
 [editable path="Empties/empty398"]
@@ -4420,6 +4696,8 @@ vertical_alignment = 1
 [editable path="Empties/empty412"]
 [editable path="Empties/empty413"]
 [editable path="Empties/empty414"]
+[editable path="Empties/empty455"]
+[editable path="Empties/empty456"]
 [editable path="Empties/empty415"]
 [editable path="Empties/empty416"]
 [editable path="Empties/empty417"]
@@ -4447,23 +4725,30 @@ vertical_alignment = 1
 [editable path="Empties/empty450"]
 [editable path="Empties/empty451"]
 [editable path="Empties/empty452"]
-[editable path="Empties/empty455"]
 [editable path="Empties/empty457"]
-[editable path="Empties/empty458"]
 [editable path="Empties/empty459"]
-[editable path="Empties/empty460"]
 [editable path="Empties/empty461"]
 [editable path="Empties/empty462"]
 [editable path="Empties/empty463"]
-[editable path="Empties/empty464"]
 [editable path="Empties/empty465"]
 [editable path="Empties/empty466"]
 [editable path="Empties/empty467"]
 [editable path="Empties/empty469"]
 [editable path="Empties/empty470"]
+[editable path="Empties/empty499"]
+[editable path="Empties/empty500"]
+[editable path="Empties/empty501"]
+[editable path="Empties/empty502"]
+[editable path="Empties/empty503"]
+[editable path="Empties/empty504"]
+[editable path="Empties/empty505"]
+[editable path="Empties/empty506"]
+[editable path="Empties/empty507"]
+[editable path="Empties/empty508"]
+[editable path="Empties/empty509"]
+[editable path="Empties/empty510"]
+[editable path="Empties/empty511"]
 [editable path="Empties/empty471"]
-[editable path="Empties/empty468"]
-[editable path="Empties/empty456"]
 [editable path="Empties/empty423"]
 [editable path="Empties/empty408"]
 [editable path="Empties/empty343"]
@@ -4472,6 +4757,17 @@ vertical_alignment = 1
 [editable path="Empties/empty369"]
 [editable path="Empties/empty283"]
 [editable path="Empties/empty284"]
+[editable path="Empties/empty317"]
+[editable path="Empties/empty375"]
+[editable path="Empties/empty376"]
+[editable path="Empties/empty380"]
+[editable path="Empties/empty388"]
+[editable path="Empties/empty453"]
+[editable path="Empties/empty454"]
+[editable path="Empties/empty472"]
+[editable path="Empties/empty473"]
+[editable path="Empties/empty474"]
+[editable path="Empties/empty325"]
 [editable path="Empties/empty267"]
 [editable path="Empties/empty268"]
 [editable path="Empties/empty269"]
