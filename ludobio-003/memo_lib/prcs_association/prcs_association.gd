@@ -36,8 +36,10 @@ func _input(event: InputEvent) -> void:
 						if souvenir.name == "Origin" and MemoryPool.instance.menu_removed == false:
 							MemoryPool.instance.remove_menu()
 						# ENDING 
-						if souvenir_clicked.is_in_group("end"):
-							MemoryPool.instance.ending(souvenir_clicked)
+						#if souvenir_clicked.is_in_group("end"):
+						#	MemoryPool.instance.ending(souvenir_clicked)
+						if len(souvenir_clicked.association_array) == 0:
+							MemoryPool.instance.temp_end(mouse_pos)
 						# CLICK NEW SOUVENIR: START CHAIN
 						if current_souvenir_associating == null:
 							current_souvenir_associating = souvenir_clicked
@@ -46,6 +48,7 @@ func _input(event: InputEvent) -> void:
 							# make associated souvenirs recollectable
 							for associated_souvenir in current_souvenir_associating.association_array:
 								associated_souvenir.is_associated = true
+								associated_souvenir.update_letters()
 						# CLICKED LAST: REMOVE FROM CHAIN
 						elif current_souvenir_associating == souvenir_clicked:
 							current_souvenir_associating.process_association("clean")
@@ -53,12 +56,14 @@ func _input(event: InputEvent) -> void:
 							# make associated souvenirs NOT recollectable ANYMORE
 							for associated_souvenir in current_souvenir_associating.association_array:
 								associated_souvenir.is_associated = false
+								associated_souvenir.update_letters()
 							# if chain still exist, change current + make associated souvenirs recollectable 
 							if(!associating_souvenirs_chain.is_empty()):
 								current_souvenir_associating = associating_souvenirs_chain[len(associating_souvenirs_chain) -1]
 								for associated_souvenir in current_souvenir_associating.association_array:
 									if !associating_souvenirs_chain.has(associated_souvenir):
 										associated_souvenir.is_associated = true
+										associated_souvenir.update_letters()
 								# update the links (remove them)
 								update_chain("clean")
 							# else no more chain
@@ -72,11 +77,13 @@ func _input(event: InputEvent) -> void:
 							# make obsolete associated souvenirs NOT recollectable ANYMORE
 							for associated_souvenir in current_souvenir_associating.association_array:
 								associated_souvenir.is_associated = false 
+								associated_souvenir.update_letters()
 							current_souvenir_associating = souvenir_clicked
 							current_souvenir_associating.process_association("activate")
 							# make NEW associated souvenirs recollectable souvenirs
 							for associated_souvenir in current_souvenir_associating.association_array:
 								associated_souvenir.is_associated = true
+								associated_souvenir.update_letters()
 							# update the links (add one)
 							update_chain("add")
 						# CLICKED ALREADY IN CHAIN BUT NOT LAST: DO NOTHING

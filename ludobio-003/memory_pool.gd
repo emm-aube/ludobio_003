@@ -9,6 +9,8 @@ var souvenirs_array = []
 var menu_removed:bool 
 var end_reached:bool
 
+var tempo_end:bool = false
+
 static var instance: MemoryPool
 
 func _enter_tree() -> void:
@@ -69,3 +71,11 @@ func ending(ending_souvenir:Node2D):
 		if souvenir != ending_souvenir:
 			souvenir.deactivate()
 	
+func temp_end(mouse_pos:Vector2) -> void:
+	if (tempo_end == false):
+		$End_Debug.global_position = Vector2(mouse_pos.x - 250, mouse_pos.y - 400)
+		$End_Debug.visible = true
+		tempo_end = true
+	else:
+		$End_Debug.visible = false
+		tempo_end = false
