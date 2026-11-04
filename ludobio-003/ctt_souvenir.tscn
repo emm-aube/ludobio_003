@@ -50,3 +50,5 @@ scroll_active = false
 autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=964802253]

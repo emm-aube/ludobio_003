@@ -50,3 +50,7 @@ scroll_active = false
 autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1143922370]
+position = Vector2(-105, -100)
+rect = Rect2(0, 0, 200, 200)

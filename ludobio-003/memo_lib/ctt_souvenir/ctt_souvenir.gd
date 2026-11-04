@@ -4,7 +4,7 @@ extends Node2D
 var original_souvenir:String
 var letters_array:Array
 
-var first:bool
+var first_init_done:bool
 
 # RECOLLECTION PROCESS
 @export var recollection_target:float
@@ -108,69 +108,71 @@ func process_association(process_choice:String):
 		update_letters()
 
 # UPDATE EACH LETTER EACH FRAME DEPENDING ON RECOLLECTION AND CLARITY LEVELS 
-func update_letters():
-	# init important vars
-	var clear_letters:int = 0
-	var txt_to_display = ""
-	# go through EACH letter 
-	for char_i in range(MemoryPool.instance.souvenirs_length):
-		# check is souvenir is slected, in which case give it the right effect 
-		if(is_associating):
-			letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
-			letters_array[char_i]["status"] = status_selected
-			letters_array[char_i]["end_status"] = end_status_selected
-		# otherwise 
-		else:
-			letters_array[char_i]["end_status"] = end_status
-			# check clarity level (or luck to be clear int he vague area) and give it right status
-			if letters_array[char_i]["clarity_level"] == 1 or randf() < letters_array[char_i]["clarity_level"] :
-				letters_array[char_i]["status"] = status_clear
-			elif letters_array[char_i]["clarity_level"] == 0:
-				letters_array[char_i]["status"] = status_unclear
+func update_letters():	
+	if($VisibleOnScreenNotifier2D.is_on_screen() or !first_init_done):
+		first_init_done = true
+		# init important vars
+		var clear_letters:int = 0
+		var txt_to_display = ""
+		# go through EACH letter 
+		for char_i in range(MemoryPool.instance.souvenirs_length):
+			# check is souvenir is slected, in which case give it the right effect 
+			if(is_associating):
+				letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
+				letters_array[char_i]["status"] = status_selected
+				letters_array[char_i]["end_status"] = end_status_selected
+			# otherwise 
 			else:
-				letters_array[char_i]["status"] = status_vague
-			# check if the souvenir is recollectable 
-			# IE EITHER empty but never reaches because of recollection value in inspector
-			# OR is associated (meaning a souvenir it depends on is "selected")
-			if(!needs_association or is_associated):
-				# check recollection for EACH letter based on % chances (0 if not in threshold, vague if in between, 1 if in tolerance)
-				letters_array[char_i]["is_recollected"] = recollection_level == 1 or randf() < recollection_level
-				if(letters_array[char_i]["is_recollected"]):
-					# then IF recollected + in the clarity area, we can put origin letter + count it as clear
-					if letters_array[char_i]["status"] == status_clear:
-						letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
-						clear_letters += 1
-					# if RECOLLECTED BUT NOT CLEAR 
-					# if it's an empty letter to start with (just all who have - as origin) give ascii enmpty
-					else: 
-						if(letters_array[char_i]["origin_letter"] == "-"):
-							letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
-						# else, give it a random not empty 
-						else:
-							letters_array[char_i]["current_letter"] = ascii[randi()% len(ascii)]
+				letters_array[char_i]["end_status"] = end_status
+				# check clarity level (or luck to be clear int he vague area) and give it right status
+				if letters_array[char_i]["clarity_level"] == 1 or randf() < letters_array[char_i]["clarity_level"] :
+					letters_array[char_i]["status"] = status_clear
+				elif letters_array[char_i]["clarity_level"] == 0:
+					letters_array[char_i]["status"] = status_unclear
 				else:
-					# if NOT RECOLLECTED
-					# give empty letters to everything (wheter empty or good)
-					letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
-			# IF it needs to be associated, then we cannot do anything then it's empty anwyays
-			else:
-				letters_array[char_i]["current_letter"] = ascii_empty[randi() % len(ascii_empty)]
-		# depending on how many clear letters and the clarity needed (to be clicked on), define if WHOLE souvenir is Clear or NOT
-		is_clear = (float(clear_letters) / float(MemoryPool.instance.souvenirs_length) > clarity_needed)
-		# FAKE SPACES
-		# because space break the lines, use other symbol for the noise (defined in ascii enpty) and paint it dark
-		if(letters_array[char_i]["current_letter"] == "$"):
-			letters_array[char_i]["status"] = status_dark
-		# LETTER LINK
-		# if the letter is used to create a link between 2 selecter souvenirs, paint it with selected look too 
-		if(letters_array[char_i]["letter_link"] != "") and !is_associating:
-			letters_array[char_i]["current_letter"] = letters_array[char_i]["letter_link"]
-			letters_array[char_i]["status"] = status_selected
-			letters_array[char_i]["end_status"] = end_status_selected
-		# add each letter with its look to the final text
-		txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
-	# and update the label with final text
-	$RichTextLabel.text = txt_to_display			
+					letters_array[char_i]["status"] = status_vague
+				# check if the souvenir is recollectable 
+				# IE EITHER empty but never reaches because of recollection value in inspector
+				# OR is associated (meaning a souvenir it depends on is "selected")
+				if(!needs_association or is_associated):
+					# check recollection for EACH letter based on % chances (0 if not in threshold, vague if in between, 1 if in tolerance)
+					letters_array[char_i]["is_recollected"] = recollection_level == 1 or randf() < recollection_level
+					if(letters_array[char_i]["is_recollected"]):
+						# then IF recollected + in the clarity area, we can put origin letter + count it as clear
+						if letters_array[char_i]["status"] == status_clear:
+							letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
+							clear_letters += 1
+						# if RECOLLECTED BUT NOT CLEAR 
+						# if it's an empty letter to start with (just all who have - as origin) give ascii enmpty
+						else: 
+							if(letters_array[char_i]["origin_letter"] == "-"):
+								letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
+							# else, give it a random not empty 
+							else:
+								letters_array[char_i]["current_letter"] = ascii[randi()% len(ascii)]
+					else:
+						# if NOT RECOLLECTED
+						# give empty letters to everything (wheter empty or good)
+						letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
+				# IF it needs to be associated, then we cannot do anything then it's empty anwyays
+				else:
+					letters_array[char_i]["current_letter"] = ascii_empty[randi() % len(ascii_empty)]
+			# depending on how many clear letters and the clarity needed (to be clicked on), define if WHOLE souvenir is Clear or NOT
+			is_clear = (float(clear_letters) / float(MemoryPool.instance.souvenirs_length) > clarity_needed)
+			# FAKE SPACES
+			# because space break the lines, use other symbol for the noise (defined in ascii enpty) and paint it dark
+			if(letters_array[char_i]["current_letter"] == "$"):
+				letters_array[char_i]["status"] = status_dark
+			# LETTER LINK
+			# if the letter is used to create a link between 2 selecter souvenirs, paint it with selected look too 
+			if(letters_array[char_i]["letter_link"] != "") and !is_associating:
+				letters_array[char_i]["current_letter"] = letters_array[char_i]["letter_link"]
+				letters_array[char_i]["status"] = status_selected
+				letters_array[char_i]["end_status"] = end_status_selected
+			# add each letter with its look to the final text
+			txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
+		# and update the label with final text
+		$RichTextLabel.text = txt_to_display			
 
 # PROCESS NOISE: ADD (from Memory Pool)
 func process_noise(reset:bool, char_index:int, nb_chars_to_noisify:int):
