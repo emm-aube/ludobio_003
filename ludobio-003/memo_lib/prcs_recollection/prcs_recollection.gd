@@ -18,7 +18,7 @@ func initialize(souvenirs:Array):
 
 # UPDATE SOUVENIRS ON RECOLLECT
 func _unhandled_input(event: InputEvent) -> void:
-	if(MemoryPool.instance.start_processing == true):
+	if(MemoryPool.instance.start_processing == true and MemoryPool.instance.is_anchoring == false):
 		# check if mouse wheel AND if pan gesture in case mac trackpad (twice, just reverse values)
 		if (event.is_action_pressed("Zoom_In")) or (event is InputEventPanGesture and event.delta.y < 0):
 			if recollection_current_level < recollection_depth_max:

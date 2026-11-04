@@ -6,7 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://bevudnsmhehxj" path="res://memo_lib/prcs_noise/prcs_noise.tscn" id="2_vuuoh"]
 [ext_resource type="PackedScene" uid="uid://b55tn7sd0xhfw" path="res://memo_lib/prcs_clarity/prcs_clarity.tscn" id="3_irfen"]
 [ext_resource type="PackedScene" uid="uid://bhix7k7qpxom0" path="res://memo_lib/ctt_souvenir/ctt_souvenir.tscn" id="4_xe1s3"]
+[ext_resource type="Script" uid="uid://o8f6arb03jy3" path="res://memo_lib/prcs_anchoring/anchors.gd" id="7_lvu7v"]
 [ext_resource type="FontFile" uid="uid://bgl0vumfeog03" path="res://text/MonospaceTypewriter.ttf" id="7_otxw1"]
+[ext_resource type="PackedScene" uid="uid://blrnuyak1a6q7" path="res://memo_lib/prcs_anchoring/prcs_anchor.tscn" id="9_irfen"]
+
+[sub_resource type="Resource" id="Resource_irfen"]
+script = ExtResource("7_lvu7v")
+metadata/_custom_type_script = "uid://o8f6arb03jy3"
 
 [node name="MemoryPool" type="Node" unique_id=1706129249]
 script = ExtResource("1_otxw1")
@@ -54,6 +60,7 @@ metadata/_edit_use_anchors_ = true
 [node name="I_Adam" parent="CTN_Adam" unique_id=2064432564 node_paths=PackedStringArray("association_array") instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 900)
 recollection_target = 200.0
+anchors = Array[ExtResource("7_lvu7v")]([SubResource("Resource_irfen")])
 association_array = [NodePath("../I_AdamExplain")]
 
 [node name="RichTextLabel" parent="CTN_Adam/I_Adam" index="1" unique_id=676347016]
@@ -4345,6 +4352,9 @@ text = "TEMP FEEDABCK
 REACHED END OF THREAD"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PrcsAnchor" parent="." unique_id=1689288330 instance=ExtResource("9_irfen")]
+position = Vector2(43, 19)
 
 [editable path="Origin"]
 [editable path="CTN_Adam/I_Adam"]

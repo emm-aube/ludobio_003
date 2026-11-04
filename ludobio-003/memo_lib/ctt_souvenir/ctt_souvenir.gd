@@ -18,6 +18,7 @@ var clarity_needed:float
 
 # ASSOCIATION PROCESS 
 # asso_target is a duplicate of reco target that can is modified during asso process
+@export var anchors: Array[Anchor] = []
 @export var association_array:Array[Node2D]
 var is_associated:bool
 var is_associating:bool 

@@ -39,7 +39,7 @@ func _input(_event: InputEvent) -> void:
 
 # UPDATE CLARITY 
 func update_clarity() -> void:
-	if(MemoryPool.instance.start_processing == true):
+	if(MemoryPool.instance.start_processing == true and MemoryPool.instance.is_anchoring == false):
 		# get GLOBAL (because screen moves) mouse position
 		var mouse_pos = get_viewport().get_canvas_transform().affine_inverse() * get_viewport().get_mouse_position()
 		# update clarity in each souvenir depending on distance  

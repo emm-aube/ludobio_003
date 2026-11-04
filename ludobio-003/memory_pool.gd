@@ -8,8 +8,8 @@ var start_processing:bool = false
 var souvenirs_array = []
 var menu_removed:bool 
 var end_reached:bool
-
 var tempo_end:bool = false
+var is_anchoring:bool = false
 
 static var instance: MemoryPool
 
@@ -79,3 +79,8 @@ func temp_end(mouse_pos:Vector2) -> void:
 	else:
 		$End_Debug.visible = false
 		tempo_end = false
+
+func zoomzoom(duration:float, value:float):
+	is_anchoring = !is_anchoring
+	var zoomtween = get_tree().create_tween()
+	zoomtween.tween_property($Camera2D, "zoom", Vector2.ONE* value, duration)

@@ -21,7 +21,7 @@ func initialize(souvenirs:Array):
 			
 # UPDATE SOUVENIRS ON RECOLLECT
 func _input(event: InputEvent) -> void:
-	if !MemoryPool.instance.start_processing:
+	if !MemoryPool.instance.start_processing or MemoryPool.instance.is_anchoring:
 		return
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
