@@ -38,3 +38,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func debug_display():
 	pass
 	$dbg_reco_lvl.text = str(recollection_current_level)
+
+
+func order_recollection():
+	for x in souvenirs_array:
+		x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
+		debug_display()

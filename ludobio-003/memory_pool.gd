@@ -22,20 +22,20 @@ func _ready() -> void:
 
 	# init each SOUVENIR
 	souvenirs_length = souvenir_nb_lines * souvenir_nb_char
-	for x in (get_tree().get_nodes_in_group("souvenir")):
+	for x in (get_tree().get_nodes_in_group("empty")):
 		souvenirs_array.append(x)
 	for x in souvenirs_array:
 		x.initialize($prcs_clarity.clarity_expected)
 	
 	# INIT AL PROCESSES
-	# Association (first because we need to know if they need association or not)
-	$prcs_association.initialize(souvenirs_array)
 	# Recollection (calculates initial recollection state)
 	$prcs_recollection.initialize(souvenirs_array)
 	# Clarity
 	$prcs_clarity.initialize(souvenirs_array)
 	# Noise
 	$prcs_noise.initialize(souvenirs_array)
+	# Anchors
+	$prcs_anchor.initialize(souvenirs_array)
 	
 	# AUTHORIZE PROCESSING FOR ALL (for those who have input)
 	start_processing = true
@@ -84,3 +84,10 @@ func zoomzoom(duration:float, value:float):
 	is_anchoring = !is_anchoring
 	var zoomtween = get_tree().create_tween()
 	zoomtween.tween_property($Camera2D, "zoom", Vector2.ONE* value, duration)
+
+func order_recollection():
+	$prcs_recollection.recollection_current_level = 500
+	$prcs_recollection.order_recollection()
+
+func order_clarity():
+	$prcs_clarity.order_clarity()

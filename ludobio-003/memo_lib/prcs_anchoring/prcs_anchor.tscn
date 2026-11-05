@@ -7,6 +7,7 @@
 script = ExtResource("1_y5x3k")
 
 [node name="LineEdit" type="LineEdit" parent="." unique_id=1671671675]
+visible = false
 custom_minimum_size = Vector2(600, 100)
 anchors_preset = 8
 anchor_left = 0.5
@@ -24,6 +25,7 @@ theme_override_font_sizes/font_size = 50
 max_length = 15
 
 [node name="Button" type="Button" parent="." unique_id=2090344124]
+visible = false
 offset_left = 1344.0
 offset_top = 798.0
 offset_right = 1544.0

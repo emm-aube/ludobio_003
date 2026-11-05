@@ -54,3 +54,7 @@ func update_clarity() -> void:
 				if(!x.is_unclear):
 					x.process_clarity(true, mouse_pos, clarity_threshold, clarity_tolerance)
 					x.is_unclear = true
+
+func order_clarity():
+	for x in souvenirs_array:
+		x.process_clarity(true, Vector2(0 , 0), clarity_threshold, clarity_tolerance)

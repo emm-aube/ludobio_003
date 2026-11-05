@@ -11,4 +11,4 @@ enum anchor_enum{
 }
 
 @export var anchors:anchor_enum
-@export_range (0.0, 0.1) var strength: float
+@export_range (0.0, 1.0) var strength: float
