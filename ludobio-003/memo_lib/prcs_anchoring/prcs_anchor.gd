@@ -8,6 +8,7 @@ func _ready() -> void:
 	$LineEdit.visible = false
 	$Button.visible = false
 
+# DETECT BUTTON TO DISPLAY SEARCH BAR
 func _input(event):
 	if (event.is_action_pressed("Anchor")):
 		if MemoryPool.instance.is_anchoring == false:
