@@ -5,13 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bevudnsmhehxj" path="res://memo_lib/prcs_noise/prcs_noise.tscn" id="2_vuuoh"]
 [ext_resource type="PackedScene" uid="uid://b55tn7sd0xhfw" path="res://memo_lib/prcs_clarity/prcs_clarity.tscn" id="3_irfen"]
 [ext_resource type="PackedScene" uid="uid://bhix7k7qpxom0" path="res://memo_lib/ctt_souvenir/ctt_souvenir.tscn" id="4_xe1s3"]
-[ext_resource type="Script" uid="uid://o8f6arb03jy3" path="res://memo_lib/prcs_anchoring/anchors.gd" id="7_lvu7v"]
+[ext_resource type="Script" uid="uid://b3bjycteb2m6c" path="res://diary_entries/diary.gd" id="5_lvu7v"]
 [ext_resource type="PackedScene" uid="uid://blrnuyak1a6q7" path="res://memo_lib/prcs_anchoring/prcs_anchor.tscn" id="9_irfen"]
-
-[sub_resource type="Resource" id="Resource_otxw1"]
-script = ExtResource("7_lvu7v")
-anchors = 2
-metadata/_custom_type_script = "uid://o8f6arb03jy3"
 
 [node name="MemoryPool" type="Node" unique_id=1706129249]
 script = ExtResource("1_otxw1")
@@ -30,209 +25,209 @@ clarity_tolerance = 200
 clarity_threshold = 300
 clarity_expected = 0.95
 
-[node name="Diary" type="Node" parent="." unique_id=1979387012]
+[node name="diary" type="Node" parent="." unique_id=1979387012]
+script = ExtResource("5_lvu7v")
 
-[node name="entry_01" parent="Diary" unique_id=293940841 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_01" parent="diary" unique_id=293940841 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(100, 100)
 recollection_target = -1000.0
-anchors_array = Array[ExtResource("7_lvu7v")]([SubResource("Resource_otxw1")])
 
-[node name="RichTextLabel" parent="Diary/entry_01" index="1" unique_id=676347016]
+[node name="RichTextLabel" parent="diary/entry_01" index="1" unique_id=676347016]
 text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
 
-[node name="entry_02" parent="Diary" unique_id=1850093116 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_02" parent="diary" unique_id=1850093116 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(300, 100)
 recollection_target = -1000.0
 
-[node name="entry_03" parent="Diary" unique_id=1579757061 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_03" parent="diary" unique_id=1579757061 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 100)
 recollection_target = -1000.0
 
-[node name="entry_04" parent="Diary" unique_id=1464428561 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_04" parent="diary" unique_id=1464428561 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 100)
 recollection_target = -1000.0
 
-[node name="entry_05" parent="Diary" unique_id=1524095617 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_05" parent="diary" unique_id=1524095617 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(900, 100)
 recollection_target = -1000.0
 
-[node name="entry_06" parent="Diary" unique_id=2014427916 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_06" parent="diary" unique_id=2014427916 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 100)
 recollection_target = -1000.0
 
-[node name="entry_07" parent="Diary" unique_id=387711685 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_07" parent="diary" unique_id=387711685 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1300, 100)
 recollection_target = -1000.0
 
-[node name="entry_08" parent="Diary" unique_id=1068428636 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_08" parent="diary" unique_id=1068428636 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 100)
 recollection_target = -1000.0
 
-[node name="entry_09" parent="Diary" unique_id=1097586928 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_09" parent="diary" unique_id=1097586928 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 100)
 recollection_target = -1000.0
 
-[node name="entry_10" parent="Diary" unique_id=1506034975 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_10" parent="diary" unique_id=1506034975 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1900, 100)
 recollection_target = -1000.0
 
-[node name="entry_11" parent="Diary" unique_id=1390670897 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_11" parent="diary" unique_id=1390670897 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(100, 300)
 recollection_target = -1000.0
 
-[node name="entry_12" parent="Diary" unique_id=1964087442 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_12" parent="diary" unique_id=1964087442 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(300, 300)
 recollection_target = -1000.0
 
-[node name="entry_13" parent="Diary" unique_id=1679834441 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_13" parent="diary" unique_id=1679834441 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 300)
 recollection_target = -1000.0
 
-[node name="entry_14" parent="Diary" unique_id=1212477151 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_14" parent="diary" unique_id=1212477151 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 300)
 recollection_target = -1000.0
 
-[node name="entry_15" parent="Diary" unique_id=1483286621 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_15" parent="diary" unique_id=1483286621 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(900, 300)
 recollection_target = -1000.0
 
-[node name="entry_16" parent="Diary" unique_id=1701124204 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_16" parent="diary" unique_id=1701124204 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 300)
 recollection_target = -1000.0
 
-[node name="entry_17" parent="Diary" unique_id=1992435873 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_17" parent="diary" unique_id=1992435873 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1300, 300)
 recollection_target = -1000.0
 
-[node name="entry_18" parent="Diary" unique_id=1713849200 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_18" parent="diary" unique_id=1713849200 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 300)
 recollection_target = -1000.0
 
-[node name="entry_19" parent="Diary" unique_id=305860448 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_19" parent="diary" unique_id=305860448 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 300)
 recollection_target = -1000.0
 
-[node name="entry_20" parent="Diary" unique_id=1730501018 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_20" parent="diary" unique_id=1730501018 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1900, 300)
 recollection_target = -1000.0
 
-[node name="entry_21" parent="Diary" unique_id=1427693372 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_21" parent="diary" unique_id=1427693372 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(100, 500)
 recollection_target = -1000.0
 
-[node name="entry_22" parent="Diary" unique_id=1912459149 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_22" parent="diary" unique_id=1912459149 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(300, 500)
 recollection_target = -1000.0
 
-[node name="entry_23" parent="Diary" unique_id=2068250129 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_23" parent="diary" unique_id=2068250129 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 500)
 recollection_target = -1000.0
 
-[node name="entry_24" parent="Diary" unique_id=201758846 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_24" parent="diary" unique_id=201758846 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 500)
 recollection_target = -1000.0
 
-[node name="entry_25" parent="Diary" unique_id=921806236 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_25" parent="diary" unique_id=921806236 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(900, 500)
 recollection_target = -1000.0
 
-[node name="entry_26" parent="Diary" unique_id=88432882 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_26" parent="diary" unique_id=88432882 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 500)
 recollection_target = -1000.0
 
-[node name="entry_27" parent="Diary" unique_id=1975910168 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_27" parent="diary" unique_id=1975910168 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1300, 500)
 recollection_target = -1000.0
 
-[node name="entry_28" parent="Diary" unique_id=804678464 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_28" parent="diary" unique_id=804678464 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 500)
 recollection_target = -1000.0
 
-[node name="entry_29" parent="Diary" unique_id=822936489 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_29" parent="diary" unique_id=822936489 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 500)
 recollection_target = -1000.0
 
-[node name="entry_30" parent="Diary" unique_id=1126613525 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_30" parent="diary" unique_id=1126613525 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1900, 500)
 recollection_target = -1000.0
 
-[node name="entry_31" parent="Diary" unique_id=2010675540 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_31" parent="diary" unique_id=2010675540 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(100, 700)
 recollection_target = -1000.0
 
-[node name="entry_32" parent="Diary" unique_id=1083773606 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_32" parent="diary" unique_id=1083773606 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(300, 700)
 recollection_target = -1000.0
 
-[node name="entry_33" parent="Diary" unique_id=241495202 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_33" parent="diary" unique_id=241495202 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 700)
 recollection_target = -1000.0
 
-[node name="entry_34" parent="Diary" unique_id=298216605 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_34" parent="diary" unique_id=298216605 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 700)
 recollection_target = -1000.0
 
-[node name="entry_35" parent="Diary" unique_id=1214495450 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_35" parent="diary" unique_id=1214495450 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(900, 700)
 recollection_target = -1000.0
 
-[node name="entry_36" parent="Diary" unique_id=1094604227 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_36" parent="diary" unique_id=1094604227 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 700)
 recollection_target = -1000.0
 
-[node name="entry_37" parent="Diary" unique_id=604466417 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_37" parent="diary" unique_id=604466417 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1300, 700)
 recollection_target = -1000.0
 
-[node name="entry_38" parent="Diary" unique_id=2064476417 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_38" parent="diary" unique_id=2064476417 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 700)
 recollection_target = -1000.0
 
-[node name="entry_39" parent="Diary" unique_id=200299599 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_39" parent="diary" unique_id=200299599 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 700)
 recollection_target = -1000.0
 
-[node name="entry_40" parent="Diary" unique_id=16145360 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_40" parent="diary" unique_id=16145360 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1900, 700)
 recollection_target = -1000.0
 
-[node name="entry_41" parent="Diary" unique_id=84125977 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_41" parent="diary" unique_id=84125977 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(100, 900)
 recollection_target = -1000.0
 
-[node name="entry_42" parent="Diary" unique_id=907592236 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_42" parent="diary" unique_id=907592236 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(300, 900)
 recollection_target = -1000.0
 
-[node name="entry_43" parent="Diary" unique_id=1200046950 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_43" parent="diary" unique_id=1200046950 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(500, 900)
 recollection_target = -1000.0
 
-[node name="entry_44" parent="Diary" unique_id=1685676409 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_44" parent="diary" unique_id=1685676409 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(700, 900)
 recollection_target = -1000.0
 
-[node name="entry_45" parent="Diary" unique_id=950785731 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_45" parent="diary" unique_id=950785731 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(900, 900)
 recollection_target = -1000.0
 
-[node name="entry_46" parent="Diary" unique_id=1204895215 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_46" parent="diary" unique_id=1204895215 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1100, 900)
 recollection_target = -1000.0
 
-[node name="entry_47" parent="Diary" unique_id=783737453 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_47" parent="diary" unique_id=783737453 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1300, 900)
 recollection_target = -1000.0
 
-[node name="entry_48" parent="Diary" unique_id=1309327504 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_48" parent="diary" unique_id=1309327504 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1500, 900)
 recollection_target = -1000.0
 
-[node name="entry_49" parent="Diary" unique_id=379025413 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_49" parent="diary" unique_id=379025413 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1700, 900)
 recollection_target = -1000.0
 
-[node name="entry_50" parent="Diary" unique_id=1114722127 groups=["empty"] instance=ExtResource("4_xe1s3")]
+[node name="entry_50" parent="diary" unique_id=1114722127 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(1900, 900)
 recollection_target = -1000.0
 
@@ -240,4 +235,4 @@ recollection_target = -1000.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=232915653]
 
-[editable path="Diary/entry_01"]
+[editable path="diary/entry_01"]

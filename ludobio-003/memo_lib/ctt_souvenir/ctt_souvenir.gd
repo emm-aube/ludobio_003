@@ -4,8 +4,6 @@ extends Node2D
 var original_souvenir:String
 var letters_array:Array
 
-var first_init_done:bool
-
 # RECOLLECTION PROCESS
 @export var recollection_target:float
 var recollection_level:float
@@ -18,7 +16,7 @@ var clarity_needed:float
 
 # ANCHOR PROCESS 
 # asso_target is a duplicate of reco target that can is modified during asso process
-@export var anchors_array: Array[Anchor] = []
+#@export var anchors_array: Array[Anchor] = []
 var is_anchored:bool 
 #var association_array:Array[Node2D]
 #var is_associated:bool
@@ -33,56 +31,15 @@ var status_dark:String = "[color=#ffffff00]"
 var status_vague:String = "[color=#ffffff70]"
 var status_unclear:String = "[color=#ffffff25]"
 var status_noise:String = "[color=#ffffffff]"
-var status_selected:String = "[shake][rainbow]"
+#var status_selected:String = "[shake][rainbow]"
 var end_status:String = "[/color]"
-var end_status_selected:String = "[/rainbow][/shake]"
+#var end_status_selected:String = "[/rainbow][/shake]"
 
 # ACTIVATE SOUVENIR FROM POOL
 func initialize(clarity_value:float) -> void:
 	# store the inspector data
 	original_souvenir = $RichTextLabel.text
-	# find char size to then find each letter position 
-	var char_size = Vector2($RichTextLabel.size) / Vector2(MemoryPool.instance.souvenir_nb_char, MemoryPool.instance.souvenir_nb_lines)
-	var x_i: int = 0
-	var y_i: int = 1
-	# create a dico with data for each lettter
-	for character in original_souvenir:
-		x_i += 1
-		if x_i > MemoryPool.instance.souvenir_nb_char:
-			x_i = 1
-			y_i += 1
-		var char_dico = {
-			"origin_letter" : character,
-			"clarity_level" : 0.0,
-			"current_letter" : " ",
-			"letter_link" : "",
-			"is_recollected": name == "Origin",
-			"status": status_unclear, 
-			"end_status": end_status,
-			# noise are just temp parameters that revert to current so keep separated
-			"noise_letter" : "",
-			"noise_status": status_clear,
-			#"position": char_size * Vector2(x_i, y_i) + Vector2(position.x - $RichTextLabel.size.x /2, position.y - $RichTextLabel.size.y /2)
-			"position": char_size * Vector2(x_i, y_i) + global_position - $RichTextLabel.size / 2
-		}
-		letters_array.append(char_dico)
-	while len(letters_array) < 136:
-		var char_dico = {
-			"origin_letter" : " ",
-			"clarity_level" : 0.0,
-			"current_letter" : " ",
-			"letter_link" : "",
-			"is_recollected": name == "Origin",
-			"status": status_unclear, 
-			"end_status": end_status,
-			# noise are just temp parameters that revert to current so keep separated
-			"noise_letter" : "",
-			"noise_status": status_clear,
-			#"position": char_size * Vector2(x_i, y_i) + Vector2(position.x - $RichTextLabel.size.x /2, position.y - $RichTextLabel.size.y /2)
-			"position": char_size * Vector2(x_i, y_i) + global_position - $RichTextLabel.size / 2
-		}
-		letters_array.append(char_dico)
-
+	fill_letters(original_souvenir, 0.0)
 	# clarity needed
 	clarity_needed = clarity_value
 
@@ -112,94 +69,117 @@ func process_recollection(current_depth:int, recollection_threshold:int, recolle
 	update_letters()
 
 # PROCESS ANCHORING
-func process_anchoring(anchor:String):
-	var anchor_value = Anchor.anchor_enum.get(anchor, -1)
-	recollection_level = -1000
-	is_anchored = false
-	if len(anchors_array) >= 1:
-		for entry in anchors_array:
-			if entry.anchors == anchor_value:
-				recollection_target = 500
-				is_anchored = true
+func process_anchoring(reset:bool, feeder:String):
+	if(reset):
+		letters_array.clear()
+		fill_letters(original_souvenir, 0.0)
+		recollection_target = -1000
+		recollection_level = 0.0
+		is_anchored = false
+		update_letters()
+	else:
+		letters_array.clear()
+		is_anchored = true
+		fill_letters(feeder, 1.0)
+		recollection_target = 500
+		recollection_level = 0.5
+		update_letters()
 
-# PROCESS ASSOCIATION		
-#func process_association(process_choice:String):
-#	if process_choice == "check":
-#		if is_clear or is_associating:
-#			return(self)
-#	elif process_choice == "activate":
-#		is_associating = true
-#		update_letters()
-#	elif process_choice == "clean":
-#		is_associating = false			
-#		update_letters()
+# FILL LETTERS FROM INIT OR AFTER SEARCH
+func fill_letters(content:String, clarity_value:float):
+	# find char size to then find each letter position
+	var char_size = Vector2($RichTextLabel.size) / Vector2(MemoryPool.instance.souvenir_nb_char, MemoryPool.instance.souvenir_nb_lines)
+	var x_i: int = 0
+	var y_i: int = 1
+	# create a dico with data for each lettter
+	for character in content:
+		x_i += 1
+		if x_i > MemoryPool.instance.souvenir_nb_char:
+			x_i = 1
+			y_i += 1
+		var char_dico = {
+			"origin_letter" : character,
+			"clarity_level" : clarity_value,
+			"current_letter" : " ",
+			"letter_link" : "",
+			"is_recollected": clarity_value == 1.0,
+			"status": status_unclear, 
+			"end_status": end_status,
+			# noise are just temp parameters that revert to current so keep separated
+			"noise_letter" : "",
+			"noise_status": status_clear,
+			#"position": char_size * Vector2(x_i, y_i) + Vector2(position.x - $RichTextLabel.size.x /2, position.y - $RichTextLabel.size.y /2)
+			"position": char_size * Vector2(x_i, y_i) + global_position - $RichTextLabel.size / 2
+		}
+		letters_array.append(char_dico)
+	while len(letters_array) < 136:
+		var char_dico = {
+			"origin_letter" : " ",
+			"clarity_level" : clarity_value,
+			"current_letter" : " ",
+			"letter_link" : "",
+			"is_recollected": clarity_value == 1.0,
+			"status": status_unclear, 
+			"end_status": end_status,
+			# noise are just temp parameters that revert to current so keep separated
+			"noise_letter" : "",
+			"noise_status": status_clear,
+			#"position": char_size * Vector2(x_i, y_i) + Vector2(position.x - $RichTextLabel.size.x /2, position.y - $RichTextLabel.size.y /2)
+			"position": char_size * Vector2(x_i, y_i) + global_position - $RichTextLabel.size / 2
+		}
+		letters_array.append(char_dico)
+
 
 # UPDATE EACH LETTER EACH FRAME DEPENDING ON RECOLLECTION AND CLARITY LEVELS 
 func update_letters():	
-	if($VisibleOnScreenNotifier2D.is_on_screen() or !first_init_done):
-		first_init_done = true
-		# init important vars
-		var clear_letters:int = 0
-		var txt_to_display = ""
-		# go through EACH letter 
-		for char_i in range(MemoryPool.instance.souvenirs_length):
-			# check is souvenir is slected, in which case give it the right effect 
-			#if(is_associating):
-			#	letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
-			#	letters_array[char_i]["status"] = status_selected
-			#	letters_array[char_i]["end_status"] = end_status_selected
-			# otherwise 
-			#else:
-				#letters_array[char_i]["end_status"] = end_status
-				# check clarity level (or luck to be clear int he vague area) and give it right status
-			if letters_array[char_i]["clarity_level"] == 1 or randf() < letters_array[char_i]["clarity_level"] :
-				letters_array[char_i]["status"] = status_clear
-			elif letters_array[char_i]["clarity_level"] == 0:
-				letters_array[char_i]["status"] = status_unclear
+	# init important vars
+	var clear_letters:int = 0
+	var txt_to_display = ""
+	# go through EACH letter 
+	for char_i in range(MemoryPool.instance.souvenirs_length):
+		if letters_array[char_i]["clarity_level"] == 1 or randf() < letters_array[char_i]["clarity_level"] :
+			letters_array[char_i]["status"] = status_clear
+		elif letters_array[char_i]["clarity_level"] == 0:
+			letters_array[char_i]["status"] = status_unclear
+		else:
+			letters_array[char_i]["status"] = status_vague
+			# check if the souvenir is recollectable 
+			# IE EITHER empty but never reaches because of recollection value in inspector
+			# OR is associated (meaning a souvenir it depends on is "selected")
+		if(is_anchored):
+			# check recollection for EACH letter based on % chances (0 if not in threshold, vague if in between, 1 if in tolerance)
+			letters_array[char_i]["is_recollected"] = recollection_level == 1 or randf() < recollection_level
+			if(letters_array[char_i]["is_recollected"]):
+				# then IF recollected + in the clarity area, we can put origin letter + count it as clear
+				if letters_array[char_i]["status"] == status_clear:
+					letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
+					clear_letters += 1
+				# if RECOLLECTED BUT NOT CLEAR 
+				# if it's an empty letter to start with (just all who have - as origin) give ascii enmpty
+				else: 
+					if(letters_array[char_i]["origin_letter"] == "-"):
+						letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
+					# else, give it a random not empty 
+					else:
+						letters_array[char_i]["current_letter"] = ascii[randi()% len(ascii)]
 			else:
-				letters_array[char_i]["status"] = status_vague
-				# check if the souvenir is recollectable 
-				# IE EITHER empty but never reaches because of recollection value in inspector
-				# OR is associated (meaning a souvenir it depends on is "selected")
-			if(is_anchored):
-				# check recollection for EACH letter based on % chances (0 if not in threshold, vague if in between, 1 if in tolerance)
-				letters_array[char_i]["is_recollected"] = recollection_level == 1 or randf() < recollection_level
-				if(letters_array[char_i]["is_recollected"]):
-					# then IF recollected + in the clarity area, we can put origin letter + count it as clear
-					if letters_array[char_i]["status"] == status_clear:
-						letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
-						clear_letters += 1
-					# if RECOLLECTED BUT NOT CLEAR 
-					# if it's an empty letter to start with (just all who have - as origin) give ascii enmpty
-					else: 
-						if(letters_array[char_i]["origin_letter"] == "-"):
-							letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
-						# else, give it a random not empty 
-						else:
-							letters_array[char_i]["current_letter"] = ascii[randi()% len(ascii)]
-				else:
-					# if NOT RECOLLECTED
-					# give empty letters to everything (wheter empty or good)
-					letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
-			# IF it needs to be associated, then we cannot do anything then it's empty anwyays
-			else:
-				letters_array[char_i]["current_letter"] = ascii_empty[randi() % len(ascii_empty)]
-		# depending on how many clear letters and the clarity needed (to be clicked on), define if WHOLE souvenir is Clear or NOT
-			is_clear = (float(clear_letters) / float(MemoryPool.instance.souvenirs_length) > clarity_needed)
-			# FAKE SPACES
-			# because space break the lines, use other symbol for the noise (defined in ascii enpty) and paint it dark
-			if(letters_array[char_i]["current_letter"] == "$"):
-				letters_array[char_i]["status"] = status_dark
-			## LETTER LINK
-			## if the letter is used to create a link between 2 selecter souvenirs, paint it with selected look too 
-			#if(letters_array[char_i]["letter_link"] != "") and !is_associating:
-			#	letters_array[char_i]["current_letter"] = letters_array[char_i]["letter_link"]
-			#	letters_array[char_i]["status"] = status_selected
-			#	letters_array[char_i]["end_status"] = end_status_selected
-			# add each letter with its look to the final text
-			txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
-		# and update the label with final text
-		$RichTextLabel.text = txt_to_display			
+				# if NOT RECOLLECTED
+				# give empty letters to everything (wheter empty or good)
+				letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
+		# IF it needs to be associated, then we cannot do anything then it's empty anwyays
+		else:
+			letters_array[char_i]["current_letter"] = ascii_empty[randi() % len(ascii_empty)]
+	# depending on how many clear letters and the clarity needed (to be clicked on), define if WHOLE souvenir is Clear or NOT
+		is_clear = (float(clear_letters) / float(MemoryPool.instance.souvenirs_length) > clarity_needed)
+		# FAKE SPACES
+		# because space break the lines, use other symbol for the noise (defined in ascii enpty) and paint it dark
+		if(letters_array[char_i]["current_letter"] == "$"):
+			letters_array[char_i]["status"] = status_dark
+		# add each letter with its look to the final text
+		txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
+	# and update the label with final text
+	$RichTextLabel.text = txt_to_display
+				
 
 # PROCESS NOISE: ADD (from Memory Pool)
 func process_noise(reset:bool, char_index:int, nb_chars_to_noisify:int):
@@ -225,55 +205,3 @@ func process_noise(reset:bool, char_index:int, nb_chars_to_noisify:int):
 				else:
 					txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
 	$RichTextLabel.text = txt_to_display
-
-# AFTER ASSOCIATION (fron same PRCS)
-# create visible links between souvenirs
-#func make_link(direction:String):
-#	var center = roundi(MemoryPool.instance.souvenirs_length + MemoryPool.instance.souvenir_nb_char) / 2
-#	var nb_char =  MemoryPool.instance.souvenir_nb_char
-#	var h_offset = roundi(MemoryPool.instance.souvenir_nb_char / 4)
-#	var v_offset = roundi(MemoryPool.instance.souvenir_nb_lines / 4)
-#	# receive direction form association and place O in chains horizontal / vertical / angle with spaces between them
-#	if direction == "v":
-#		for char_i in range(MemoryPool.instance.souvenirs_length):
-#			if char_i == center or char_i == center + (nb_char * v_offset) or char_i == center - (nb_char * v_offset) :
-#				letters_array[char_i]["letter_link"] = "o"
-#	elif direction == "h":
-#		for char_i in range(MemoryPool.instance.souvenirs_length):
-#			if char_i == center or char_i == center + h_offset or char_i == center - h_offset: 
-#				letters_array[char_i]["letter_link"] = "o"
-#	elif direction == "left-up":
-#		for char_i in range(MemoryPool.instance.souvenirs_length):
-#			if char_i == center or char_i == center + h_offset or char_i == center - (nb_char * v_offset):
-#				letters_array[char_i]["letter_link"] = "o"
-#	elif direction == "left-down":
-#		for char_i in range(MemoryPool.instance.souvenirs_length):
-#			if char_i == center or char_i == center + h_offset or char_i == center + (nb_char * v_offset):
-#				letters_array[char_i]["letter_link"] = "o"
-#	elif direction == "right-up":
-#		for char_i in range(MemoryPool.instance.souvenirs_length):
-#			if char_i == center or char_i == center - h_offset or char_i == center - (nb_char * v_offset):
-#				letters_array[char_i]["letter_link"] = "o"
-#	elif direction == "right-down":
-#		for char_i in range(MemoryPool.instance.souvenirs_length):
-#			if char_i == center or char_i == center - h_offset or char_i == center + (nb_char * v_offset):
-#				letters_array[char_i]["letter_link"] = "o"
-#	elif direction == "clean":
-#		for char_i in range(MemoryPool.instance.souvenirs_length):
-#			letters_array[char_i]["letter_link"] = ""
-#	update_letters()
-
-# GAME OVER
-#func deactivate():
-	# just put every letter (except spaces aka $) to darkish 
-#	var txt_to_display = ""
-#	for char_i in range(MemoryPool.instance.souvenirs_length):
-#		# the dark letter 
-#		if(letters_array[char_i]["current_letter"] == "$"):
-#			letters_array[char_i]["status"] = status_dark
-#		else:
-#			letters_array[char_i]["status"] = status_unclear
-#		letters_array[char_i]["end_status"] = end_status
-#		txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
-#	$RichTextLabel.text = txt_to_display
-	

@@ -10,6 +10,7 @@ var menu_removed:bool
 var end_reached:bool
 var tempo_end:bool = false
 var is_anchoring:bool = false
+var ze_diary:Array
 
 static var instance: MemoryPool
 
@@ -36,6 +37,8 @@ func _ready() -> void:
 	$prcs_noise.initialize(souvenirs_array)
 	# Anchors
 	$prcs_anchor.initialize(souvenirs_array)
+	# Diary
+	ze_diary = $diary.make_diary()
 	
 	# AUTHORIZE PROCESSING FOR ALL (for those who have input)
 	start_processing = true
@@ -84,10 +87,6 @@ func zoomzoom(duration:float, value:float):
 	is_anchoring = !is_anchoring
 	var zoomtween = get_tree().create_tween()
 	zoomtween.tween_property($Camera2D, "zoom", Vector2.ONE* value, duration)
-
-func order_recollection():
-	$prcs_recollection.recollection_current_level = 500
-	$prcs_recollection.order_recollection()
 
 func order_clarity():
 	$prcs_clarity.order_clarity()
