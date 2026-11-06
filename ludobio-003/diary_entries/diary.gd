@@ -11,7 +11,6 @@ func make_diary():
 			var diary_line:int = 0
 			var content:String = ""
 			var entry:Array
-
 			while !diary_file.eof_reached():
 				if diary_line == 0:
 					entry.append(diary_file.get_line())
@@ -20,9 +19,6 @@ func make_diary():
 				else:
 					content += diary_file.get_line()
 				diary_line += 1
-	
 			entry.append(content)
 			diary.append(entry)
-
-	print(diary)
 	return(diary)

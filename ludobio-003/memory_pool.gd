@@ -90,3 +90,6 @@ func zoomzoom(duration:float, value:float):
 
 func order_clarity():
 	$prcs_clarity.order_clarity()
+
+func order_recollection():
+	$prcs_recollection.order_recollection()

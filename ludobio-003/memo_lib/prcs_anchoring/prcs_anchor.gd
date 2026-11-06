@@ -5,6 +5,7 @@ var anchored_souvenirs_array:Array
 var zoomout_value = 0.3
 var zoom_duration = 0.25
 var current_anchor : String = ""
+var active_souvenirs_array:Array
 
 # JUST INIT FROM MEMORY POOL
 func initialize(souvenirs:Array) -> void:
@@ -33,15 +34,23 @@ func _input(event):
 func _on_button_pressed() -> void:
 	search()
 
-# CHECK IF TAG EXISTS THEN LAUNCH A SEARCH 
+# LAUNCH A SEARCH 4 THE ANCHOR IN ALL DIARY
 func search():
 	for souvenir in souvenirs_array:
-		souvenir.process_anchoring(true, "")
+		souvenir.process_anchoring(true, "", 0.0)
 	current_anchor = $LineEdit.text
 	for entry in MemoryPool.instance.ze_diary:
 		if entry[1].has(current_anchor):
-			souvenirs_array[1].process_anchoring(false, entry[2])
+			var weight_index = 1 + entry[1].find(current_anchor)
+			if active_souvenirs_array.size() >= souvenirs_array.size():
+				break
+			var souvenir_to_take = souvenirs_array.pick_random()
+			while active_souvenirs_array.has(souvenir_to_take):
+				souvenir_to_take = souvenirs_array.pick_random()
+			active_souvenirs_array.append(souvenir_to_take)
+			souvenir_to_take.process_anchoring(false, entry[2], float(entry[1][weight_index]))
 	$LineEdit.text = ""
-	await get_tree().create_timer(0.2).timeout
+	MemoryPool.instance.order_recollection()
+	await get_tree().create_timer(0.1).timeout
 	$LineEdit.grab_focus()
 	$LineEdit.edit()

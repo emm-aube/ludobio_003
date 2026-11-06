@@ -39,7 +39,7 @@ var end_status:String = "[/color]"
 func initialize(clarity_value:float) -> void:
 	# store the inspector data
 	original_souvenir = $RichTextLabel.text
-	fill_letters(original_souvenir, 0.0)
+	fill_letters(original_souvenir)
 	# clarity needed
 	clarity_needed = clarity_value
 
@@ -69,24 +69,28 @@ func process_recollection(current_depth:int, recollection_threshold:int, recolle
 	update_letters()
 
 # PROCESS ANCHORING
-func process_anchoring(reset:bool, feeder:String):
+func process_anchoring(reset:bool, content:String, weight:float):
 	if(reset):
 		letters_array.clear()
-		fill_letters(original_souvenir, 0.0)
+		fill_letters(original_souvenir)
 		recollection_target = -1000
 		recollection_level = 0.0
 		is_anchored = false
-		update_letters()
 	else:
 		letters_array.clear()
 		is_anchored = true
-		fill_letters(feeder, 1.0)
-		recollection_target = 500
-		recollection_level = 0.5
-		update_letters()
+		fill_letters(content)
+		# NEED TO CHANGE LATER 
+		# right now the reco direction is random
+		# but I think it should be more diary VS memory or sthing similar
+		var random_bool: bool = randf() < 0.5
+		if(random_bool):
+			recollection_target = weight * 1000.0 / 2.0
+		else:
+			recollection_target = 1000 - (weight * 1000.0 / 2.0)
 
 # FILL LETTERS FROM INIT OR AFTER SEARCH
-func fill_letters(content:String, clarity_value:float):
+func fill_letters(content:String):
 	# find char size to then find each letter position
 	var char_size = Vector2($RichTextLabel.size) / Vector2(MemoryPool.instance.souvenir_nb_char, MemoryPool.instance.souvenir_nb_lines)
 	var x_i: int = 0
@@ -99,10 +103,10 @@ func fill_letters(content:String, clarity_value:float):
 			y_i += 1
 		var char_dico = {
 			"origin_letter" : character,
-			"clarity_level" : clarity_value,
+			"clarity_level" : 0.0,
 			"current_letter" : " ",
 			"letter_link" : "",
-			"is_recollected": clarity_value == 1.0,
+			"is_recollected": false,
 			"status": status_unclear, 
 			"end_status": end_status,
 			# noise are just temp parameters that revert to current so keep separated
@@ -115,10 +119,10 @@ func fill_letters(content:String, clarity_value:float):
 	while len(letters_array) < 136:
 		var char_dico = {
 			"origin_letter" : " ",
-			"clarity_level" : clarity_value,
+			"clarity_level" : 0.0,
 			"current_letter" : " ",
 			"letter_link" : "",
-			"is_recollected": clarity_value == 1.0,
+			"is_recollected": false,
 			"status": status_unclear, 
 			"end_status": end_status,
 			# noise are just temp parameters that revert to current so keep separated

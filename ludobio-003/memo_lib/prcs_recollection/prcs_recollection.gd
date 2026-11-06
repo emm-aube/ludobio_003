@@ -41,6 +41,7 @@ func debug_display():
 
 
 func order_recollection():
+	recollection_current_level = recollection_depth_max / 2
 	for x in souvenirs_array:
 		x.process_recollection(recollection_current_level, recollection_threshold, recollection_tolerance)
 		debug_display()

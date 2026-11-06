@@ -18,7 +18,7 @@ recollection_depth_max = 1000
 recollection_current_level = 500
 recollection_speed = 50
 recollection_tolerance = 100
-recollection_threshold = 600
+recollection_threshold = 500
 
 [node name="prcs_clarity" parent="." unique_id=1295542053 instance=ExtResource("3_irfen")]
 clarity_tolerance = 200
