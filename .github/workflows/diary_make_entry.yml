@@ -1,0 +1,27 @@
+name: Make Diary Entry
+
+on: 
+  workflow_dispatch:
+    inputs:
+      diary_text:
+        description: "Diary Entry"
+        required: true
+        type: string 
+
+permissions:
+  contents: write
+
+jobs:
+  create-entry:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repostitory
+        uses: actions/checkout@v4
+      - name: Create diary commit
+        env:
+          DIARY_TEXT: ${{ inputs.diary_text }}
+        run: |
+          git config user.name "Diary Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "DIARY_TEXT"
+          git push
