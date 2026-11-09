@@ -231,6 +231,8 @@ recollection_target = -1000.0
 position = Vector2(1900, 900)
 recollection_target = -1000.0
 
+[node name="HTTPRequest" type="HTTPRequest" parent="diary" unique_id=2123626360]
+
 [node name="prcs_anchor" parent="." unique_id=1689288330 instance=ExtResource("9_irfen")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=232915653]

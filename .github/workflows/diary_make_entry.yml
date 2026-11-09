@@ -23,5 +23,5 @@ jobs:
         run: |
           git config user.name "Diary Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit --allow-empty -m "DIARY_TEXT"
+          git commit --allow-empty -m "$DIARY_TEXT"
           git push

@@ -1,7 +1,22 @@
 extends Node
 
 # Called when the node enters the scene tree for the first time.
-func make_diary():
+func load_diary():
+	$HTTPRequest.request_completed.connect(open_diary)
+	var url = "https://api.github.com/repos/emm-aube/Ludobio_003/commits?sha=diary"
+	$HTTPRequest.request(url)
+	
+func open_diary(result, response_code, headers, body):
+	if response_code != 200:
+		print("github not accessed", response_code)
+		return
+	var commits = JSON.parse_string(body.get_string_from_utf8())
+	for entry in commits:
+		if entry["commit"]["author"]["name"] == "Diary Bot":
+			print(entry["commit"]["message"])
+
+
+func obsolete():
 	var diary:Array
 	var diary_source = DirAccess.open("res://diary_entries/")
 

@@ -30,23 +30,24 @@ func _ready() -> void:
 	
 	# INIT AL PROCESSES
 	# Recollection (calculates initial recollection state)
-	$prcs_recollection.initialize(souvenirs_array)
+	#$prcs_recollection.initialize(souvenirs_array)
 	# Clarity
-	$prcs_clarity.initialize(souvenirs_array)
+	#$prcs_clarity.initialize(souvenirs_array)
 	# Noise
-	$prcs_noise.initialize(souvenirs_array)
+	#$prcs_noise.initialize(souvenirs_array)
 	# Anchors
-	$prcs_anchor.initialize(souvenirs_array)
+	#$prcs_anchor.initialize(souvenirs_array)
 	# Diary
-	ze_diary = $diary.make_diary()
+	#ze_diary = $diary.load_diary()
+	$diary.load_diary()
 	
 	# AUTHORIZE PROCESSING FOR ALL (for those who have input)
-	start_processing = true
+	#start_processing = true
 	
 	# START ALL PROCESSES (for those who have timers)
-	$prcs_clarity.start()
-	$prcs_noise.start()
-	$Camera2D.global_position = get_viewport().get_visible_rect().size / 2
+	#$prcs_clarity.start()
+	#$prcs_noise.start()
+	#$Camera2D.global_position = get_viewport().get_visible_rect().size / 2
 
 # REMOVE MENU / TUTOS AND DISPLAY HIDDEN TILES
 func remove_menu():
