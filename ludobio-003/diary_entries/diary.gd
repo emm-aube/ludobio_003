@@ -30,15 +30,15 @@ func open_diary(result, response_code, headers, body):
 			#print(diary_file)
 			#var diary_line:int = 0
 			var entry:Array
-			var entry_array_origin = str(commit_entry["commit"]["message"]).split("//")
+			var entry_array_origin = str(commit_entry["commit"]["message"]).split("|")
 			if len(entry_array_origin) > 1:
 				entry.append(commit_entry["commit"]["author"]["date"])
 				
 				#print (entry_array_origin)
-				var tags = entry_array_origin[0]
+				var tags = entry_array_origin[1]
 				#print(tag_entry)
-				entry.append(tags.split(" "))
-				var content = entry_array_origin[1]
+				entry.append(tags.split(", "))
+				var content = entry_array_origin[0]
 				entry.append(content)
 				#entry.append(entry_array_origin[1])
 				#print (entry[1])
@@ -55,5 +55,5 @@ func open_diary(result, response_code, headers, body):
 				#entry.append(content)
 				#print(entry)
 				diary.append(entry)
-	#print(diary)
+	print(diary)
 	return(diary)
