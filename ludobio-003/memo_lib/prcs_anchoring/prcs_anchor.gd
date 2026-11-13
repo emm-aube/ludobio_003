@@ -61,8 +61,8 @@ func search():
 			active_souvenirs_array.append(souvenir_to_take)
 			souvenir_to_take.process_anchoring(false, entry[1], weight_value)
 	$LineEdit.text = ""
+	MemoryPool.instance.clean_memory()
 	MemoryPool.instance.order_recollection()
 	await get_tree().create_timer(0.1).timeout
 	$LineEdit.grab_focus()
 	$LineEdit.edit()
-

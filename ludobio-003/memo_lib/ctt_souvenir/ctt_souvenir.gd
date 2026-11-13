@@ -148,6 +148,9 @@ func update_letters():
 			letters_array[char_i]["end_status"] = end_status_selected
 			letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
 		else:
+			if letters_array[char_i]["status"] == status_selected:
+				letters_array[char_i]["status"] = status_unclear
+				letters_array[char_i]["end_status"] = end_status
 			if letters_array[char_i]["clarity_level"] == 1 or randf() < letters_array[char_i]["clarity_level"] :
 				letters_array[char_i]["status"] = status_clear
 			elif letters_array[char_i]["clarity_level"] == 0:
@@ -217,7 +220,11 @@ func process_noise(reset:bool, char_index:int, nb_chars_to_noisify:int):
 					txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
 	$RichTextLabel.text = txt_to_display
 
-func inspect():		
-	if(is_anchored and is_clear):
-		inspected = true
+func inspect(clean:bool):		
+	if(clean):
+		inspected = false
 		update_letters()
+	else:
+		if(is_anchored and is_clear):
+			inspected = true
+			update_letters()

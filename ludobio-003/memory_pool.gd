@@ -105,4 +105,11 @@ func _input(event: InputEvent) -> void:
 			for souvenir in souvenirs_array:
 				var label = souvenir.get_node("RichTextLabel")
 				if label.get_global_rect().has_point(mouse_pos):
-					souvenir.inspect()
+					for x in souvenirs_array:
+						x.inspect(true)
+					souvenir.inspect(false)
+
+func clean_memory():
+	for souvenir in souvenirs_array:
+		souvenir.inspect(true)
+	
