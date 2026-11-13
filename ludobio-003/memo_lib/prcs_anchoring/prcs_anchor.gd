@@ -44,22 +44,22 @@ func _on_button_pressed() -> void:
 func search():
 	for souvenir in souvenirs_array:
 		souvenir.process_anchoring(true, "", 0.0)
-	current_anchor = $LineEdit.text
+	current_anchor = $LineEdit.text.to_lower()
 	for entry in MemoryPool.instance.ze_diary:
-		print(entry)
-		print(entry[1])
-		if entry[1].has(current_anchor):
-			print("ok it's in")
-			var weight_value= float(entry[1].find(current_anchor))
-			weight_value = 1 / (1 + weight_value)
-			print(weight_value)
+		var tag = entry[1].to_lower()
+		if tag.contains(current_anchor):
+			var index = float(MemoryPool.instance.ze_diary.find(entry))
+			var quant = float(len(MemoryPool.instance.ze_diary))
+			var weight_value = index / quant
+			if weight_value < 0.3:
+				weight_value = 0.3
 			if active_souvenirs_array.size() >= souvenirs_array.size():
 				break
 			var souvenir_to_take = souvenirs_array.pick_random()
 			while active_souvenirs_array.has(souvenir_to_take):
 				souvenir_to_take = souvenirs_array.pick_random()
 			active_souvenirs_array.append(souvenir_to_take)
-			souvenir_to_take.process_anchoring(false, entry[2], weight_value)
+			souvenir_to_take.process_anchoring(false, entry[1], weight_value)
 	$LineEdit.text = ""
 	MemoryPool.instance.order_recollection()
 	await get_tree().create_timer(0.1).timeout
