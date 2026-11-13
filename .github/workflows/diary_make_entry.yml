@@ -1,10 +1,10 @@
-name: Make Diary Entry
+name: OUTRUN NOSTALGIA
 
 on: 
   workflow_dispatch:
     inputs:
       diary_text:
-        description: "Diary Entry"
+        description: "How do you wish to remember this moment? (100 car)"
         required: true
         type: string 
 
