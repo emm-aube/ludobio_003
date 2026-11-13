@@ -1,10 +1,10 @@
-name: Make Diary Entry
+name: OUTRUN NOSTALGIA
 
 on: 
   workflow_dispatch:
     inputs:
       diary_text:
-        description: "Diary Entry"
+        description: "How do you wish to remember this moment? (100 car)"
         required: true
         type: string 
 
@@ -20,8 +20,10 @@ jobs:
       - name: Create diary commit
         env:
           DIARY_TEXT: ${{ inputs.diary_text }}
+          DIARY_TAG_1: ${{ inputs.hashtag_1 }}
+          DIARY_TAG_2: ${{ inputs.hashtag_2 }}
         run: |
           git config user.name "Diary Bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit --allow-empty -m "DIARY_TEXT"
+          git commit --allow-empty -m "$DIARY_TEXT"
           git push
