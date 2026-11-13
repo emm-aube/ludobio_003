@@ -65,3 +65,4 @@ func search():
 	await get_tree().create_timer(0.1).timeout
 	$LineEdit.grab_focus()
 	$LineEdit.edit()
+

@@ -95,3 +95,14 @@ func order_clarity():
 
 func order_recollection():
 	$prcs_recollection.order_recollection()
+
+func _input(event: InputEvent) -> void:
+	if !start_processing:
+		return
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			var mouse_pos = get_viewport().get_canvas_transform().affine_inverse() * event.position
+			for souvenir in souvenirs_array:
+				var label = souvenir.get_node("RichTextLabel")
+				if label.get_global_rect().has_point(mouse_pos):
+					souvenir.inspect()

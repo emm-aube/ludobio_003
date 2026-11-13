@@ -8,6 +8,8 @@ var letters_array:Array
 @export var recollection_target:float
 var recollection_level:float
 
+# INSPECT
+var inspected:bool
 # CLARITY PROCESS
 var is_clear:bool
 var is_unclear:bool
@@ -31,9 +33,9 @@ var status_dark:String = "[color=#ffffff00]"
 var status_vague:String = "[color=#ffffff80]"
 var status_unclear:String = "[color=#ffffff40]"
 var status_noise:String = "[color=#ffffffff]"
-#var status_selected:String = "[shake][rainbow]"
+var status_selected:String = "[shake][rainbow]"
 var end_status:String = "[/color]"
-#var end_status_selected:String = "[/rainbow][/shake]"
+var end_status_selected:String = "[/rainbow][/shake]"
 
 # ACTIVATE SOUVENIR FROM POOL
 func initialize(clarity_value:float) -> void:
@@ -141,45 +143,50 @@ func update_letters():
 	var txt_to_display = ""
 	# go through EACH letter 
 	for char_i in range(MemoryPool.instance.souvenirs_length):
-		if letters_array[char_i]["clarity_level"] == 1 or randf() < letters_array[char_i]["clarity_level"] :
-			letters_array[char_i]["status"] = status_clear
-		elif letters_array[char_i]["clarity_level"] == 0:
-			letters_array[char_i]["status"] = status_unclear
+		if inspected == true:
+			letters_array[char_i]["status"] = status_selected
+			letters_array[char_i]["end_status"] = end_status_selected
+			letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
 		else:
-			letters_array[char_i]["status"] = status_vague
-			# check if the souvenir is recollectable 
-			# IE EITHER empty but never reaches because of recollection value in inspector
-			# OR is associated (meaning a souvenir it depends on is "selected")
-		if(is_anchored):
-			# check recollection for EACH letter based on % chances (0 if not in threshold, vague if in between, 1 if in tolerance)
-			letters_array[char_i]["is_recollected"] = recollection_level == 1 or randf() < recollection_level
-			if(letters_array[char_i]["is_recollected"]):
-				# then IF recollected + in the clarity area, we can put origin letter + count it as clear
-				if letters_array[char_i]["status"] == status_clear:
-					letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
-					clear_letters += 1
-				# if RECOLLECTED BUT NOT CLEAR 
-				# if it's an empty letter to start with (just all who have - as origin) give ascii enmpty
-				else: 
-					if(letters_array[char_i]["origin_letter"] == "-"):
-						letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
-					# else, give it a random not empty 
-					else:
-						letters_array[char_i]["current_letter"] = ascii[randi()% len(ascii)]
+			if letters_array[char_i]["clarity_level"] == 1 or randf() < letters_array[char_i]["clarity_level"] :
+				letters_array[char_i]["status"] = status_clear
+			elif letters_array[char_i]["clarity_level"] == 0:
+				letters_array[char_i]["status"] = status_unclear
 			else:
-				# if NOT RECOLLECTED
-				# give empty letters to everything (wheter empty or good)
-				letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
-		# IF it needs to be associated, then we cannot do anything then it's empty anwyays
-		else:
-			letters_array[char_i]["current_letter"] = ascii_empty[randi() % len(ascii_empty)]
-	# depending on how many clear letters and the clarity needed (to be clicked on), define if WHOLE souvenir is Clear or NOT
-		is_clear = (float(clear_letters) / float(MemoryPool.instance.souvenirs_length) > clarity_needed)
-		# FAKE SPACES
-		# because space break the lines, use other symbol for the noise (defined in ascii enpty) and paint it dark
-		if(letters_array[char_i]["current_letter"] == "$"):
-			letters_array[char_i]["status"] = status_dark
-		# add each letter with its look to the final text
+				letters_array[char_i]["status"] = status_vague
+				# check if the souvenir is recollectable 
+				# IE EITHER empty but never reaches because of recollection value in inspector
+				# OR is associated (meaning a souvenir it depends on is "selected")
+			if(is_anchored):
+				# check recollection for EACH letter based on % chances (0 if not in threshold, vague if in between, 1 if in tolerance)
+				letters_array[char_i]["is_recollected"] = recollection_level == 1 or randf() < recollection_level
+				if(letters_array[char_i]["is_recollected"]):
+					# then IF recollected + in the clarity area, we can put origin letter + count it as clear
+					if letters_array[char_i]["status"] == status_clear:
+						letters_array[char_i]["current_letter"] = letters_array[char_i]["origin_letter"]
+						clear_letters += 1
+					# if RECOLLECTED BUT NOT CLEAR 
+					# if it's an empty letter to start with (just all who have - as origin) give ascii enmpty
+					else: 
+						if(letters_array[char_i]["origin_letter"] == "-"):
+							letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
+						# else, give it a random not empty 
+						else:
+							letters_array[char_i]["current_letter"] = ascii[randi()% len(ascii)]
+				else:
+					# if NOT RECOLLECTED
+					# give empty letters to everything (wheter empty or good)
+					letters_array[char_i]["current_letter"] = ascii_empty[randi()% len(ascii_empty)]
+			# IF it needs to be associated, then we cannot do anything then it's empty anwyays
+			else:
+				letters_array[char_i]["current_letter"] = ascii_empty[randi() % len(ascii_empty)]
+		# depending on how many clear letters and the clarity needed (to be clicked on), define if WHOLE souvenir is Clear or NOT
+			is_clear = (float(clear_letters) / float(MemoryPool.instance.souvenirs_length) > clarity_needed)
+			# FAKE SPACES
+			# because space break the lines, use other symbol for the noise (defined in ascii enpty) and paint it dark
+			if(letters_array[char_i]["current_letter"] == "$"):
+				letters_array[char_i]["status"] = status_dark
+			# add each letter with its look to the final text
 		txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
 	# and update the label with final text
 	$RichTextLabel.text = txt_to_display
@@ -209,3 +216,8 @@ func process_noise(reset:bool, char_index:int, nb_chars_to_noisify:int):
 				else:
 					txt_to_display += letters_array[char_i]["status"] + letters_array[char_i]["current_letter"] + letters_array[char_i]["end_status"]
 	$RichTextLabel.text = txt_to_display
+
+func inspect():		
+	if(is_anchored and is_clear):
+		inspected = true
+		update_letters()

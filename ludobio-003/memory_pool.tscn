@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bevudnsmhehxj" path="res://memo_lib/prcs_noise/prcs_noise.tscn" id="2_vuuoh"]
 [ext_resource type="PackedScene" uid="uid://b55tn7sd0xhfw" path="res://memo_lib/prcs_clarity/prcs_clarity.tscn" id="3_irfen"]
 [ext_resource type="PackedScene" uid="uid://bhix7k7qpxom0" path="res://memo_lib/ctt_souvenir/ctt_souvenir.tscn" id="4_xe1s3"]
-[ext_resource type="Script" uid="uid://b3bjycteb2m6c" path="res://diary_entries/diary.gd" id="5_lvu7v"]
+[ext_resource type="Script" uid="uid://b3bjycteb2m6c" path="res://memo_lib/prcs_anchoring/diary.gd" id="5_lvu7v"]
+[ext_resource type="Script" uid="uid://rmbb5nwuimiu" path="res://camera_2d.gd" id="8_lvu7v"]
 [ext_resource type="PackedScene" uid="uid://blrnuyak1a6q7" path="res://memo_lib/prcs_anchoring/prcs_anchor.tscn" id="9_irfen"]
 
 [node name="MemoryPool" type="Node" unique_id=1706129249]
@@ -195,6 +196,75 @@ recollection_target = -1000.0
 position = Vector2(100, 900)
 recollection_target = -1000.0
 
+[node name="entry_66" parent="diary" unique_id=1142346754 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, 100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_66" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_67" parent="diary" unique_id=2073248364 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, 300)
+recollection_target = -1000.0
+
+[node name="entry_68" parent="diary" unique_id=1370804004 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, 500)
+recollection_target = -1000.0
+
+[node name="entry_69" parent="diary" unique_id=1252954672 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, 700)
+recollection_target = -1000.0
+
+[node name="entry_70" parent="diary" unique_id=1695773893 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, 900)
+recollection_target = -1000.0
+
+[node name="entry_71" parent="diary" unique_id=1234110403 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, 100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_71" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_72" parent="diary" unique_id=690260998 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, 300)
+recollection_target = -1000.0
+
+[node name="entry_73" parent="diary" unique_id=188001067 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, 500)
+recollection_target = -1000.0
+
+[node name="entry_74" parent="diary" unique_id=2054401063 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, 700)
+recollection_target = -1000.0
+
+[node name="entry_75" parent="diary" unique_id=781563324 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, 900)
+recollection_target = -1000.0
+
+[node name="entry_76" parent="diary" unique_id=215484834 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, 100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_76" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_77" parent="diary" unique_id=13625250 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, 300)
+recollection_target = -1000.0
+
+[node name="entry_78" parent="diary" unique_id=1768293625 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, 500)
+recollection_target = -1000.0
+
+[node name="entry_79" parent="diary" unique_id=1553097622 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, 700)
+recollection_target = -1000.0
+
+[node name="entry_80" parent="diary" unique_id=1918962718 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, 900)
+recollection_target = -1000.0
+
 [node name="entry_42" parent="diary" unique_id=907592236 groups=["empty"] instance=ExtResource("4_xe1s3")]
 position = Vector2(300, 900)
 recollection_target = -1000.0
@@ -231,10 +301,362 @@ recollection_target = -1000.0
 position = Vector2(1900, 900)
 recollection_target = -1000.0
 
+[node name="entry_51" parent="diary" unique_id=1240449766 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, 100)
+recollection_target = -1000.0
+
+[node name="entry_52" parent="diary" unique_id=1542081908 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, 300)
+recollection_target = -1000.0
+
+[node name="entry_53" parent="diary" unique_id=1694206979 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, 500)
+recollection_target = -1000.0
+
+[node name="entry_54" parent="diary" unique_id=1075932947 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, 700)
+recollection_target = -1000.0
+
+[node name="entry_55" parent="diary" unique_id=2116281484 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, 900)
+recollection_target = -1000.0
+
+[node name="entry_56" parent="diary" unique_id=822272828 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, 100)
+recollection_target = -1000.0
+
+[node name="entry_57" parent="diary" unique_id=686398847 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, 300)
+recollection_target = -1000.0
+
+[node name="entry_58" parent="diary" unique_id=1254695439 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, 500)
+recollection_target = -1000.0
+
+[node name="entry_59" parent="diary" unique_id=287539040 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, 700)
+recollection_target = -1000.0
+
+[node name="entry_60" parent="diary" unique_id=1923978841 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, 900)
+recollection_target = -1000.0
+
+[node name="entry_61" parent="diary" unique_id=2119021013 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, 100)
+recollection_target = -1000.0
+
+[node name="entry_113" parent="diary" unique_id=1703985919 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, -100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_113" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_114" parent="diary" unique_id=960505749 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(300, -100)
+recollection_target = -1000.0
+
+[node name="entry_115" parent="diary" unique_id=106879441 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(500, -100)
+recollection_target = -1000.0
+
+[node name="entry_116" parent="diary" unique_id=873409198 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, -100)
+recollection_target = -1000.0
+
+[node name="entry_117" parent="diary" unique_id=1228412505 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, -100)
+recollection_target = -1000.0
+
+[node name="entry_118" parent="diary" unique_id=1408956432 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, -100)
+recollection_target = -1000.0
+
+[node name="entry_119" parent="diary" unique_id=1205585119 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, -100)
+recollection_target = -1000.0
+
+[node name="entry_120" parent="diary" unique_id=923700514 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, -100)
+recollection_target = -1000.0
+
+[node name="entry_121" parent="diary" unique_id=308601883 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, -100)
+recollection_target = -1000.0
+
+[node name="entry_122" parent="diary" unique_id=944824441 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, -100)
+recollection_target = -1000.0
+
+[node name="entry_123" parent="diary" unique_id=981133211 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, -100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_123" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_124" parent="diary" unique_id=2115921168 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, -100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_124" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_125" parent="diary" unique_id=2095221698 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, -100)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_125" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_126" parent="diary" unique_id=186165539 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, -100)
+recollection_target = -1000.0
+
+[node name="entry_127" parent="diary" unique_id=765318626 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, -100)
+recollection_target = -1000.0
+
+[node name="entry_128" parent="diary" unique_id=1996284201 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, -100)
+recollection_target = -1000.0
+
+[node name="entry_129" parent="diary" unique_id=762864339 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, -300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_129" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_130" parent="diary" unique_id=1216247039 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(300, -300)
+recollection_target = -1000.0
+
+[node name="entry_131" parent="diary" unique_id=542020149 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(500, -300)
+recollection_target = -1000.0
+
+[node name="entry_132" parent="diary" unique_id=1264013822 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, -300)
+recollection_target = -1000.0
+
+[node name="entry_133" parent="diary" unique_id=190952647 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, -300)
+recollection_target = -1000.0
+
+[node name="entry_134" parent="diary" unique_id=859362182 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, -300)
+recollection_target = -1000.0
+
+[node name="entry_135" parent="diary" unique_id=1802596174 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, -300)
+recollection_target = -1000.0
+
+[node name="entry_136" parent="diary" unique_id=160224832 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, -300)
+recollection_target = -1000.0
+
+[node name="entry_137" parent="diary" unique_id=459312421 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, -300)
+recollection_target = -1000.0
+
+[node name="entry_138" parent="diary" unique_id=1963824642 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, -300)
+recollection_target = -1000.0
+
+[node name="entry_139" parent="diary" unique_id=1401845559 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, -300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_139" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_140" parent="diary" unique_id=1892721074 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, -300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_140" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_141" parent="diary" unique_id=1522688908 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, -300)
+recollection_target = -1000.0
+
+[node name="RichTextLabel" parent="diary/entry_141" index="1" unique_id=676347016]
+text = "OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S OK I JUST WNAT S"
+
+[node name="entry_142" parent="diary" unique_id=1580716312 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, -300)
+recollection_target = -1000.0
+
+[node name="entry_143" parent="diary" unique_id=1501334822 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, -300)
+recollection_target = -1000.0
+
+[node name="entry_144" parent="diary" unique_id=139273256 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, -300)
+recollection_target = -1000.0
+
+[node name="entry_62" parent="diary" unique_id=1158674546 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, 300)
+recollection_target = -1000.0
+
+[node name="entry_63" parent="diary" unique_id=256198326 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, 500)
+recollection_target = -1000.0
+
+[node name="entry_64" parent="diary" unique_id=216692245 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, 700)
+recollection_target = -1000.0
+
+[node name="entry_65" parent="diary" unique_id=442675673 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, 900)
+recollection_target = -1000.0
+
+[node name="entry_81" parent="diary" unique_id=497478156 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, 1100)
+recollection_target = -1000.0
+
+[node name="entry_82" parent="diary" unique_id=1962401286 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, 1100)
+recollection_target = -1000.0
+
+[node name="entry_83" parent="diary" unique_id=237411875 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, 1100)
+recollection_target = -1000.0
+
+[node name="entry_84" parent="diary" unique_id=1849468985 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, 1100)
+recollection_target = -1000.0
+
+[node name="entry_85" parent="diary" unique_id=590199687 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(300, 1100)
+recollection_target = -1000.0
+
+[node name="entry_86" parent="diary" unique_id=180540386 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 1100)
+recollection_target = -1000.0
+
+[node name="entry_87" parent="diary" unique_id=1832051493 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 1100)
+recollection_target = -1000.0
+
+[node name="entry_88" parent="diary" unique_id=822600974 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 1100)
+recollection_target = -1000.0
+
+[node name="entry_89" parent="diary" unique_id=393413161 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, 1100)
+recollection_target = -1000.0
+
+[node name="entry_90" parent="diary" unique_id=1876448139 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 1100)
+recollection_target = -1000.0
+
+[node name="entry_91" parent="diary" unique_id=1050186860 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, 1100)
+recollection_target = -1000.0
+
+[node name="entry_92" parent="diary" unique_id=1096641453 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 1100)
+recollection_target = -1000.0
+
+[node name="entry_93" parent="diary" unique_id=1350563559 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, 1100)
+recollection_target = -1000.0
+
+[node name="entry_94" parent="diary" unique_id=1249481131 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, 1100)
+recollection_target = -1000.0
+
+[node name="entry_95" parent="diary" unique_id=1684644169 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, 1100)
+recollection_target = -1000.0
+
+[node name="entry_96" parent="diary" unique_id=1180523259 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, 1100)
+recollection_target = -1000.0
+
+[node name="entry_97" parent="diary" unique_id=382452619 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(100, 1300)
+recollection_target = -1000.0
+
+[node name="entry_98" parent="diary" unique_id=1350478015 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-100, 1300)
+recollection_target = -1000.0
+
+[node name="entry_99" parent="diary" unique_id=958527842 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-300, 1300)
+recollection_target = -1000.0
+
+[node name="entry_100" parent="diary" unique_id=1911545025 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(-500, 1300)
+recollection_target = -1000.0
+
+[node name="entry_101" parent="diary" unique_id=20170718 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(300, 1300)
+recollection_target = -1000.0
+
+[node name="entry_102" parent="diary" unique_id=1801297764 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(500, 1300)
+recollection_target = -1000.0
+
+[node name="entry_103" parent="diary" unique_id=740123037 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(700, 1300)
+recollection_target = -1000.0
+
+[node name="entry_104" parent="diary" unique_id=1417335689 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(900, 1300)
+recollection_target = -1000.0
+
+[node name="entry_105" parent="diary" unique_id=2081114079 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1100, 1300)
+recollection_target = -1000.0
+
+[node name="entry_106" parent="diary" unique_id=897982302 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1300, 1300)
+recollection_target = -1000.0
+
+[node name="entry_107" parent="diary" unique_id=340246583 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1500, 1300)
+recollection_target = -1000.0
+
+[node name="entry_108" parent="diary" unique_id=1581795469 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1700, 1300)
+recollection_target = -1000.0
+
+[node name="entry_109" parent="diary" unique_id=769587711 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(1900, 1300)
+recollection_target = -1000.0
+
+[node name="entry_110" parent="diary" unique_id=1251480633 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2100, 1300)
+recollection_target = -1000.0
+
+[node name="entry_111" parent="diary" unique_id=1095964664 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2300, 1300)
+recollection_target = -1000.0
+
+[node name="entry_112" parent="diary" unique_id=475093751 groups=["empty"] instance=ExtResource("4_xe1s3")]
+position = Vector2(2500, 1300)
+recollection_target = -1000.0
+
 [node name="HTTPRequest" type="HTTPRequest" parent="diary" unique_id=2123626360]
 
 [node name="prcs_anchor" parent="." unique_id=1689288330 instance=ExtResource("9_irfen")]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=232915653]
+script = ExtResource("8_lvu7v")
 
 [editable path="diary/entry_01"]
+[editable path="diary/entry_66"]
+[editable path="diary/entry_71"]
+[editable path="diary/entry_76"]
+[editable path="diary/entry_113"]
+[editable path="diary/entry_123"]
+[editable path="diary/entry_124"]
+[editable path="diary/entry_125"]
+[editable path="diary/entry_129"]
+[editable path="diary/entry_139"]
+[editable path="diary/entry_140"]
+[editable path="diary/entry_141"]
