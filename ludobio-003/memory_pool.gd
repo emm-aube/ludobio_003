@@ -39,7 +39,7 @@ func _ready() -> void:
 	$prcs_anchor.initialize(souvenirs_array)
 	# Diary
 	ze_diary = await $diary.load_diary()
-	print(ze_diary)
+	
 	#$diary.load_diary()
 	
 	# AUTHORIZE PROCESSING FOR ALL (for those who have input)
