@@ -1,0 +1,58 @@
+
+- DONE Change wording
+- DONE Game Add tag prompt
+- DONE Game check new tags system
+- DONE Text limit
+- DONE Game Display date / name on click 
+- DONE Add fields (name, location…)
+- DONE tag & weight, maybe weight by date ? YES
+- DONE Naming in Branch
+- DONE camera center to last selected 
+- DONE camera tweens
+- DONE Change letters of empty on create chain
+- DONE Change letters only on H or V
+- DONE Calculate the right letter
+- DONE Change letters only on right souvenir
+- DONE Make the angle
+- DONE Clean 
+- DONE Stop the moving 
+- DONE Make sure NO variables in scripts
+- DONE Comment everything 
+- DONE Simplify where possible 
+- DONE Intro text that disappears on first click
+- DONE Cursor moves the whole screen not the cursor itself
+- DONE End text (just label)
+- DONE Create a few chains, with 5 ending 
+- DONE 50 souvenirs in total 
+- DONE souvenir that is associating can be changed by link
+- DONE Link remains if select a souvenir (should be cleaned)
+- DONE End of Thread (GENERIC)
+- DONE Fix recollection levels on select souvenir
+- DONE Recollection levels  + make values mouse friendly
+
+
+
+TO DO 
+- Re-allow click/select > display date
+- Move mouse
+
+BUGS
+- Letters move on clarity and break links perfect lines WHY THOUGH ???
+- Cleaning on UN-SELECT (update letters)
+- Should complete letters with spaces if < 136 
+- Empties can be « linked » between different souvenirs so when cleaning, cleaning « others » links as well
+- letters still move with monospace
+
+
+POLISH & TBD
+- EDITOR 
+- TBD if Objective can be chosen, at the beginning of the game
+- Direction of links depend on position of souvenirs around
+- Find solution for line breaks (will need my editor)
+- What if noise is a process too, but NOISE equals CLARITY ?? 
+- 	How can I distinguish both of them 
+- Add parallel timers for the noise so that it’s less linear
+- Turn all alpha to 100 system (% to html)
+- Requires ^ Change the noise alpha so that it depends on original value 
+- Changes the whole thing on movement but the further the littler 
+- Diary: title ? Jouer de la nostalgie 

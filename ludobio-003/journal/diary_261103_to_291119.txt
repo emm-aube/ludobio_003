@@ -1,0 +1,51 @@
+26/11/03 - Note d’intention : début de la seconde itération 
+
+Toujours bloqué avec cette question fondamentale liée à la narration de soi : que faire de la tension entre bénéfice personnel et intérêt pour le public ? Cette tension existe dans toute œuvre clairement autobiographique (// Ernaux) mais me semble plus forte dans le jeu. Par habitude ? Par format ? 
+
+J’en reviens toujours au même (1 seul !!!) jeu comme exemple vraiment réussi : Dys4ia. De la même autrice, Triad échoue à générer des questions/réalisations sur une expérience de vie. Je déteste les métaphores de That Dragon, Cancer. Vendran las aves quand même intéressant, oui. Peut-être pas autobiographique, mais peu importe. 
+
+Rappel de mon intention avec ce doctorat? Approcher des formes de narration de soi comme Ernaux, Éribon, Louis (cad qui exposent des trajectoires de vies obliques). Pourtant, en me concentrant trop sur la mémoire, je m’en éloigne peut-être (je reviens à Proust, mais c’est un projet entièrement différent).
+
+Sur la dimension égocentrique : je l’accepte. D’une part, je ne trouve aucun intérêt/motivation, à travailler sur un projet qui ne me transforme pas (Foucault, Wilde, etc). L’autobiographique n’est pas ici indispensable mais, et d’autre part, toute démarche artistique l’est. Ogni pintore dipinge se. Mais, et Foucault encore (avec d’autres, Ernaux etc), il faut résonner avec d’autres en faisant cela. Retour question initiale... Amplifiée par le jeu (ludique = fun != réflection sérieuse) ??? Consume Me! fonctionne peut-être. Quelque chose me dérange dedans malgré tout, mais je ne sais pas quoi. À re-tester... 
+
+Je n'arrive pas à décider dans l’immédiat. Donc, pour l’instant, je vais ignorer les objectifs ludiques, et tester un autre format de narration de soi (journal). 
+ 
+Concrètement :
+Ajout système de Tag et Recherche
+Ajout mouvements caméras
+Tester entrées type Journal (peut-être jouer avec format Commit ?)
+
+
+
+26/11/09 - Entrée
+
+Je me suis amusé avec l’idée du journal.
+ 
+Le résultat : une action GitHub (exécutable depuis l’application smartphone) crée et commit un fichier txt qui s’ajoute au matériel mnésique du jeu. Le contenu est explorable avec les process Anchoring (recherche par tag) et Recollection.
+
+L’expérience me parait intéressante uniquement (et cela m’éloigne énormément du projet initial) si la création est « multi-joueur ». Une sorte de Twitter x BeReal. 
+L'incitation en serait :« Devancer la nostalgie ». Au moment d’une expérience, conscientiser son devenir (cad sa transformation en mémoire) pour réorienter sa perception. 
+Un format serait nécessaire (// art protocolaire) pour mettre de l'ordre et du sens à la polyvocité . Peut-être intéressant d'en discuter avec Richy. 
+
+À réfléchir… 
+
+Pour l’instant, je vais terminer et débugger le projet puis créer une autre branche pour explorer l’autre direction envisagée : 
+inspiration WikiRace (avec un objectif plus clair et ludique de Ré-Association d’un souvenir).
+	
+
+
+26/11/19 - Entrée
+
+Peu réfléchi au projet ces derniers jours (occupé par d'autres activités).
+Je devrais dire aux projets puisque j’ai confirmé la division entre les deux. 
+
+J'ai néanmoins terminé le prorotype de la version multi-journal et pu le faire tester. 
+Les retours, et ma propre appréciation, sont positifs dans l'ensemble, mais pour faire un test de plus grande envergue, j’ai proposé à Richy d’exposer le projet sous forme d’installation pour Nostagain. 
+Ça fait longtemps que je n’ai pas réalisé d’installation, donc l’idée me plait assez.
+
+Je n’ai pas de blocage pour l’instant, mais il faut que je consacre du temps à :
+créer une interface web-based pour « rentrer » les souvenirs (le playable peut rester sur Godot) sous forme de texte / « dessin » (nécessite une interface dédiée)
+penser le format de l’installation (j’ai commencé des discussions avec Golnaz)
+chercher des modèles de dictionnaires pour censurer les messages indésirables, filtrer la recherche pas mots-clés (à discuter avec Edith)
+
+Je retourne au projet Association pour l'instant afin de le finir.
