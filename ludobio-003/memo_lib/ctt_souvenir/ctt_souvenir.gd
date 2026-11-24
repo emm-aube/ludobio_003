@@ -2,6 +2,7 @@ extends Node2D
 
 # ORIGINAL CONTENT
 var original_souvenir:String
+@export var original_souvenirs:Array[String]
 var letters_array:Array
 
 var first_init_done:bool
@@ -40,6 +41,11 @@ var end_status_selected:String = "[/rainbow][/shake]"
 func initialize(clarity_value:float) -> void:
 	# store the inspector data
 	original_souvenir = $RichTextLabel.text
+	if(original_souvenir.length() < 136):
+		print("souvenir too short, added spaces: " + name)
+		while(original_souvenir.length() < 136):
+			original_souvenir = original_souvenir + " "
+	
 	# find char size to then find each letter position 
 	var char_size = Vector2($RichTextLabel.size) / Vector2(MemoryPool.instance.souvenir_nb_char, MemoryPool.instance.souvenir_nb_lines)
 	var x_i: int = 0
@@ -65,8 +71,6 @@ func initialize(clarity_value:float) -> void:
 			"position": char_size * Vector2(x_i, y_i) + global_position - $RichTextLabel.size / 2
 		}
 		letters_array.append(char_dico)
-	if len(letters_array) < 136:
-		print(name)
 
 	# clarity needed
 	clarity_needed = clarity_value

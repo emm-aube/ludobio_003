@@ -29,17 +29,25 @@
 - DONE End of Thread (GENERIC)
 - DONE Fix recollection levels on select souvenir
 - DONE Recollection levels  + make values mouse friendly
+- DONE Camera movement
+- DONE Should complete letters with spaces if < 136 
+- DONE Move mouse
+- WONT Re-allow click/select > display date
+
 
 
 
 TO DO 
-- Re-allow click/select > display date
-- Move mouse
+- Progresive node display 
+- Texts change depending on where we come from
+- Add souvenir Value field 
+- Value change //
+- Fail depending on current value
+- Stabilization system 
 
 BUGS
 - Letters move on clarity and break links perfect lines WHY THOUGH ???
 - Cleaning on UN-SELECT (update letters)
-- Should complete letters with spaces if < 136 
 - Empties can be « linked » between different souvenirs so when cleaning, cleaning « others » links as well
 - letters still move with monospace
 

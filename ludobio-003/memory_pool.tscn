@@ -83,7 +83,7 @@ position = Vector2(1900, 900)
 recollection_target = 200.0
 
 [node name="RichTextLabel" parent="CTN_Adam/I_AdamExplain" index="1" unique_id=676347016]
-text = " Adam. I thought he would be here  for me, like I  was here for me,  when he needed   it. He decided  not to. That is  when all shifted."
+text = "Ce n'était pas la première fois qu/e je traversais ça. Chaque fois, la  depression venait. C'était horrible. En tout cas, ça fait 8 la"
 autowrap_trim_flags = 0
 justification_flags = 0
 metadata/_edit_use_anchors_ = true
