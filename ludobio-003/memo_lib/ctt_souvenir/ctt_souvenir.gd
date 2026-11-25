@@ -2,7 +2,6 @@ extends Node2D
 
 # ORIGINAL CONTENT
 var original_souvenir:String
-@export var original_souvenirs:Array[String]
 var letters_array:Array
 
 var first_init_done:bool
@@ -41,6 +40,7 @@ var end_status_selected:String = "[/rainbow][/shake]"
 func initialize(clarity_value:float) -> void:
 	# store the inspector data
 	original_souvenir = $RichTextLabel.text
+	original_souvenir = original_souvenir.replace("/n", "")
 	if(original_souvenir.length() < 136):
 		print("souvenir too short, added spaces: " + name)
 		while(original_souvenir.length() < 136):

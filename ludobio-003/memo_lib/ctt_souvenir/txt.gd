@@ -11,6 +11,7 @@ func _ready():
 
 func load_souvenirs():
 	souvenirs.clear()
+	
 
 	var data = JSON.parse_string(
 		FileAccess.get_file_as_string("res://text/pool.json")
@@ -19,7 +20,9 @@ func load_souvenirs():
 	if data is Dictionary:
 		for entry in data.get("souvenirs", []):
 			souvenirs[entry["SOUVENIR"]] = entry["ASCII"]
-
+	print(data)
+	print(souvenirs.keys())
+	
 func _get_property_list() -> Array[Dictionary]:
 	return [{
 		"name": "souvenir",

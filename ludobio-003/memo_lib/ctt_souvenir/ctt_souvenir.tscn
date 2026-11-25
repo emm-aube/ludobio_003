@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bea1iwy043acx" path="res://memo_lib/ctt_souvenir/ctt_souvenir.gd" id="1_fa5lw"]
 [ext_resource type="Shader" uid="uid://bfu4bgi05pl6m" path="res://pics/ctt_souvenir.gdshader" id="2_fa5lw"]
 [ext_resource type="FontFile" uid="uid://bgl0vumfeog03" path="res://text/MonospaceTypewriter.ttf" id="3_ny7y8"]
+[ext_resource type="Script" uid="uid://dq2jyccwf4tnq" path="res://memo_lib/ctt_souvenir/txt.gd" id="4_ny7y8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_aqto5"]
 shader = ExtResource("2_fa5lw")
@@ -49,6 +50,8 @@ scroll_active = false
 autowrap_mode = 1
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("4_ny7y8")
+souvenir = ""
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1143922370]
 position = Vector2(-105, -100)

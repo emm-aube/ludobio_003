@@ -1,0 +1,22 @@
+26/11/25
+
+Ré-attaqué le projet solo (Pills Pills Pills) avec des taches simples pour me remettre dedans (debug, excel export etc).
+Je vois une direction plus claire.
+Je veux conserver le comportement général: RE-association d'un souvenir pour le "soigner".  
+Mais cette agency doit être percepetible par les joueurs, dans les process même. 
+
+Les souvenirs de cette ludobiographie sont lourds. Potentiellement anxiogènes. 
+Quand je cherche un souvenir positif, je peux être assailli par des souvenirs négatifs. 
+Cet assaut doit affecter les efforts de la mémoire et définir échec/réussite. 
+
+Mon idée en l'état:
+	- GARDER : objectif de trouver [1] "bon" souvenir dans le Pool
+	- GARDER : saut de souvenir en souvenir
+	- AJOUTER : le contenu (texte/visuel) ET la [valeur] d'un souvenir dépendent de celui qui le précède (eg, HAND > MUM = [comfort], HAND > HIM = [anxiety])
+	- AJOUTER : quand [anxiété] augmente, le Noise aussi, ET les souvenirs alternent entre [normal] VS [parasite]
+	- AJOUTER : quand je clique sur la version [parasite] d'un souvenir, l'anxiété augmente
+	- AJOUTER : quand l'anxiété est trop haute = Game Over
+	
+Je pense que ça fait une ambition suffisante pour finir ce projet. 
+J'ai envie de jouer aussi du format des souvenirs: sortir de et/ou combiner mes "carrés" pour faire des "fresques" de plusieurs souvenirs imbriqués comme des palimpsestes.
+Même si j'ai une image précise en tête et une envie forte de travailler dessus, ça va devoir attendre un prochain projet. 
